@@ -60,7 +60,7 @@ const UserProfileSidebar = () => {
     { label: "Edit Wallets", icon: menuIcons.wallet, path: "/edit-wallet" },
     { label: "Active Contests", icon: menuIcons.contests, path: "/profile/contests" },
     { label: "Withdraw Funds", icon: menuIcons.funds, path: "/withdraw-funds" },
-    { label: "Transaction History", icon: menuIcons.history, path: "/profile/transactions" },
+    { label: "Transaction History", icon: menuIcons.history, path: "/transaction-history" },
     { label: "Special Offers", icon: menuIcons.offers, path: "/profile/offers" },
     { label: "Find a Game", icon: menuIcons.search, path: "/profile/offers" },
   ];
