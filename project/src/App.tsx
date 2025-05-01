@@ -22,6 +22,7 @@ import EditWallet from './components/Profile Page/EditWallet.js';
 import WithdrawFunds from './components/Profile Page/WithdrawFunds.js';
 import GameSignupPopup from './components/GameSignupPopup';
 import ScrollToTop from './components/ScrollToTop';
+import TransactionHistory from './components/Profile Page/TransactionHistory.js';
 
 function App() {
   return (
@@ -65,6 +66,8 @@ function App() {
                     <Route path="/withdraw-funds" element={<WithdrawFunds />} />
                       {/* gaming-signup-popup Page */}
                       <Route path="/gaming-signup-popup" element={<GameSignupPopup />} />
+                      {/* transaction-history Page */}
+                      <Route path="/transaction-history" element={<TransactionHistory />} />
                   
           </Routes>
         </main>
