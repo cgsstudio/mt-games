@@ -23,6 +23,7 @@ import WithdrawFunds from './components/Profile Page/WithdrawFunds.js';
 import GameSignupPopup from './components/GameSignupPopup';
 import ScrollToTop from './components/ScrollToTop';
 import TransactionHistory from './components/Profile Page/TransactionHistory.js';
+import ActiveContest from './components/Profile Page/ActiveContest.js';
 
 function App() {
   return (
@@ -68,6 +69,8 @@ function App() {
                       <Route path="/gaming-signup-popup" element={<GameSignupPopup />} />
                       {/* transaction-history Page */}
                       <Route path="/transaction-history" element={<TransactionHistory />} />
+                      {/* active-contest Page */}
+                      <Route path="/active-contest" element={<ActiveContest />} />
                   
           </Routes>
         </main>
