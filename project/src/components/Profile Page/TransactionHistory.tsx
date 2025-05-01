@@ -94,7 +94,7 @@ export default function TransactionHistory() {
       {/* Transaction Table */}
       <div className="rounded overflow-hidden space-y-4 px-2 md:px-0">
         {/* Table Header */}
-        <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded">
+        <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded-[6px]">
           <div>DATE</div>
           <div>EVENT</div>
           <div>STATUS</div>
@@ -111,7 +111,7 @@ export default function TransactionHistory() {
               : 'linear-gradient( 180deg, 	rgb(3, 8, 16) 0%, rgb(7, 18, 33) 100%)';
               
             return (
-              <div key={transaction.id} className={`grid grid-cols-5 itmes-center  py-4 px-6 rounded `} style={{ background: bgColor }}>
+              <div key={transaction.id} className={`grid grid-cols-5 itmes-center  py-4 px-6 rounded-[6px] `} style={{ background: bgColor }}>
                 <div className="text-[#ffdfcd] barlow-semibold text-[12px] md:text-base">{transaction.date}</div>
                 <div className="flex items-center justify-center md:justify-start gap-4">
                   {transaction.profileImg && (

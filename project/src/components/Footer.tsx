@@ -13,7 +13,7 @@ import contestmobiedivider from '../image/icons/contestmobiledivider.svg';
 export default function Footer() {
   const location = useLocation();
 
-  const isContestOrProfilePage = location.pathname.includes('contest') || location.pathname.includes('PROFILE') || location.pathname.includes('checkout-card') || location.pathname.includes('confirmation') || location.pathname.includes('checkout-crypto') || location.pathname.includes('buy-credits') || location.pathname.includes('update-profile') || location.pathname.includes('edit-wallet') || location.pathname.includes('withdraw-funds'); ;
+  const isContestOrProfilePage = location.pathname.includes('contest') || location.pathname.includes('PROFILE') || location.pathname.includes('checkout-card') || location.pathname.includes('confirmation') || location.pathname.includes('checkout-crypto') || location.pathname.includes('buy-credits') || location.pathname.includes('update-profile') || location.pathname.includes('edit-wallet') || location.pathname.includes('withdraw-funds') || location.pathname.includes('transaction-history'); 
 
   // Divider images based on screen size and page
   const topDividerDesktop = isContestOrProfilePage ? contestdivider : shapedivider;
