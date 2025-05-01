@@ -1,0 +1,47 @@
+.player-reviews {
+  background-color: #000;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.reviews-title {
+  font-family: 'Your-Font', sans-serif; /* Replace with your actual font */
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-content {
+  padding: 2rem;
+  color: white;
+}
+
+.review-text {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  color: #00a8ff; /* The blue color used for CaptainZ */
+  font-size: 1.2rem;
+  text-align: right;
+  padding-right: 20%;
+}
+
+/* Custom navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff00ff; /* Pink/purple color from the arrows */
+}
+
+/* Optional: Customize the navigation buttons further */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem;
+} 

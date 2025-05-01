@@ -1,0 +1,16 @@
+<svg id="COLLAPSE_NAV" data-name="COLLAPSE NAV" xmlns="http://www.w3.org/2000/svg" width="57" height="55" viewBox="0 0 57 55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0.25;
+      }
+
+      .cls-2 {
+        fill: #283643;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Img_copy_2" data-name="Img copy 2" class="cls-1" width="57" height="55" rx="16" ry="16"/>
+  <path class="cls-2" d="M411.171,247.478h8.673l-8.673-12.614,8.673-12.34h-8.673l-8.673,12.34Z" transform="translate(-384 -208)"/>
+</svg>

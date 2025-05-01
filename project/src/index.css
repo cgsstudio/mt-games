@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #050d19;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+
+
+  @font-face {
+    font-family: 'Cygun';
+    src: url('./Assest/font/Cygun-Regular-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Cygun';
+    src: url('./Assest/font/Cygun-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('./Assest/font/orbitron-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('./Assest/font/orbitron-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('./Assest/font/orbitron-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Century-Gothic';
+    src: url('./Assest/font/Century-Gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Digital-7-mono';
+    src: url('./Assest/font/digital-7-mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: 'Myriad Pro';
+    src: url('./Assest/font/MYRIADPRO-REGULAR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .myriad-pro-regular {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: normal;
+  }
+  .digital-7-mono {
+    font-family: 'Digital-7-mono', sans-serif;
+    font-weight: normal;
+  }
+
+  .century-gothic-normal {
+    font-family: 'Century-Gothic', sans-serif;
+    font-weight: normal;
+  }
+  .century-gothic-medium {
+    font-family: 'Century-Gothic', sans-serif;
+    font-weight: 500;
+  }
+  .century-gothic-bold {
+    font-family: 'Century-Gothic', sans-serif;
+    font-weight: 700;
+  }
+
+  .orbitron-light {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 300; /* Light */
+  }
+  
+  .orbitron-medium {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500; /* Medium */
+  }
+  .orbitron-semibold {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600; /* Medium */
+  }
+  .orbitron-bold {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700; /* Bold */
+  }
+
+  .cygun {
+    font-family: 'Cygun', sans-serif;
+  }
+  .cygun-bold {
+    font-family: 'Cygun', sans-serif;
+    font-weight: bold;
+  }
+
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+.text-shadow{
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.44);
+
+}
+.box-shadow{
+  box-shadow: 0px 3px 27px 0px rgba(0, 0, 0, 0.79);
+}
+.glow {
+  box-shadow: 0 0 20px theme('colors.purple.500' / 20%);
+}
+
+.info-button{
+  border:none;
+  background-image: linear-gradient(to bottom, #0d0917, #3f1261);
+  color: #fff;
+  border-radius: 1000px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-button::after{
+  content: "";
+  position: absolute;
+  width: 104%;
+  height: 107%;
+  background-image: linear-gradient(to bottom, #0560fa, #d93ef9);
+  z-index: -1;
+  border-radius: 1000px;
+}
+@media (max-width: 768px) {
+  .info-button::after{
+   border-radius: 8px;
+   width: 103%;
+  }
+  .info-button{
+    border-radius: 8px;
+  }
+  .swiper-pagination-bullet{
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
+.linear-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: none;
+  background: linear-gradient(to bottom, #0d0917, #3f1261); /* inner background */
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.linear-button::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(to right, #0560fa, #d93ef9); /* outer gradient border */
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.linear-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0d0917, #3f1261); /* masking background */
+  border-radius: 999px;
+  z-index: -1;
+  margin: 1px; /* gap between border and button */
+}
+
+@media (max-width: 768px) {
+  .linear-button {
+    border-radius: 8px !important;
+  }
+
+  .linear-button::before,
+  .linear-button::after {
+    border-radius: 8px !important;
+  }
+}
+
+.linear-button-2{
+  padding: 0px 20px;
+  border:none;
+  background-image: linear-gradient(to bottom, #0d0917, #3f1261);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linear-button-2::after{
+  content: "";
+  position: absolute;
+  width: 101%;
+  height: 107%;
+  background-image: linear-gradient(to bottom, #0560fa, #d93ef9);
+  z-index: -1;
+  border-radius: 12px;
+}
+.work-card{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.work-card::after{
+  content: "";
+  position: absolute;
+  width: 101%;
+  height: 101%;
+  background-image: linear-gradient(to bottom, #0560fa, #d93ef9);
+  z-index: -1;
+  border-radius: 25px;
+
+}
+
+.hero-sec{
+  background-image: url('./image/hero-img.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.swiper-button-prev:after, .swiper-button-next:after{
+  display: none;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0 ;
+  left: 30px;
+}
+@media (max-width: 768px) {
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    left: 0;
+    bottom: 20px;
+  }
+}
+.swiper-pagination{
+  text-align:center;
+}
+/* Change bullet color */
+.swiper-pagination-bullet {
+  border: 1px solid #d93ef9; /* Border color */
+  opacity: 1; /* Ensure visibility */
+  transition: all 0.3s ease-in-out;
+  width: 15px;
+  height: 15px;
+}
+
+/* Glow effect on bullets */
+.swiper-pagination-bullet-active {
+  background: radial-gradient(circle, #ffffff 10%, #a855f7 80%);
+  box-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px rgba(168, 85, 247, 0.8);
+  border: none;
+}
+
+
+.barlow-regular {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-medium {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-semibold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.barlow-bold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.barlow-black {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.barlow-condensed-light {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.barlow-condensed-regular {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-condensed-medium {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-condensed-semibold {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.barlow-condensed-bold {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+

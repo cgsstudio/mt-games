@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="584" height="125" viewBox="0 0 584 125">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-opacity: 0.7;
+        stroke: #161f29;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Img_copy_2" data-name="Img copy 2" class="cls-1" d="M63,246.007H597a24,24,0,0,1,24,24v74.986a24,24,0,0,1-24,24H63a24,24,0,0,1-24-24V270.007A24,24,0,0,1,63,246.007Z" transform="translate(-38 -245)"/>
+</svg>

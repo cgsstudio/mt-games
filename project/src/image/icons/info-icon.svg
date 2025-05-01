@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6" height="22" viewBox="0 0 6 22">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 29.167px;
+        fill: #00ade1;
+        text-anchor: middle;
+        font-family: "Century Gothic";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text id="i" class="cls-1" x="2.884" y="22.251"><tspan x="2.884">i</tspan></text>
+</svg>

@@ -1,0 +1,13 @@
+.review-slider .swiper-button-prev,
+.review-slider .swiper-button-next {
+  color: white;
+}
+
+.review-slider .swiper-button-prev:after,
+.review-slider .swiper-button-next:after {
+  font-size: 16px;
+}
+
+.review-slider .swiper {
+  padding: 0 1rem;
+} 

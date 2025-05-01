@@ -1,0 +1,17 @@
+<svg id="ARROW" xmlns="http://www.w3.org/2000/svg" width="68.5" height="24.938" viewBox="0 0 68.5 24.938">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path id="Line_956" data-name="Line 956" class="cls-1" d="M508,231v-2h61v2H508Z" transform="translate(-501.5 -217.531)"/>
+  <path class="cls-2" d="M510.171,242.478h8.673l-8.673-12.614,8.673-12.34h-8.673l-8.673,12.34Z" transform="translate(-501.5 -217.531)"/>
+</svg>
