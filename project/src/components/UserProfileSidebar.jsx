@@ -71,7 +71,7 @@ const UserProfileSidebar = () => {
         isOpen ? "w-80" : "w-20"
       }`}
     >
-      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(-41deg,_rgb(42,35,78)_0%,_rgb(5,12,17)_100%)] shadow-lg py-6 flex flex-col">
+      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] shadow-lg py-6 flex flex-col">
         {/* Toggle Button */}
         <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center"} mb-4`}>
           <button
@@ -94,7 +94,7 @@ const UserProfileSidebar = () => {
             </div>
             {isOpen && (
               <>
-                <h2 className="text-white text-2xl text-center font-bold mt-2">
+                <h2 className="text-white text-[32px] leading-none text-center cygun-bold mt-2">
                   USER NAME
                 </h2>
                 <img src={glowingline} alt="" className="w-full h-full mt-1" />

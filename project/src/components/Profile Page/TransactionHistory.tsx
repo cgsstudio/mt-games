@@ -94,7 +94,7 @@ export default function TransactionHistory() {
       {/* Transaction Table */}
       <div className="rounded overflow-hidden space-y-4 px-2 md:px-0">
         {/* Table Header */}
-        <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded-[6px]">
+        <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded-[6px] my-6">
           <div>DATE</div>
           <div>EVENT</div>
           <div>STATUS</div>
