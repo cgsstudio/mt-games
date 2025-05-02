@@ -78,7 +78,7 @@ export default function DropdownMenu() {
         </button>
 
         {isOpen && (
-          <div className="absolute z-30 w-[90%] left-1/2 -translate-x-1/2 mt-2 rounded-xl shadow-lg overflow-hidden bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] border border-purple-900/30 pt-8 pb-4 px-8 space-y-2 drop-shadow-[0_4px_20px_rgba(213,64,243,0.15)] -mt-5">
+          <div className="absolute z-30 w-[90%] left-1/2 -translate-x-1/2  rounded-xl shadow-lg overflow-hidden bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] border border-purple-900/30 pt-8 pb-4 px-8 space-y-2 drop-shadow-[0_4px_20px_rgba(213,64,243,0.15)] -mt-5">
             {menuItems.map((item) => (
               <div key={item.id} className="relative">
                 {item.link === location.pathname && (
