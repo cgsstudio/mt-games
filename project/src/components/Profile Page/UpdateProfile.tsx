@@ -52,7 +52,7 @@ export default function UpdateProfile() {
     // Reset temp image when modal opens
     setTempSelectedImage(null);
   };
-  
+
   const closeModal = () => {
     setIsModalOpen(false);
     setTempSelectedImage(null);
@@ -68,7 +68,7 @@ export default function UpdateProfile() {
 
       {/* Header */}
       <div className='2xl:max-w-6xl xl:max-w-5xl mx-auto'>
-        <div className='block md:hidden mt-4'>
+        <div className='block md:hidden mt-4 px-6'>
           <UserProfileMobile />
         </div>
 
@@ -95,15 +95,15 @@ export default function UpdateProfile() {
                   />
                 </div>
                 <div className='flex justify-end'>
-                <button 
-                  onClick={openModal}
-                  className=" "
-                >
-                  <img src={customPencil} alt="Edit" className="w-full h-full" />
-                </button>
+                  <button
+                    onClick={openModal}
+                    className=" "
+                  >
+                    <img src={customPencil} alt="Edit" className="w-full h-full" />
+                  </button>
 
                 </div>
-           
+
               </div>
             </div>
 
@@ -176,52 +176,52 @@ export default function UpdateProfile() {
           </div>
 
           {isModalOpen && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-    <div className="bg-[#050d19] border border-[#283643] p-6 rounded-[12px] w-80">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-[#fff0c9] font-medium orbitron-medium">UPLOAD PFP</h3>
-        <button onClick={closeModal} className="text-[#758695] hover:text-white">
-          <X size={20} />
-        </button>
-      </div>
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
+              <div className="bg-[#050d19] border border-[#283643] p-6 rounded-[12px] w-80">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-[#fff0c9] font-medium orbitron-medium">UPLOAD PFP</h3>
+                  <button onClick={closeModal} className="text-[#758695] hover:text-white">
+                    <X size={20} />
+                  </button>
+                </div>
 
-      <div
-        className="border border-dashed border-[#283643] bg-[#161f29] rounded-none md:rounded-[6px] h-[250px] mb-4 flex flex-col items-center justify-center cursor-pointer"
-        onClick={() => document.getElementById('fileInput').click()}
-      >
-        {tempSelectedImage ? (
-          <img 
-            src={tempSelectedImage} 
-            alt="Preview" 
-            className="max-h-full max-w-full object-contain p-2" 
-          />
-        ) : (
-          <p className="text-[#758695] text-sm text-center barlow-condensed-regular">Select an image to upload</p>
-        )}
-        <input
-          id="fileInput"
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className="hidden"
-        />
-      </div>
+                <div
+                  className="border border-dashed border-[#283643] bg-[#161f29] rounded-none md:rounded-[6px] h-[250px] mb-4 flex flex-col items-center justify-center cursor-pointer"
+                  onClick={() => document.getElementById('fileInput').click()}
+                >
+                  {tempSelectedImage ? (
+                    <img
+                      src={tempSelectedImage}
+                      alt="Preview"
+                      className="max-h-full max-w-full object-contain p-2"
+                    />
+                  ) : (
+                    <p className="text-[#758695] text-sm text-center barlow-condensed-regular">Select an image to upload</p>
+                  )}
+                  <input
+                    id="fileInput"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                </div>
 
-      <div className="flex justify-end">
-        <button
-          onClick={handleSaveImage}
-          disabled={!tempSelectedImage}
-          className={`w-auto text-white text-base py-2 px-6 rounded-[7px] barlow-black transition-colors
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleSaveImage}
+                    disabled={!tempSelectedImage}
+                    className={`w-auto text-white text-base py-2 px-6 rounded-[7px] barlow-black transition-colors
             ${tempSelectedImage ? 'bg-[#194272] border border-[#38638b] hover:bg-[#172A3A]' : 'bg-[#232323] border border-[#3b3b3b] cursor-not-allowed text-[#3b3b3b]'}
           `}
-        >
-          SAVE
-        </button>
-      </div>
+                  >
+                    SAVE
+                  </button>
+                </div>
 
-    </div>
-  </div>
-)}
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

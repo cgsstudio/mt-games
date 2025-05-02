@@ -3,6 +3,10 @@ import robotimg from '../image/icons/robot-bg.png'
 import glowingline from "../image/icons/glowing-line.svg";
 import buyLeft from "../image/icons/ios.svg";
 import buyRight from "../image/icons/glowchavron.svg";
+import adnroidicon from "../image/icons/android.svg";
+import macicon from "../image/icons/mac.svg";
+import pcicon from "../image/icons/window.svg";
+import browsericon from "../image/icons/browser.svg"
 
 const GameSignupPopup = ({ isOpen, onClose, game }) => {
   const popupRef = useRef(null);
@@ -48,11 +52,9 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-gray-200 hover:text-white"
+          className="orbitron-medium absolute top-4 right-4 z-10 text- text-[#758695] hover:text-white"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
+         x
         </button>
 
         {/* Popup content */}
@@ -68,13 +70,15 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
             </div>
 
             {/* Right side content */}
-            <div className="w-full lg:w-3/5 p-3 flex flex-col">
+            <div className="w-full lg:w-3/5 px-3 pb-3 pt-4 flex flex-col">
               {/* Game title */}
               <div className="mb-6 text-center">
+                {/* Add this line for debugging */}
+                {console.log("Game object:", game)}
                 <img
-                  src={game?.logo || '/default-game-logo.png'}
-
-                  className="h-24 md:h-32 w-auto mx-auto object-contain"
+                  src={game?.logo}
+                  alt={game?.title}
+                  className="h-16 md:h-32 w-auto mx-auto object-contain"
                 />
               </div>
 
@@ -83,7 +87,7 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
                 {/* Play Now Heading */}
                 <div className="text-center">
                   <h3 className="text-2xl md:text-[37px] leading-none text-[#ffefc9] barlow-black">PLAY NOW</h3>
-                  <img src={glowingline} alt="glowing line" className="w-full h-auto -mt-3 " />
+                  <img src={glowingline} alt="glowing line" className="w-full h-auto -mt-1 md:-mt-3 " />
                 </div>
 
                 {/* Mobile downloads */}
@@ -94,34 +98,33 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
                   <div className="flex justify-center space-x-4">
                     {/* iOS */}
 
-                    <button className="relative flex items-center justify-center gap-3 md:gap-6 px-3 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-black text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+                    <button className="w-[260px] relative flex items-center justify-between  px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
 
-                      {/* Gradient Overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span>
+                      
+                      {/* <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span> */}
 
                       {/* Content */}
-                      <img src={buyLeft} alt="left arrow" className="w-[30px] h-[30px] z-10" />
+                      <img src={buyLeft} alt="left arrow" className="w-[25px] h-[25px] md:w-[35px] md:h-[35px] z-10" />
                       <div className="text-center z-10">
-                        <p className="uppercase barlow-bold text-xl text-[#fff0ca]">ios</p>
+                        <p className="uppercase barlow-bold text-base md:text-xl text-[#fff0ca]">ios</p>
                       </div>
-                      <img src={buyRight} alt="right arrow" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
+                      <img src={buyRight} alt="right arrow" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
 
                     </button>
 
 
 
                     {/* Android */}
-                    <button className="relative flex items-center justify-center gap-3 md:gap-6 px-3 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-black text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+                    <button className="w-[260px] relative flex items-center justify-between  px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
 
-                      {/* Gradient Overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span>
+                     
 
                       {/* Content */}
-                      <img src={buyLeft} alt="left arrow" className="w-[30px] h-[30px] z-10" />
+                      <img src={adnroidicon} alt="left arrow" className="w-[25px] h-[25px ] md:w-[35px] md:h-[35px] z-10" />
                       <div className="text-center z-10">
-                        <p className="uppercase barlow-bold text-xl text-[#fff0ca]">Android</p>
+                        <p className="uppercase barlow-bold text-base md:text-xl text-[#fff0ca]">Android</p>
                       </div>
-                      <img src={buyRight} alt="right arrow" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
+                      <img src={buyRight} alt="right arrow" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
 
                     </button>
                   </div>
@@ -134,32 +137,30 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
                   </p>
                   <div className="flex justify-center space-x-4">
                     {/* Mac */}
-                    <button className="relative flex items-center justify-center gap-3 md:gap-6 px-3 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-black text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+                    <button className="w-[260px] relative flex items-center justify-between  px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
 
-                      {/* Gradient Overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span>
+                     
 
                       {/* Content */}
-                      <img src={buyLeft} alt="left arrow" className="w-[30px] h-[30px] z-10" />
+                      <img src={macicon} alt="left arrow" className="w-[25px] h-[25px] md:w-[35px] md:h-[35px] z-10" />
                       <div className="text-center z-10">
-                        <p className="uppercase barlow-bold text-xl text-[#fff0ca]">Mac</p>
+                        <p className="uppercase barlow-bold text-base md:text-xl text-[#fff0ca]">Mac</p>
                       </div>
-                      <img src={buyRight} alt="right arrow" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
+                      <img src={buyRight} alt="right arrow" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
 
                     </button>
 
                     {/* PC */}
-                    <button className="relative flex items-center justify-center gap-3 md:gap-6 px-3 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-black text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+                    <button className="w-[260px] relative flex items-center justify-between  px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
 
-                      {/* Gradient Overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span>
+                      
 
                       {/* Content */}
-                      <img src={buyLeft} alt="left arrow" className="w-[30px] h-[30px] z-10" />
+                      <img src={pcicon} alt="left arrow" className="w-[25px] h-[25px] md:w-[35px] md:h-[35px] z-10" />
                       <div className="text-center z-10">
-                        <p className="uppercase barlow-bold text-xl text-[#fff0ca]">Pc</p>
+                        <p className="uppercase barlow-bold text-base md:text-xl text-[#fff0ca]">Pc</p>
                       </div>
-                      <img src={buyRight} alt="right arrow" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
+                      <img src={buyRight} alt="right arrow" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
 
                     </button>
                   </div>
@@ -167,21 +168,20 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
 
                 {/* Browser play option */}
                 <div className="space-y-2">
-                  <p className="text-center text-gray-400 text-sm barlow-medium uppercase tracking-wide">
+                  <p className="text-center text-[#758695] text-base orbitron-semibold uppercase tracking-wide">
                     PLAY IN BROWSER:
                   </p>
                   <div className="flex justify-center">
-                    <button className="relative flex items-center justify-center gap-3 md:gap-6 px-3 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-black text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+                    <button className="w-[260px] relative flex items-center justify-between  px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
 
-                      {/* Gradient Overlay */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#080e16]/50 to-[#9929ea]/50 rounded-[4px] md:rounded-[8px] pointer-events-none z-0"></span>
+                      
 
                       {/* Content */}
-                      <img src={buyLeft} alt="left arrow" className="w-[30px] h-[30px] z-10" />
+                      <img src={browsericon} alt="left arrow" className="w-[25px] h-[25px] md:w-[35px] md:h-[35px] z-10" />
                       <div className="text-center z-10">
-                        <p className="uppercase barlow-bold text-xl text-[#fff0ca]">Browser</p>
+                        <p className="uppercase barlow-bold text-base md:text-xl text-[#fff0ca]">Browser</p>
                       </div>
-                      <img src={buyRight} alt="right arrow" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
+                      <img src={buyRight} alt="right arrow" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] z-10" />
 
                     </button>
                   </div>

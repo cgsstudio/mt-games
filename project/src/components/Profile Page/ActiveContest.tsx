@@ -27,7 +27,7 @@ export default function ActiveContest() {
 
             {/* Header */}
             <div className='2xl:max-w-6xl xl:max-w-5xl mx-auto'>
-                <div className='block md:hidden mt-4'>
+                <div className='block md:hidden mt-4 px-6'>
                     <UserProfileMobile />
                 </div>
 

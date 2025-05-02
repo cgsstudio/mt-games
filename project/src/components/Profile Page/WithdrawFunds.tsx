@@ -52,7 +52,7 @@ export default function WithdrawFunds() {
 
       {/* Header */}
       <div className='2xl:max-w-6xl xl:max-w-5xl mx-auto'>
-        <div className='block md:hidden mt-4'>
+        <div className='block md:hidden mt-4 px-6'>
           <UserProfileMobile />
         </div>
 
@@ -80,7 +80,7 @@ export default function WithdrawFunds() {
           </div>
 
           {/* Right Column - 1fr */}
-     
+
         </div>
 
         {/* Second Section with Same Layout */}
@@ -88,8 +88,8 @@ export default function WithdrawFunds() {
           {/* Left Column - 1.5fr */}
 
           <div className="space-y-6">
-            
-          <div className="grid grid-cols-7 p-[5px] bg-[#161f29] overflow-hidden rounded-[12px]">
+
+            <div className="grid grid-cols-7 p-[5px] bg-[#161f29] overflow-hidden rounded-[12px]">
               <div className="col-span-3 flex items-center justify-center">
                 <span className="uppercase text-[#f4e6c1] text-xl barlow-condensed-semibold">available to withdraw</span>
               </div>
@@ -150,11 +150,10 @@ export default function WithdrawFunds() {
 
                 <div
                   className={`pb-5 pt-8 absolute w-80 left-0 right-0 mx-auto bg-[#161f29] bg-[linear-gradient(0deg,_rgba(20,31,47,0.25)_0%,_rgba(255,255,255,0.25)_100%)] 
-                  bg-blend-overlay rounded-b-lg mt-6 overflow-hidden transition-all duration-300 border border-[#1a2634] z-10 ${
-                    isDropdownOpen
+                  bg-blend-overlay rounded-b-lg mt-6 overflow-hidden transition-all duration-300 border border-[#1a2634] z-10 ${isDropdownOpen
                       ? 'max-h-48 opacity-100 translate-y-0'
                       : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
-                  }`}
+                    }`}
                 >
                   <div
                     className={`pl-3 flex items-center gap-2 hover:bg-[#0e1826] cursor-pointer transition-colors duration-200`}
@@ -163,22 +162,21 @@ export default function WithdrawFunds() {
                     onMouseLeave={() => setHoverIndex(null)}
                   >
                     <ChevronRight
-                      className={`text-white transition-opacity duration-200 ${
-                        hoverIndex === 0 || selectedChain === 'paypal' ? 'opacity-100' : 'opacity-0'
-                      }`}
+                      className={`text-white transition-opacity duration-200 ${hoverIndex === 0 || selectedChain === 'paypal' ? 'opacity-100' : 'opacity-0'
+                        }`}
                       size={18}
                     />
                     <div className="flex items-center">
                       <span className="text-[#f4e6c1] orbitron-semibold text-lg mr-2">Paypal</span>
-                   
+
                     </div>
                   </div>
-              
+
                 </div>
               </div>
 
               <div className='px-4 md:px-8'>
-                
+
                 <input
                   type="text"
                   value={walletAddress}
