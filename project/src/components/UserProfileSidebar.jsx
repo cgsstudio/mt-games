@@ -58,7 +58,7 @@ const UserProfileSidebar = () => {
   const menuItems = [
     { label: "Update Profile", icon: menuIcons.profile, path: "/update-profile" },
     { label: "Edit Wallets", icon: menuIcons.wallet, path: "/edit-wallet" },
-    { label: "Active Contests", icon: menuIcons.contests, path: "/profile/contests" },
+    { label: "Active Contests", icon: menuIcons.contests, path: "/active-contest" },
     { label: "Withdraw Funds", icon: menuIcons.funds, path: "/withdraw-funds" },
     { label: "Transaction History", icon: menuIcons.history, path: "/transaction-history" },
     { label: "Special Offers", icon: menuIcons.offers, path: "/profile/offers" },
@@ -71,7 +71,7 @@ const UserProfileSidebar = () => {
         isOpen ? "w-80" : "w-20"
       }`}
     >
-      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(-41deg,_rgb(42,35,78)_0%,_rgb(5,12,17)_100%)] shadow-lg py-6 flex flex-col">
+      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] shadow-lg py-6 flex flex-col">
         {/* Toggle Button */}
         <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center"} mb-4`}>
           <button
@@ -94,7 +94,7 @@ const UserProfileSidebar = () => {
             </div>
             {isOpen && (
               <>
-                <h2 className="text-white text-2xl text-center font-bold mt-2">
+                <h2 className="text-white text-[32px] leading-none text-center cygun-bold mt-2">
                   USER NAME
                 </h2>
                 <img src={glowingline} alt="" className="w-full h-full mt-1" />
@@ -105,30 +105,37 @@ const UserProfileSidebar = () => {
           {/* Navigation Items */}
           <div className="flex-1 flex flex-col">
             {menuItems.map(({ icon, label, path }, index) => (
-              <Link 
-                to={path}
-                key={index}
-                className={`
-                  flex items-center 
-                  ${isOpen ? "justify-start px-4 rounded-[16px]" : "justify-center rounded-tr-[16px] rounded-br-[16px]"} 
-                  text-amber-100 py-3 mb-1 bg-[#0f1020]
-                  hover:bg-opacity-20 hover:bg-white 
-                  cursor-pointer transition-all shadow-md
-                `}
-              >
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <img 
-                    src={icon} 
-                    alt={label}
-                    className="w-full h-full"
-                  />
-                </div>
-                {isOpen && (
+              isOpen ? (
+                <Link 
+                  to={path}
+                  key={index}
+                  className={`
+                    flex items-center justify-start px-4 rounded-[16px]
+                    text-amber-100 py-3 mb-1 bg-[#0f1020]
+                    hover:bg-opacity-20 hover:bg-white 
+                    cursor-pointer transition-all shadow-md
+                  `}
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <img src={icon} alt={label} className="w-full h-full" />
+                  </div>
                   <span className="text-base font-medium text-amber-100 ml-3">
                     {label}
                   </span>
-                )}
-              </Link>
+                </Link>
+              ) : (
+                <div 
+                  key={index}
+                  className={`
+                    flex items-center justify-center rounded-tr-[16px] rounded-br-[16px]
+                    text-amber-100 py-3 mb-1 bg-[#0f1020]
+                  `}
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <img src={icon} alt={label} className="w-full h-full" />
+                  </div>
+                </div>
+              )
             ))}
           </div>
           

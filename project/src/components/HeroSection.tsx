@@ -21,9 +21,11 @@ import mobilebg from '../image/BANNERmobileCONTAINER.png'
 import paraimg from '../image/parabg.svg'
 import downarrow from '../image/icons/downarrow.svg'
 import brawllerlogo from '../image/icons/REBEL-BRAWLERS-LOGO.png'
+import speedrunlogo from  '../image/icons/speedrunlogo.svg'
 
 // Import the GameSignupPopup component
 import GameSignupPopup from './GameSignupPopup';
+import VideoPopup from './VideoPopup';
 
 const games = [
   {
@@ -39,7 +41,7 @@ const games = [
   {
     title: 'Rebel speed runner',
     image: banner3,
-    logo:brawllerlogo
+    logo:speedrunlogo
   }
 ];
 
@@ -51,6 +53,9 @@ const MobileHeroSection = () => {
   // Add state for popup
   const [popupOpen, setPopupOpen] = useState(false);
   const [currentGame, setCurrentGame] = useState(null);
+
+  // Add state for video popup
+  const [videoPopupOpen, setVideoPopupOpen] = useState(false);
 
   // Function to handle sign up button click
   const handleSignUpClick = (game) => {
@@ -113,14 +118,17 @@ const MobileHeroSection = () => {
                   </div>
                   {/* Video and Info Buttons */}
                   <div className="absolute bottom-4 right-4 flex flex-col gap-2 z-10">
-                    <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
-                      <div className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full p-2">
-                        <img src={videoIcon} alt="Video" className="w-2 h-2 drop-shadow-[0_0_5px_#ff00cc]" />
+                    <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-8 h-8">
+                      <div 
+                        className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center"
+                        onClick={() => setVideoPopupOpen(true)}
+                      >
+                        <img src={videoIcon} alt="Video" className="w-3 h-3 drop-shadow-[0_0_5px_#ff00cc]" />
                       </div>
                     </button>
-                    <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
-                      <div className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full p-2">
-                        <img src={infoIcon} alt="Info" className="w-2 h-2 drop-shadow-[0_0_5px_#ff00cc]" />
+                    <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-8 h-8">
+                      <div className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center">
+                        <img src={infoIcon} alt="Info" className="w-3 h-3 drop-shadow-[0_0_5px_#ff00cc]" />
                       </div>
                     </button>
                   </div>
@@ -185,6 +193,13 @@ const MobileHeroSection = () => {
         onClose={() => setPopupOpen(false)} 
         game={currentGame}
       />
+
+      {/* Video Popup */}
+      <VideoPopup 
+        isOpen={videoPopupOpen}
+        onClose={() => setVideoPopupOpen(false)}
+        videoUrl="https://www.youtube.com/embed/your-video-id"
+      />
     </div>
   );
 };
@@ -194,6 +209,9 @@ const DesktopHeroSection = () => {
   // Add state for popup
   const [popupOpen, setPopupOpen] = useState(false);
   const [currentGame, setCurrentGame] = useState(null);
+
+  // Add state for video popup
+  const [videoPopupOpen, setVideoPopupOpen] = useState(false);
 
   // Function to handle sign up button click
   const handleSignUpClick = (game) => {
@@ -251,23 +269,38 @@ const DesktopHeroSection = () => {
                     {games.map((game, index) => (
                       <SwiperSlide key={index}>
                         <img src={game.image} alt={game.title} className="w-full h-full object-cover" />
+                        {/* Desktop Play Now Button */}
+                        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
+                          <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
+                            <button 
+                              className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] text-white px-5 text-3xl barlow-black tracking-wide uppercase flex items-center gap-3 rounded-[10px]"
+                              onClick={() => handleSignUpClick(game)}
+                            >
+                              <img src={signup02} alt="icon" className="w-16 h-16 drop-shadow-[0_0_5px_#ff00cc]" />
+                              sign up now
+                              <img src={signup01} alt="icon" className="w-16 h-16 drop-shadow-[0_0_5px_#ff00cc]" />
+                            </button>
+                          </div>
+                        </div>
+                        {/* Desktop Video and Info Buttons */}
+                        <div className="absolute bottom-12 right-12 flex flex-col gap-4 z-10">
+                          <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-12 h-12">
+                            <div 
+                              className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center"
+                              onClick={() => setVideoPopupOpen(true)}
+                            >
+                              <img src={videoIcon} alt="Video" className="w-5 h-5 drop-shadow-[0_0_5px_#ff00cc]" />
+                            </div>
+                          </button>
+                          <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-12 h-12">
+                            <div className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center">
+                              <img src={infoIcon} alt="Info" className="w-5 h-5 drop-shadow-[0_0_5px_#ff00cc]" />
+                            </div>
+                          </button>
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
-
-                  {/* Desktop Play Now Button */}
-                  <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
-                      <button 
-                        className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] text-white px-5 text-3xl barlow-black tracking-wide uppercase flex items-center gap-3 rounded-[10px]"
-                        onClick={() => handleSignUpClick(games[0])}
-                      >
-                        <img src={signup02} alt="icon" className="w-16 h-16 drop-shadow-[0_0_5px_#ff00cc]" />
-                        sign up now
-                        <img src={signup01} alt="icon" className="w-16 h-16 drop-shadow-[0_0_5px_#ff00cc]" />
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -311,6 +344,13 @@ const DesktopHeroSection = () => {
         isOpen={popupOpen} 
         onClose={() => setPopupOpen(false)} 
         game={currentGame}
+      />
+
+      {/* Video Popup */}
+      <VideoPopup 
+        isOpen={videoPopupOpen}
+        onClose={() => setVideoPopupOpen(false)}
+        videoUrl="https://www.youtube.com/embed/your-video-id"
       />
     </div>
   );

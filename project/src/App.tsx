@@ -24,6 +24,7 @@ import GameSignupPopup from './components/GameSignupPopup';
 import ScrollToTop from './components/ScrollToTop';
 import TransactionHistory from './components/Profile Page/TransactionHistory.js';
 import ActiveContest from './components/Profile Page/ActiveContest.js';
+import WithdrawConfirmation from './components/Profile Page/WithdrawConfirmation.js';
 
 function App() {
   return (
@@ -71,6 +72,8 @@ function App() {
                       <Route path="/transaction-history" element={<TransactionHistory />} />
                       {/* active-contest Page */}
                       <Route path="/active-contest" element={<ActiveContest />} />
+                      {/* withdraw-confirmation Page */}
+                      <Route path="/withdraw-confirmation" element={<WithdrawConfirmation />} />
                   
           </Routes>
         </main>

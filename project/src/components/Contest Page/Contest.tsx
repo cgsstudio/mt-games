@@ -15,10 +15,11 @@ import signup02 from '../../image/icons/sign-up-ar-2.svg';
 import shapedivider from '../../image/icons/BG-55.svg'
 import mobileshapedivider from '../../image/icons/BG-contest.svg'
 import UserProfileMobile from '../../components/UserProfileMobile'
-
+import EnterNow from './EnterNow';
 
 export default function ContestDetails() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [showEnterNow, setShowEnterNow] = useState(false);
   
   // Create arrays for slide images and thumbnail images
   const slideImages = [
@@ -217,12 +218,23 @@ export default function ContestDetails() {
 
             {/* Enter Button */}
             <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
-  <button className="w-full  bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-xl uppercase flex items-center justify-center gap-3">
-    <img src={signup02} alt="Right Icon" className="w-12 h-12 md:w-16 md:h-16" />
-    ENTER NOW!
-    <img src={signup01} alt="Left Icon" className="w-12 h-12 md:w-16 md:h-16" />
-  </button>
-</div>
+              <button 
+                onClick={() => setShowEnterNow(true)}
+                className="w-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-xl uppercase flex items-center justify-center gap-3"
+              >
+                <img src={signup02} alt="Right Icon" className="w-12 h-12 md:w-16 md:h-16" />
+                ENTER NOW!
+                <img src={signup01} alt="Left Icon" className="w-12 h-12 md:w-16 md:h-16" />
+              </button>
+            </div>
+
+            {/* EnterNow Popup */}
+            <EnterNow 
+              isOpen={showEnterNow}
+              onClose={() => setShowEnterNow(false)}
+              entryFee={10000}
+              contestEndTime={new Date('2025-04-30T23:59:59')}
+            />
 
           </div>
         </div>

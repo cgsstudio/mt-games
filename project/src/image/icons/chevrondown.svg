@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.781" height="19.468" viewBox="0 0 27.781 19.468">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff0c9;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="513.75" y="181.594" width="27.781" height="19.468" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="1.667" in="SourceAlpha"/>
+      <feFlood result="flood" flood-color="#f0f" flood-opacity="0.63"/>
+      <feComposite result="composite-2" operator="out" in2="blur"/>
+      <feComposite result="composite" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path class="cls-1" d="M541.519,191.327V181.6l-14.03,9.729L513.764,181.6v9.729l13.725,9.729Z" transform="translate(-513.75 -181.594)"/>
+</svg>
