@@ -150,31 +150,53 @@ body{
 }
 
 .info-button{
-  border:none;
-  background-image: linear-gradient(to bottom, #0d0917, #3f1261);
-  color: #fff;
-  border-radius: 1000px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+ 
+  border: none;
+  background: linear-gradient(to bottom, #0d0917, #3f1261); /* inner background */
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  z-index: 1;
+  overflow: hidden;
 }
-.info-button::after{
+.info-button::before {
   content: "";
   position: absolute;
-  width: 104%;
-  height: 107%;
-  background-image: linear-gradient(to bottom, #0560fa, #d93ef9);
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(to right, #0560fa, #d93ef9); /* outer gradient border */
+  border-radius: 999px;
   z-index: -1;
-  border-radius: 1000px;
+}
+.info-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0d0917, #3f1261); /* masking background */
+  border-radius: 999px;
+  z-index: -1;
+  margin: 1px; /* gap between border and button */
 }
 @media (max-width: 768px) {
-  .info-button::after{
-   border-radius: 8px;
-   width: 103%;
+  .info-button::after,
+  .info-button::before {
+    border-radius: 8px !important;
   }
   .info-button{
-    border-radius: 8px;
+    border-radius: 8px !important;
   }
   .swiper-pagination-bullet{
     width: 10px !important;
@@ -227,12 +249,12 @@ body{
 
 @media (max-width: 768px) {
   .linear-button {
-    border-radius: 8px !important;
+    border-radius: 4px !important;
   }
 
   .linear-button::before,
   .linear-button::after {
-    border-radius: 8px !important;
+    border-radius: 4px !important;
   }
 }
 

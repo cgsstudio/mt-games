@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, Play, ChevronDoubleLeft, ChevronDoubleRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Thumbs } from 'swiper/modules';
@@ -20,6 +20,30 @@ import EnterNow from './EnterNow';
 export default function ContestDetails() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [showEnterNow, setShowEnterNow] = useState(false);
+  const [userCredits] = useState(5000); // Add this line to set user credits for testing
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const contestEndTime = new Date('2025-04-30T23:59:59');
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = contestEndTime.getTime() - now.getTime();
+
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   
   // Create arrays for slide images and thumbnail images
   const slideImages = [
@@ -137,8 +161,9 @@ export default function ContestDetails() {
           </div>
 
           {/* Right Column - Narrower (2/5) */}
-          <div className="md:col-span-2 space-y-4  w-[85%] lg:w-[80%] xl:w-full mx-auto">
-            {/* Contest Status - EXACTLY MATCHING THE IMAGE */}
+          <div className="md:col-span-2   w-[85%] lg:w-[80%] xl:w-full mx-auto">
+            <div className='space-y-4'>
+                 {/* Contest Status - EXACTLY MATCHING THE IMAGE */}
             <div className="grid grid-cols-7 p-2 bg-[#161f29] overflow-hidden rounded-[5px]">
               <div className="col-span-3 pl-4  flex items-center">
                 <span className="uppercase text-[#f4e6c1] text-lg barlow-condensed-semibold">CONTEST STARTS:</span>
@@ -154,21 +179,29 @@ export default function ContestDetails() {
                 <span className="uppercase text-[#f4e6c1] pl-4 text-lg barlow-condensed-semibold">CONTEST ENDS:</span>
               </div>
               <div className="col-span-4 bg-[#702121] p-2 flex items-center justify-center rounded-[4px]">
-                <div className="grid grid-cols-4 w-full text-center">
+                <div className="flex justify-center w-full text-center">
                   <div className="px-1">
-                    <div className="text-[25px] leading-none digital-7-mono">02</div>
+                    <div className="text-[25px] leading-none digital-7-mono">
+                      {timeLeft.days.toString().padStart(2, '0')}:
+                    </div>
                     <div className="text-base leading-none uppercase digital-7-mono">DAYS</div>
                   </div>
                   <div className="px-1">
-                    <div className="text-[25px] leading-none digital-7-mono">03</div>
+                    <div className="text-[25px] leading-none digital-7-mono">
+                      {timeLeft.hours.toString().padStart(2, '0')}:
+                    </div>
                     <div className="text-base leading-none uppercase digital-7-mono">HRS</div>
                   </div>
                   <div className="px-1">
-                    <div className="text-[25px] leading-none digital-7-mono">24</div>
+                    <div className="text-[25px] leading-none digital-7-mono">
+                      {timeLeft.minutes.toString().padStart(2, '0')}:
+                    </div>
                     <div className="text-base leading-none uppercase digital-7-mono">MIN</div>
                   </div>
                   <div className="px-1">
-                    <div className="text-[25px] leading-none digital-7-mono">19</div>
+                    <div className="text-[25px] leading-none digital-7-mono">
+                      {timeLeft.seconds.toString().padStart(2, '0')}
+                    </div>
                     <div className="text-base leading-none uppercase digital-7-mono">SEC</div>
                   </div>
                 </div>
@@ -180,7 +213,7 @@ export default function ContestDetails() {
               <div className="col-span-3   flex items-center">
                 <span className="uppercase pl-4 text-[#f4e6c1] text-lg barlow-condensed-semibold">ENTRY FEE:</span>
               </div>
-              <div className="col-span-4 bg-[#283643] p-3 flex items-center rounded-[4px] justify-center ">
+              <div className="col-span-4 bg-[#283643] p-2 flex items-center rounded-[4px] justify-center ">
                 <div className="flex items-center">
                     <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
                   {/* <span className="text-yellow-500 mr-2">●</span> */}
@@ -216,8 +249,11 @@ export default function ContestDetails() {
               </ul>
             </div>
 
+            </div>
+         
+
             {/* Enter Button */}
-            <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
+            <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-4">
               <button 
                 onClick={() => setShowEnterNow(true)}
                 className="w-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-xl uppercase flex items-center justify-center gap-3"
@@ -234,6 +270,7 @@ export default function ContestDetails() {
               onClose={() => setShowEnterNow(false)}
               entryFee={10000}
               contestEndTime={new Date('2025-04-30T23:59:59')}
+              userCredits={userCredits} // Add this line
             />
 
           </div>
