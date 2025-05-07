@@ -53,7 +53,7 @@ const winners = [
 
 export default function WinnersSection() {
   return (
-    <section className="bg-[#050d19] py-20">
+    <section className="bg-[#050d19] py-20" id='winners'>
       <div className="2xl:max-w-7xl xl:max-w-5xl mx-auto px-4">
         <div className="rounded-3xl bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] border-[1px] border-[#d540f3] overflow-hidden">
           <h2 className="text-2xl md:text-3xl border-b border-[#d540f3] text-white orbitron-medium p-6 px-12">

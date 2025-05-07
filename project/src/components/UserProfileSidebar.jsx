@@ -71,9 +71,9 @@ const UserProfileSidebar = () => {
         isOpen ? "w-80" : "w-20"
       }`}
     >
-      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] shadow-lg py-6 flex flex-col">
+      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] shadow-lg py-3 flex flex-col">
         {/* Toggle Button */}
-        <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center"} mb-4`}>
+        <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center"} mb-2`}>
           <button
             onClick={toggleSidebar}
             className="text-white text-xl hover:text-purple-400"
@@ -84,7 +84,7 @@ const UserProfileSidebar = () => {
 
         {/* Profile Section */}
         <div className={isOpen ? "pl-10 pr-10" : "pl-0 pr-3"}>
-          <div className="flex flex-col items-center mb-6">
+          <div className="flex flex-col items-center mb-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center">
               <img 
                 src={avatar} 
@@ -111,7 +111,7 @@ const UserProfileSidebar = () => {
                   key={index}
                   className={`
                     flex items-center justify-start px-4 rounded-[16px]
-                    text-amber-100 py-3 mb-1 bg-[#0f1020]
+                    text-amber-100 py-2 mb-1 bg-[#0f1020]
                     hover:bg-opacity-20 hover:bg-white 
                     cursor-pointer transition-all shadow-md
                   `}
@@ -128,7 +128,7 @@ const UserProfileSidebar = () => {
                   key={index}
                   className={`
                     flex items-center justify-center rounded-tr-[16px] rounded-br-[16px]
-                    text-amber-100 py-3 mb-1 bg-[#0f1020]
+                    text-amber-100 py-2 mb-1 bg-[#0f1020]
                   `}
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
@@ -140,7 +140,7 @@ const UserProfileSidebar = () => {
           </div>
           
           {/* Buy Credits Button */}
-          <div className="mt-8">
+          <div className="mt-4">
             {isOpen ? (
               <div className="p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
                 <button
