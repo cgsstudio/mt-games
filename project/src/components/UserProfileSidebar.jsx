@@ -124,17 +124,19 @@ const UserProfileSidebar = () => {
                   </span>
                 </Link>
               ) : (
-                <div 
+                <Link 
+                  to={path}
                   key={index}
                   className={`
                     flex items-center justify-center rounded-tr-[16px] rounded-br-[16px]
-                    text-amber-100 py-2 mb-1 bg-[#0f1020]
+                    text-amber-100 py-2 mb-1 bg-[#0f1020] hover:bg-opacity-20 hover:bg-white 
+                    cursor-pointer transition-all
                   `}
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
                     <img src={icon} alt={label} className="w-full h-full" />
                   </div>
-                </div>
+                </Link>
               )
             ))}
           </div>

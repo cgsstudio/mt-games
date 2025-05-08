@@ -131,14 +131,14 @@ const Header = () => {
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full right-0 -mt-2 w-full bg-[#0A1625] border border-[#d540f3] rounded-lg shadow-lg z-10">
-                    <div className="flex flex-col w-full   text-white rounded-lg overflow-hidden shadow-xl">
+                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl" style={{ maxHeight: '80vh' }}>
                       {/* Top header */}
 
 
                       {/* User info section */}
-                      <div className="bg-gray-900  flex flex-col items-center space-y-2 rounded-md text-white ">
-                        <div className='p-4'>
-                          <div className="flex items-center gap-4 w-full  pb-2">
+                      <div className="bg-gray-900 flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
+                        <div className='p-3'>
+                          <div className="flex items-center gap-3 w-full pb-2">
                             <div className="w-16 h-16 flex items-center justify-center">
                               <img src={usericon} alt="User Icon" className="w-full h-full " />
                             </div>
@@ -182,7 +182,7 @@ const Header = () => {
 
 
                         {/* Menu grid */}
-                        <div className="grid grid-cols-2 gap-4 p-4 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
+                        <div className="grid grid-cols-2 gap-3 p-3 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
                           {/* Special Offers */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
@@ -233,7 +233,7 @@ const Header = () => {
                         </div>
 
                         {/* Bottom buy credits button */}
-                        <div className="py-4 px-2 flex justify-center ">
+                        <div className="py-3 px-2 flex justify-center ">
                           <div className="w-auto p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
                             <button
                               className="w-full py-1 text-base text-white barlow-black rounded-full shadow-md hover:brightness-110 transition bg-gradient-to-b from-[#0d0917] to-[#3f1261] flex items-center justify-center relative"
