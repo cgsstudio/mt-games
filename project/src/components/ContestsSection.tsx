@@ -185,7 +185,7 @@ export default function ContestsSection() {
   const [contests, setContests] = useState(initialContests);
   
   return (
-    <section className="bg-[#050d19] overflow-hidden ">
+    <section className="bg-[#050d19] overflow-hidden " id='contests'>
        <h2 className="text-[32px] leading-none relative z-10 text-white text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 cygun absolute bottom-[-10px] left-1/2 translate-x-[-50%] translate-y-[-50%] lg:hidden">
           FEATURED CONTESTS
         </h2>

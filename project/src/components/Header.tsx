@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import MainLogo from '../image/Logos/main-logo.png';
 import Metatop from '../image/Logos/METATOPE-LOGO.png';
 import icon1 from '../image/icons/icon-1.png';
@@ -12,11 +13,12 @@ import signup01 from "../image/icons/sign-up-ar-1.svg";
 import signup02 from "../image/icons/sign-up-ar-2.svg";
 import specialoffer from '../image/icons/special.svg';
 import fullprofile from '../image/icons/020-player.svg';
-import editwallet from  '../image/icons/003-wallet.svg';
-import  transactionhistory from '../image/icons/transaction.svg';
+import editwallet from '../image/icons/003-wallet.svg';
+import transactionhistory from '../image/icons/transaction.svg';
 import activecontest from '../image/icons/ac-contest.svg';
 import earncredits from '../image/icons/earncreadit.svg';
 import MobileHeader from './MobileHeader';
+import usericon from '../image/icons/user-icon.svg';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -78,11 +80,13 @@ const Header = () => {
           <div className="flex items-center justify-between lg:justify-between py-2 sm:py-3">
             {/* Mobile Logo Section (Centered) */}
             <div className="flex-1 flex flex-col lg:flex-row justify-center lg:justify-start items-center space-y-2 lg:space-y-0 lg:space-x-2">
-              <img
-                src={MainLogo}
-                alt="MTGames Logo"
-                className="h-6 sm:h-8 md:h-10 w-auto object-contain"
-              />
+              <Link to="/">
+                <img
+                  src={MainLogo}
+                  alt="MTGames Logo"
+                  className="h-6 sm:h-8 md:h-10 w-auto object-contain"
+                />
+              </Link>
               <div className="orbitron-bold flex items-center gap-2 text-xs text-white-400">
                 powered by
                 <img
@@ -98,13 +102,14 @@ const Header = () => {
               {/* Credits and Username Container */}
               <div className="relative" ref={dropdownRef}>
                 <div
-                  className={`relative z-20 flex items-center gap-6 px-4 py-2 transition-colors cursor-pointer ${
-                    isDropdownOpen ? 'bg-[#add9ff] text-[#000000] rounded-tl-md rounded-tr-md' : 'hover:bg-gray-800 rounded-md'
-                  }`}
+                  className={`relative z-20 flex items-center gap-6 px-4 py-2 transition-colors cursor-pointer ${isDropdownOpen ? 'bg-[#add9ff] text-[#000000] rounded-tl-md rounded-tr-md' : 'hover:bg-gray-800 rounded-md'
+                    }`}
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
-                  <div className="flex items-center space-x-2 gap-6 lg:space-x-3">
-                    <div className="flex items-center space-x-1">
+                  {/* <div className="flex items-center space-x-2 gap-6 lg:space-x-3">
+                 
+                  </div> */}
+                  <div className="flex items-center space-x-1">
                       <img src={icon1} alt="Gold icon" className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className={`cygun-bold text-2xl ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
                     </div>
@@ -112,7 +117,6 @@ const Header = () => {
                       <img src={icon2} alt="Blue icon" className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className={`cygun-bold text-2xl ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
                     </div>
-                  </div>
 
                   <div className="flex items-center space-x-1">
                     <img
@@ -127,58 +131,58 @@ const Header = () => {
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full right-0 -mt-2 w-full bg-[#0A1625] border border-[#d540f3] rounded-lg shadow-lg z-10">
-                    <div className="flex flex-col w-full   text-white rounded-lg overflow-hidden shadow-xl">
+                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl" style={{ maxHeight: '80vh' }}>
                       {/* Top header */}
 
 
                       {/* User info section */}
-                      <div className="bg-gray-900  flex flex-col items-center space-y-2 rounded-md text-white ">
-                        <div className='p-4'>
-                        <div className="flex items-center gap-4 w-full  pb-2">
-                          <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                            <UserCircle size={40} className="text-gray-400" />
+                      <div className="bg-gray-900 flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
+                        <div className='p-3'>
+                          <div className="flex items-center gap-3 w-full pb-2">
+                            <div className="w-16 h-16 flex items-center justify-center">
+                              <img src={usericon} alt="User Icon" className="w-full h-full " />
+                            </div>
+                            <div className="text-xl century-gothic-bold border-b-[2px] border-white w-full pb-2">
+                              {userData.username}
+                            </div>
                           </div>
-                          <div className="text-xl century-gothic-bold border-b-[2px] border-white w-full pb-2">
-                            {userData.username}
+                          <div className="w-full grid grid-cols-2 gap-2 ">
+                            <div className="text-right flex flex-col space-y-2">
+                              <span className="text-gray-400 century-gothic-normal text-xl">Credit Balance:</span>
+                              <span className="text-gray-400 century-gothic-normal text-xl">Bits Balance:</span>
+                              <span className="text-gray-400 century-gothic-normal text-xl">Available for Withdrawal:</span>
+                            </div>
+                            <div className="flex flex-col space-y-2">
+                              <span className="text-xl century-gothic-bold flex items-center ">
+                                <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                                {userData.credits.toLocaleString()}
+                              </span>
+                              <span className="text-xl century-gothic-bold flex items-center ">
+                                <img src={icon2} alt="Bits" className="w-5 h-5 mr-2" />
+                                {userData.bits.toLocaleString()}
+                              </span>
+                              <span className="text-xl century-gothic-bold flex items-center ">
+                                <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                                {userData.availableForWithdrawal.toLocaleString()}
+                              </span>
+                            </div>
+
+
                           </div>
-                        </div>
-                        <div className="w-full grid grid-cols-2 gap-2 ">
-                          <div className="text-right flex flex-col space-y-2">
-                            <span className="text-gray-400 century-gothic-normal text-xl">Credit Balance:</span>
-                            <span className="text-gray-400 century-gothic-normal text-xl">Bits Balance:</span>
-                            <span className="text-gray-400 century-gothic-normal text-xl">Available for Withdrawal:</span>
-                          </div>
-                          <div className="flex flex-col space-y-2">
-                            <span className="text-xl century-gothic-bold flex items-center ">
-                              <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
-                              {userData.credits.toLocaleString()}
-                            </span>
-                            <span className="text-xl century-gothic-bold flex items-center ">
-                              <img src={icon2} alt="Bits" className="w-5 h-5 mr-2" />
-                              {userData.bits.toLocaleString()}
-                            </span>
-                            <span className="text-xl century-gothic-bold flex items-center ">
-                              <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
-                              {userData.availableForWithdrawal.toLocaleString()}
-                            </span>
-                          </div>
-                          
-                          
-                        </div>
-                        <div className='flex justify-end w-full'>
+                          <div className='flex justify-end w-full'>
                             <button className="bg-[#194272] border border-[#38638b] text-white text-base uppercase barlow-black py-2 px-6 rounded-[7px] hover:bg-[#1c5591] transition">
                               Sign Out
                             </button>
                           </div>
 
                         </div>
-                       
 
-                        
-                       
+
+
+
 
                         {/* Menu grid */}
-                        <div className="grid grid-cols-2 gap-4 p-4 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
+                        <div className="grid grid-cols-2 gap-3 p-3 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
                           {/* Special Offers */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
@@ -229,24 +233,24 @@ const Header = () => {
                         </div>
 
                         {/* Bottom buy credits button */}
-                        <div className="py-4 px-2 flex justify-center ">
-                        <div className="w-auto p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
-                    <button
-                      className="w-full py-1 text-base text-white barlow-black rounded-full shadow-md hover:brightness-110 transition bg-gradient-to-b from-[#0d0917] to-[#3f1261] flex items-center justify-center relative"
-                    >
-                      <img
-                        src={signup02}
-                        alt="Buy Icon Left"
-                        className="w-10 h-10 mr-2 scale-[1.3]"
-                      />
-                      <span className="scale-[1.1]">BUY CREDITS NOW</span>
-                      <img
-                        src={signup01}
-                        alt="Buy Icon Right"
-                        className="w-10 h-10 ml-2 scale-[1.3]"
-                      />
-                    </button>
-                  </div>
+                        <div className="py-3 px-2 flex justify-center ">
+                          <div className="w-auto p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
+                            <button
+                              className="w-full py-1 text-base text-white barlow-black rounded-full shadow-md hover:brightness-110 transition bg-gradient-to-b from-[#0d0917] to-[#3f1261] flex items-center justify-center relative"
+                            >
+                              <img
+                                src={signup02}
+                                alt="Buy Icon Left"
+                                className="w-10 h-10 mr-2 scale-[1.3]"
+                              />
+                              <span className="scale-[1.1]">BUY CREDITS NOW</span>
+                              <img
+                                src={signup01}
+                                alt="Buy Icon Right"
+                                className="w-10 h-10 ml-2 scale-[1.3]"
+                              />
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -32,13 +32,16 @@ export default function HowItWorks() {
   return (
     <div 
       className="relative w-full  py-16 overflow-hidden text-white py-16"
+      id="about" 
       style={{
         backgroundImage: `url(${secbg})`,
         backgroundPosition: 'center',
       
         backgroundRepeat: 'no-repeat',
-        backgroundColor: '#050d19' // Added this background color
+        backgroundColor: '#050d19', // Added this background color
+        
       }}
+      
     >
       {/* Background with dark overlay */}
       {/* <div className="absolute inset-0 z-0 backdrop-blur-lg">

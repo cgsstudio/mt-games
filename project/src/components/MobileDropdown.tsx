@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCircle } from 'lucide-react';
+import usericon from '../image/icons/user-icon.svg';
 import icon1 from '../image/icons/icon-1.png';
 import icon2 from '../image/icons/icon-2.png';
 import signup01 from "../image/icons/sign-up-ar-1.svg";
@@ -27,34 +27,54 @@ const MobileDropdown: React.FC<MobileDropdownProps> = ({ isOpen, onClose, userDa
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden">
-      <div className="fixed  left-0 right-0 bg-[#0A1625] rounded-t-xl max-h-[90vh] overflow-y-auto">
-        <div className="relative p-4">
+      <div className="fixed  left-0 right-0 bg-[#0A1625] rounded-xl border border-[#852695] max-h-[90vh] overflow-y-auto mx-4 mt-6">
+        <div className="relative">
           <button 
             onClick={onClose}
-            className="absolute right-4 top-4 text-white text-2xl"
+            className="absolute right-2 top-0 text-[#758695] orbitron-medium text-[30px]"
           >
             ×
           </button>
 
           {/* User Info Section */}
-          <div className="bg-gray-900 p-4 rounded-lg">
-            <div className="flex items-center gap-4 border-b border-white/20 pb-4">
-              <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                <UserCircle size={40} className="text-gray-400" />
+          <div className="p-4">
+            <div className="flex items-center gap-4  pb-4">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img src={usericon} alt="User Icon" className="w-full h-full " />
               </div>
-              <div className="text-xl text-white century-gothic-bold">
+              <div className="text-xl text-white century-gothic-bold border-b-[2px] border-white pb-2 w-full">
                 {userData.username}
               </div>
             </div>
 
             {/* Balance Info */}
             <div className="mt-4 space-y-3">
-              {/* ...Your balance info code here... */}
+              <div className="w-full grid grid-cols-2 gap-2">
+                <div className="text-right flex flex-col space-y-2">
+                  <span className="text-gray-400 century-gothic-normal text-lg">Credit Balance:</span>
+                  <span className="text-gray-400 century-gothic-normal text-lg">Bits Balance:</span>
+                  <span className="text-gray-400 century-gothic-normal text-lg">Available for Withdrawal:</span>
+                </div>
+                <div className="flex flex-col space-y-2">
+                  <span className="text-lg century-gothic-bold flex items-center">
+                    <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                    {userData.credits.toLocaleString()}
+                  </span>
+                  <span className="text-lg century-gothic-bold flex items-center">
+                    <img src={icon2} alt="Bits" className="w-5 h-5 mr-2" />
+                    {userData.bits.toLocaleString()}
+                  </span>
+                  <span className="text-lg century-gothic-bold flex items-center">
+                    <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                    {userData.availableForWithdrawal.toLocaleString()}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Menu Grid */}
-          <div className="grid grid-cols-2 gap-4 mt-4 p-4 bg-[#194272] rounded-lg">
+          <div className="grid grid-cols-2 gap-4 mt-4 p-4 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
             {[
               { icon: specialoffer, title: "Special Offers" },
               { icon: fullprofile, title: "Full Profile" },
@@ -75,7 +95,7 @@ const MobileDropdown: React.FC<MobileDropdownProps> = ({ isOpen, onClose, userDa
           </div>
 
           {/* Buy Credits Button */}
-          <div className="mt-4 p-4">
+          {/* <div className="mt-4 p-4">
             <div className="w-full p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
               <button className="w-full py-2 text-white barlow-black rounded-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] flex items-center justify-center">
                 <img src={signup02} alt="Buy Icon Left" className="w-8 h-8 mr-2" />
@@ -83,7 +103,7 @@ const MobileDropdown: React.FC<MobileDropdownProps> = ({ isOpen, onClose, userDa
                 <img src={signup01} alt="Buy Icon Right" className="w-8 h-8 ml-2" />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

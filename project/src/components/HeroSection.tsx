@@ -22,10 +22,13 @@ import paraimg from '../image/parabg.svg'
 import downarrow from '../image/icons/downarrow.svg'
 import brawllerlogo from '../image/icons/REBEL-BRAWLERS-LOGO.png'
 import speedrunlogo from  '../image/icons/speedrunlogo.svg'
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 // Import the GameSignupPopup component
 import GameSignupPopup from './GameSignupPopup';
 import VideoPopup from './VideoPopup';
+import SignupPopup from './SignUppopup';
 
 const games = [
   {
@@ -50,12 +53,26 @@ const MobileHeroSection = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("Sign up");
   
-  // Add state for popup
+  // Add state for popups
   const [popupOpen, setPopupOpen] = useState(false);
   const [currentGame, setCurrentGame] = useState(null);
-
-  // Add state for video popup
   const [videoPopupOpen, setVideoPopupOpen] = useState(false);
+  const [showSignupPopup, setShowSignupPopup] = useState(false);
+
+  // Navigation items with actions
+  const navigationItems = [
+    { 
+      label: 'Sign up', 
+      action: () => {
+        setShowSignupPopup(true);
+        setIsDropdownOpen(false);
+      },
+      isButton: true 
+    },
+    { label: 'Contests', path: '/#contests', isHash: true },
+    { label: 'Winners', path: '/#winners', isHash: true },
+    { label: 'About', path: '/#about', isHash: true }
+  ];
 
   // Function to handle sign up button click
   const handleSignUpClick = (game) => {
@@ -148,17 +165,44 @@ const MobileHeroSection = () => {
                     
                     <div className="absolute bottom-10 left-0 right-0 mb-2 py-4 rounded-[15px] overflow-hidden z-20" 
                       style={{ background: 'linear-gradient(-41deg, rgb(42, 35, 78) 0%, rgb(5, 12, 17) 100%)' }}>
-                      {['Sign up', 'Contests', 'Winners', 'About'].map((item) => (
-                        <button 
-                          key={item}
-                          className={`w-full text-center text-lg text-white orbitron-bold py-2 transition-colors border-b border-[#1A1033]/30 last:border-none ${activeItem === item ? 'bg-[#2a234e]' : 'hover:bg-[#2a234e]'}`}
-                          onClick={() => {
-                            setActiveItem(item);
-                            setIsDropdownOpen(false);
-                          }}
-                        >
-                          {item}
-                        </button>
+                      {navigationItems.map((item) => (
+                        item.isButton ? (
+                          <button 
+                            key={item.label}
+                            className={`w-full text-center text-lg text-white orbitron-bold py-2 transition-colors border-b border-[#1A1033]/30 last:border-none ${activeItem === item.label ? 'bg-[#2a234e]' : 'hover:bg-[#2a234e]'}`}
+                            onClick={() => {
+                              setActiveItem(item.label);
+                              item.action();
+                            }}
+                          >
+                            {item.label}
+                          </button>
+                        ) : item.isHash ? (
+                          <HashLink 
+                            smooth 
+                            to={item.path}
+                            key={item.label}
+                            className={`block w-full text-center text-lg text-white orbitron-bold py-2 transition-colors border-b border-[#1A1033]/30 last:border-none ${activeItem === item.label ? 'bg-[#2a234e]' : 'hover:bg-[#2a234e]'}`}
+                            onClick={() => {
+                              setActiveItem(item.label);
+                              setIsDropdownOpen(false);
+                            }}
+                          >
+                            {item.label}
+                          </HashLink>
+                        ) : (
+                          <Link 
+                            to={item.path}
+                            key={item.label}
+                            className={`block w-full text-center text-lg text-white orbitron-bold py-2 transition-colors border-b border-[#1A1033]/30 last:border-none ${activeItem === item.label ? 'bg-[#2a234e]' : 'hover:bg-[#2a234e]'}`}
+                            onClick={() => {
+                              setActiveItem(item.label);
+                              setIsDropdownOpen(false);
+                            }}
+                          >
+                            {item.label}
+                          </Link>
+                        )
                       ))}
                     </div>
                   </>
@@ -200,6 +244,9 @@ const MobileHeroSection = () => {
         onClose={() => setVideoPopupOpen(false)}
         videoUrl="https://www.youtube.com/embed/your-video-id"
       />
+
+      {/* Signup Popup */}
+      <SignupPopup isOpen={showSignupPopup} onClose={() => setShowSignupPopup(false)} />
     </div>
   );
 };
@@ -213,11 +260,24 @@ const DesktopHeroSection = () => {
   // Add state for video popup
   const [videoPopupOpen, setVideoPopupOpen] = useState(false);
 
+  const [showSignupPopup, setShowSignupPopup] = useState(false);
+
   // Function to handle sign up button click
   const handleSignUpClick = (game) => {
     setCurrentGame(game);
     setPopupOpen(true);
   };
+
+  const navigationItems = [
+    { 
+      label: 'Sign up', 
+      action: () => setShowSignupPopup(true), 
+      isButton: true 
+    },
+    { label: 'Contests', path: '/#contests', isHash: true },
+    { label: 'Winners', path: '/#winners', isHash: true },
+    { label: 'About', path: '/#about', isHash: true }
+  ];
 
   return (
     <div className="hidden lg:block w-full bg-[#050d19] relative">
@@ -306,22 +366,69 @@ const DesktopHeroSection = () => {
 
               {/* Side Navigation */}
               <div className="col-span-1 space-y-10">
-                {['Sign up', 'Contests', 'Winners', 'About'].map((item) => (
-                  <div key={item} className="relative group cursor-pointer orbitron-medium">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
-                      rounded-[15px] opacity-75 group-hover:opacity-100 
-                      transition duration-300 blur-sm group-hover:blur-md animate-pulse"
-                    />
-                    <div className="relative flex items-center justify-between bg-[#0E1A28] 
-                      text-white pl-6 rounded-[15px] 
-                      group-hover:bg-[#172A3A] transition-colors
-                      border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
-                      {item}
-                      <div className="flex items-center">
-                        <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
+                {navigationItems.map((item) => (
+                  item.isButton ? (
+                    <button 
+                      key={item.label} 
+                      onClick={item.action}
+                      className="w-full block relative group cursor-pointer orbitron-medium"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                        rounded-[15px] opacity-75 group-hover:opacity-100 
+                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                      />
+                      <div className="relative flex items-center justify-between bg-[#0E1A28] 
+                        text-white pl-6 rounded-[15px] 
+                        group-hover:bg-[#172A3A] transition-colors
+                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                        {item.label}
+                        <div className="flex items-center">
+                          <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                    </button>
+                  ) : item.isHash ? (
+                    <HashLink 
+                      smooth 
+                      to={item.path} 
+                      key={item.label} 
+                      className="block relative group cursor-pointer orbitron-medium"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                        rounded-[15px] opacity-75 group-hover:opacity-100 
+                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                      />
+                      <div className="relative flex items-center justify-between bg-[#0E1A28] 
+                        text-white pl-6 rounded-[15px] 
+                        group-hover:bg-[#172A3A] transition-colors
+                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                        {item.label}
+                        <div className="flex items-center">
+                          <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
+                        </div>
+                      </div>
+                    </HashLink>
+                  ) : (
+                    <Link 
+                      to={item.path} 
+                      key={item.label} 
+                      className="block relative group cursor-pointer orbitron-medium"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                        rounded-[15px] opacity-75 group-hover:opacity-100 
+                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                      />
+                      <div className="relative flex items-center justify-between bg-[#0E1A28] 
+                        text-white pl-6 rounded-[15px] 
+                        group-hover:bg-[#172A3A] transition-colors
+                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                        {item.label}
+                        <div className="flex items-center">
+                          <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
+                        </div>
+                      </div>
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -352,6 +459,8 @@ const DesktopHeroSection = () => {
         onClose={() => setVideoPopupOpen(false)}
         videoUrl="https://www.youtube.com/embed/your-video-id"
       />
+
+      <SignupPopup isOpen={showSignupPopup} onClose={() => setShowSignupPopup(false)} />
     </div>
   );
 };
