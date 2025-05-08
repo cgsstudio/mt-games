@@ -89,7 +89,7 @@ export default function EditWallet() {
         </div>
 
 
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8 ">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4 ">
           <div className="flex items-center gap-3">
             {/* <img src={contestarrow} alt="contestarrow"  /> */}
             <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">EDIT WALLETS</h1>
@@ -100,7 +100,7 @@ export default function EditWallet() {
       {/* Content */}
       <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto ">
         <div className="bg-[#000000] text-white min-h-screen py-4">
-          <div className="text-[20px] text-center md:text-left barlow-condensed-semibold leading-[30px] md:leading-[90px] text-[#8a8889] mb-4 px-6">
+          <div className="text-[20px] text-center md:text-left barlow-condensed-semibold leading-[30px] md:leading-[60px] text-[#8a8889] mb-4 px-6 md:px-0">
             Connect your wallet(s) to play with NFTs you hold from the collections in our ecosystem.
           </div>
 

@@ -373,14 +373,14 @@ const DesktopHeroSection = () => {
                       onClick={item.action}
                       className="w-full block relative group cursor-pointer orbitron-medium"
                     >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                      <div className="absolute -inset-0 bg-gradient-to-r from-pink-600 to-purple-600 
                         rounded-[15px] opacity-75 group-hover:opacity-100 
-                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                        transition duration-300 group-hover:shadow-[0_0_20px_#d540f3] "
                       />
                       <div className="relative flex items-center justify-between bg-[#0E1A28] 
                         text-white pl-6 rounded-[15px] 
-                        group-hover:bg-[#172A3A] transition-colors
-                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                         transition-colors
+                        border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl lg:text-2xl">
                         {item.label}
                         <div className="flex items-center">
                           <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
@@ -394,14 +394,14 @@ const DesktopHeroSection = () => {
                       key={item.label} 
                       className="block relative group cursor-pointer orbitron-medium"
                     >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                      <div className="absolute -inset-0 bg-gradient-to-r from-pink-600 to-purple-600 
                         rounded-[15px] opacity-75 group-hover:opacity-100 
-                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                        transition duration-300 group-hover:shadow-[0_0_20px_#d540f3]"
                       />
                       <div className="relative flex items-center justify-between bg-[#0E1A28] 
                         text-white pl-6 rounded-[15px] 
-                        group-hover:bg-[#172A3A] transition-colors
-                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                         transition-colors
+                        border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl lg:text-2xl">
                         {item.label}
                         <div className="flex items-center">
                           <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
@@ -414,14 +414,14 @@ const DesktopHeroSection = () => {
                       key={item.label} 
                       className="block relative group cursor-pointer orbitron-medium"
                     >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 
+                      <div className="absolute -inset-0 bg-gradient-to-r from-pink-600 to-purple-600 
                         rounded-[15px] opacity-75 group-hover:opacity-100 
-                        transition duration-300 blur-sm group-hover:blur-md animate-pulse"
+                        transition duration-300 group-hover:shadow-[0_0_20px_#d540f3]"
                       />
                       <div className="relative flex items-center justify-between bg-[#0E1A28] 
                         text-white pl-6 rounded-[15px] 
-                        group-hover:bg-[#172A3A] transition-colors
-                        border border-transparent group-hover:border-pink-500 text-lg md:text-xl lg:text-2xl">
+                         transition-colors
+                        border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl lg:text-2xl">
                         {item.label}
                         <div className="flex items-center">
                           <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />

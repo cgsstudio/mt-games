@@ -16,7 +16,7 @@ const MobileHeader = () => {
 
   return (
     <>
-      <div className="fixed lg:hidden top-1/2 left-1/2 -translate-x-1/2 z-40 w-full">
+      <div className="fixed lg:hidden bottom-0 left-1/2 -translate-x-1/2 z-40 w-full">
         <div 
           className="bg-[#050d19]/70 backdrop-blur-sm  px-1 py-4  shadow-lg"
           
