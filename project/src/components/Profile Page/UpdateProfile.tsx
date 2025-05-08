@@ -72,7 +72,7 @@ export default function UpdateProfile() {
           <UserProfileMobile />
         </div>
 
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4">
           <div className="flex items-center gap-3">
             <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">UPDATE PROFILE</h1>
           </div>
@@ -80,30 +80,28 @@ export default function UpdateProfile() {
       </div>
 
       {/* Content */}
-      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto p-4">
-        <div className="w-full bg-[#000000] text-white py-10 relative px-6 md:px-0">
+      <div className="max-w-4xl mx-auto p-4">
+        <div className="w-full bg-[#000000] text-white py-8 relative px-6 md:px-0">
           {/* 2 Column Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             {/* Profile Image Section */}
             <div className="flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full bg-[#161f29] flex items-center justify-center overflow-hidden">
+                <div className="w-40 h-40 rounded-full bg-[#161f29] flex items-center justify-center overflow-hidden">
                   <img
                     src={profileImage || defaultProfile}
                     alt="Profile"
-                    className="w-[90%] h-[90%] object-cover"
+                    className="w-[95%] h-[95%] object-cover"
                   />
                 </div>
-                <div className='flex justify-end'>
+                <div className='flex justify-end absolute bottom-0 right-0'>
                   <button
                     onClick={openModal}
-                    className=" "
+                    className="w-8 h-8"
                   >
                     <img src={customPencil} alt="Edit" className="w-full h-full" />
                   </button>
-
                 </div>
-
               </div>
             </div>
 
@@ -116,7 +114,7 @@ export default function UpdateProfile() {
                   name="username"
                   value={profileData.username}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#161f29] rounded-[6px] border border-[#283643] text-white focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
                 />
               </div>
 
@@ -127,7 +125,7 @@ export default function UpdateProfile() {
                   name="email"
                   value={profileData.email}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#161f29] rounded-[6px] border border-[#283643] text-white focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
                 />
               </div>
 
@@ -138,7 +136,7 @@ export default function UpdateProfile() {
                   name="confirmEmail"
                   value={profileData.confirmEmail}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#161f29] rounded-[6px] border border-[#283643] text-white focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
                 />
               </div>
 
@@ -149,7 +147,7 @@ export default function UpdateProfile() {
                   name="password"
                   value={profileData.password}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#161f29] rounded-[6px] border border-[#283643] text-white focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
                 />
               </div>
 
@@ -160,14 +158,14 @@ export default function UpdateProfile() {
                   name="confirmPassword"
                   value={profileData.confirmPassword}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#161f29] rounded-[6px] border border-[#283643] text-white focus:outline-none focus:border-[#d540f3] orbitron-semibold "
+                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold "
                 />
               </div>
 
-              <div className="pt-6 flex justify-center">
+              <div className="pt-5 flex justify-center">
                 <button
                   type="submit"
-                  className="bg-[#194272] border border-[#38638b] text-white py-3 px-4 rounded-[7px] orbitron-medium hover:bg-[#172A3A] transition-colors w-auto md:w-auto md:px-12"
+                  className="bg-[#194272] border border-[#38638b] text-lg text-white py-3 px-4 rounded-[7px] barlow-black hover:bg-[#172A3A] transition-colors w-auto md:w-auto md:px-12"
                 >
                   SAVE CHANGES
                 </button>

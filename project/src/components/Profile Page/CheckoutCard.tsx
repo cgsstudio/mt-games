@@ -43,16 +43,16 @@ const CheckoutCard: React.FC = () => {
         <div className='block md:hidden mt-4 px-6'>
           <UserProfileMobile />
         </div>
-        <div className="border-b-[2px] border-[#d540f3]  md:px-0 py-4 md:py-8 mx-4">
+        <div className="border-b-[2px] border-[#d540f3]  md:px-0 pt-3 pb-2 md:pt-8 md:pb-4 mx-4 md:mx-0">
           <div className="flex items-center gap-3">
             <img src={contestarrow} alt="checkout arrow" />
-            <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">CHECKOUT</h1>
+            <h1 className="font-mono orbitron-medium tracking-wider text-[25px] md:text-[33px]">CHECKOUT</h1>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-xl mx-auto py-16 px-4">
+      <div className="max-w-xl mx-auto py-6 md:py-20 px-4">
 
         {/* Purple line - matching the border-[#d540f3] from your component */}
         {/* <div className="h-px bg-[#d540f3] w-full mb-6"></div> */}

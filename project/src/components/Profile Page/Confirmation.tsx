@@ -21,7 +21,7 @@ const Confirmation: React.FC = () => {
         <div className='block md:hidden mt-4 px-6'>
           <UserProfileMobile />
         </div>
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4">
           <div className="flex items-center gap-3">
             <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">CONFIRMATION</h1>
           </div>

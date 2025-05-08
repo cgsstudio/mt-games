@@ -56,7 +56,7 @@ export default function WithdrawFunds() {
           <UserProfileMobile />
         </div>
 
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8 ">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4 ">
           <div className="flex items-center gap-3">
             <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">WITHDRAW FUNDS</h1>
           </div>
@@ -64,9 +64,9 @@ export default function WithdrawFunds() {
       </div>
 
       {/* Content */}
-      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto p-4">
+      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto px-4 md:px-0 ">
         {/* Main Content - 2 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 mt-0 md:mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 mt-4 ">
           {/* Left Column - 1.5fr */}
           <div className="space-y-6">
             {/* Description */}
@@ -87,11 +87,11 @@ export default function WithdrawFunds() {
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 mt-6">
           {/* Left Column - 1.5fr */}
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
 
             <div className="grid grid-cols-7 p-[5px] bg-[#161f29] overflow-hidden rounded-[12px]">
               <div className="col-span-3 flex items-center justify-center">
-                <span className="uppercase text-[#f4e6c1] text-xl barlow-condensed-semibold">available to withdraw</span>
+                <span className="uppercase text-[#f4e6c1] text-lg md:text-xl barlow-condensed-semibold">available to withdraw</span>
               </div>
               <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center">
                 <div className="flex items-center">

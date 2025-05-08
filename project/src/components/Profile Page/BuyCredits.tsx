@@ -31,22 +31,22 @@ export default function BuyCredits() {
         </div>
 
 
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8 ">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4" >
           <div className="flex items-center gap-3">
             {/* <img src={contestarrow} alt="contestarrow"  /> */}
-            <h1 className="font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">BUY CREDITS</h1>
+            <h1 className="font-mono orbitron-medium tracking-wider text-[25px] md:text-[33px]">BUY CREDITS</h1>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto p-4">
+      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto py-4  px-4 md:px-0 ">
 
 
         {/* Main Content - 2 Column Grid with Custom Widths */}
-        <div className="grid grid-cols-1  lg:grid-cols-5 gap-6 mt-12 ">
+        <div className="grid grid-cols-1  lg:grid-cols-5 gap-6 mt-6 ">
           {/* Left Column - Wider (3/5) */}
-          <div className="md:col-span-3 space-y-6 w-full lg:w-[95%]">
+          <div className="md:col-span-3  w-full lg:w-[95%]">
 
             <div className="grid grid-cols-7 p-[5px] bg-[#161f29] overflow-hidden rounded-[12px]">
               <div className="col-span-3   flex items-center justify-center">
@@ -54,7 +54,7 @@ export default function BuyCredits() {
               </div>
               <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center ">
                 <div className="flex items-center">
-                  <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
+                  <img src={icon1} alt="Gold icon" className="w-6 h-6 mr-2" />
                   {/* <span className="text-yellow-500 mr-2">●</span> */}
                   <span className="text-[27px] lg:text-[30px] orbitron-semibold leading-none ">10,000</span>
                 </div>
@@ -62,7 +62,7 @@ export default function BuyCredits() {
             </div>
 
             {/* Description */}
-            <div className="p-3 md:p-6 rounded-[12px] md:rounded-[15px] border-[2px] border-[#161f29] text-base md:text-xl text-[#758695] mt-6 bg-[#000000]"  >
+            <div className="p-3 md:p-6 rounded-[12px] md:rounded-[15px] border-[2px] border-[#161f29] text-base md:text-xl text-[#758695] mt-6 md:mt-10 bg-[#000000]"  >
               <ul className="space-y-1 barlow-condensed-regular">
                 <li>• $1 buys you 1,000 Credits.</li>
                 <li>• Earn 200 Bonus Credits for every 1,000 Credits purchased.</li>
@@ -80,18 +80,18 @@ export default function BuyCredits() {
             {/* Contest Status - EXACTLY MATCHING THE IMAGE */}
             <div className="col-span-1 space-y-6 hidden lg:block">
               {['See Special Offers', 'Subscriptions Plans'].map((item) => (
-                <div key={item} className="relative group cursor-pointer orbitron-medium">
-                  <div className="absolute -inset-0.5 bg-[#d540f3] 
-                                  rounded-[25px] opacity-75 group-hover:opacity-100 
-                                  transition duration-300 blur-sm group-hover:blur-md animate-pulse"
-                  />
+                <div key={item} className="relative group cursor-pointer orbitron-bold">
+                  <div className="absolute -inset-0 bg-[#d540f3] 
+                      rounded-[25px] opacity-75 group-hover:opacity-100 
+                      transition duration-300  
+                      group-hover:shadow-[0_0_20px_#d540f3]" />
                   <div className="relative flex items-center justify-between bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] 
-                                  text-white pl-6 py-3 rounded-[25px] 
-                                  group-hover:bg-[#172A3A] transition-colors
-                                  border border-[#d540f3] group-hover:border-pink-500 text-lg md:text-xl  xl:text-[25px]">
+                      text-white pl-6 py-3 rounded-[25px] 
+                      group-hover:bg-[#172A3A] transition-colors
+                      border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl  xl:text-[29px]">
                     {item}
                     <div className="flex items-center">
-                      <img src={doublearrow} alt="arrow" className="w-14 h-14 lg:w-20 lg:h-20 block" />
+                      <img src={doublearrow} alt="arrow" className="scale-[1.3] w-14 h-14 lg:w-20 lg:h-20 block" />
                     </div>
                   </div>
                 </div>
@@ -102,12 +102,13 @@ export default function BuyCredits() {
 
 
 
+
           </div>
 
 
         </div>
         {/* Another Section with the Same 2-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mt-0 lg:mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mt-0 lg:mt-10">
           {/* Left Column (3/5) */}
           <div className="md:col-span-3 space-y-6 w-full lg:w-[95%]">
             <div className="bg-[#161f29] rounded-[12px] px-4 md:px-8 py-6 md:py-12 w-full ">
@@ -115,10 +116,14 @@ export default function BuyCredits() {
               <p className="text-[#fff0c9] barlow-semibold text-base text-center mb-6">Minimum purchase: 1,000 Credits</p>
 
               <div className="flex items-center justify-between">
-                <div className="flex items-center bg-[#050d19] py-2 px-4 md:py-4 md:px-4 rounded-[3px]  md:w-[70%]">
-                  <span className="text-yellow-500 mr-2">
-                    <img src={icon1} alt="Blue icon" className="w-4 h-4 lg:w-5 lg:h-5" />
-                  </span>
+                <div className="flex items-center bg-[#050d19] py-3 md:py-4 px-4 rounded-[3px] md:w-[70%]">
+                  <div className="flex items-center justify-center mr-2 min-w-[28px] min-h-[28px] md:min-w-[32px] md:min-h-[32px]">
+                    <img
+                      src={icon1}
+                      alt="Blue icon"
+                      className="w-6 h-6  object-contain"
+                    />
+                  </div>
                   <input
                     type="text"
                     placeholder="1,000"
@@ -126,11 +131,12 @@ export default function BuyCredits() {
                   />
                 </div>
 
-
-                <button className="bg-[#194272] border border-[#38638b]  text-base md:text-lg text-white barlow-black py-2 px-4 md:py-4 md:px-4 rounded-[7px]  md:w-[30%] ml-3">
+                <button className="bg-[#194272] border border-[#38638b] text-base md:text-lg text-white barlow-black py-3 md:py-4 px-4 rounded-[7px] md:w-[30%] ml-3">
                   CALCULATE
                 </button>
               </div>
+
+
             </div>
           </div>
 
@@ -139,45 +145,45 @@ export default function BuyCredits() {
             <div className="flex flex-col gap-6">
               {/* Main credit display */}
               <div className="bg-[#161f29] rounded-[12px] py-2 px-4 md:py-6 px-6 text-white">
-                <div className="text-center text-[35px] md:text-[42px] orbitron-semibold leading-none mb-2 md:mb-8">$1.00</div>
+                <div className="text-center text-[35px] md:text-[42px] orbitron-medium leading-none mb-2 md:mb-8">$1.00</div>
 
                 <div className="flex justify-between text-[#fff0c9] text-xl mb-1">
-                  <span className="barlow-condensed-semibold">CREDITS:</span>
+                  <span className="barlow-condensed-medium">CREDITS:</span>
                   <div className="flex items-center">
                     <img src={icon1} alt="Diamond" className="w-4 h-4 mr-1" />
-                    <span className="orbitron-semibold">1,000</span>
+                    <span className="orbitron-medium">1,000</span>
                   </div>
                 </div>
 
                 <div className="flex justify-between text-[#fff0c9] text-lg leading-none md:text-xl mb-2">
-                  <span className="barlow-condensed-semibold">BONUS CREDITS:</span>
+                  <span className="barlow-condensed-medium">BONUS CREDITS:</span>
                   <div className="flex items-center">
                     <img src={icon1} alt="Diamond" className="w-4 h-4 mr-1" />
-                    <span className="orbitron-semibold">200</span>
+                    <span className="orbitron-medium">200</span>
                   </div>
                 </div>
 
                 <hr className="border-[#194272] mb-2" />
 
                 <div className="flex justify-between items-center mt-2">
-                  <span className="text-white barlow-condensed-semibold text-[25px] md:text-[32px]">TOTAL CREDITS:</span>
+                  <span className="text-white barlow-condensed-medium text-[25px] md:text-[32px]">TOTAL CREDITS:</span>
                   <div className="flex items-center">
                     <img src={icon1} alt="Diamond" className="w-6 h-6 mr-1" />
-                    <span className="text-[#e102e3] text-[25px] md:text-[32px]  orbitron-semibold">1200</span>
+                    <span className="text-[#e102e3] text-[25px] md:text-[32px]  orbitron-medium">1200</span>
                   </div>
                 </div>
               </div>
 
               {/* Checkout buttons */}
               <div className="flex gap-8 mx-4 md:mx-0">
-                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-black py-4 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
-                  <div className='text-[14px] md:text-lg leading-none'>CHECKOUT WITH</div>
-                  <div className='text-[18px] md:text-[23px] leading-none' >CREDIT CARD</div>
+                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
+                  <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
+                  <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]' >CREDIT CARD</div>
                 </button>
 
-                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-black py-4 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
-                  <div className='text-[14px] md:text-lg leading-none'>CHECKOUT WITH</div>
-                  <div className='text-[18px] md:text-[23px] leading-none'>CRYPTO</div>
+                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
+                  <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
+                  <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]'>CRYPTO</div>
                 </button>
               </div>
             </div>

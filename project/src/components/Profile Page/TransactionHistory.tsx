@@ -56,7 +56,7 @@ export default function TransactionHistory() {
         </div>
 
 
-        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 py-3 md:py-8 ">
+        <div className="border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4 ">
           <div className="flex items-center gap-3">
             {/* <img src={contestarrow} alt="contestarrow"  /> */}
             <h1 className="uppercase font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px]">Transaction History</h1>
@@ -68,7 +68,7 @@ export default function TransactionHistory() {
       <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto py-4">
         <div className="bg-black text-white min-h-screen">
           {/* Navigation Tabs with divider */}
-          <div className="flex barlow-condensed-bold justify-center md:justify-start text-base md:text-xl mb-6  pb-2 opacity-[45%]">
+          <div className="flex barlow-condensed-bold justify-center md:justify-start text-base md:text-xl pb-2 opacity-[45%]">
             <button
               className={`mr-4 uppercase ${activeTab === 'all' ? 'text-[#2a8fbc] barlow-condensed-bold text-base md:text-xl' : 'text-[#adb0bc]'}`}
               onClick={() => setActiveTab('all')}
@@ -92,9 +92,9 @@ export default function TransactionHistory() {
           </div>
 
           {/* Transaction Table */}
-          <div className="rounded overflow-hidden space-y-4 px-2 md:px-0">
+          <div className="rounded overflow-hidden space-y-4 mt-8 md:mt-10 px-2 md:px-0">
             {/* Table Header */}
-            <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded-[6px] ">
+            <div className="bg-[#161f29] barlow-condensed-bold text-lg md:text-xl  grid grid-cols-5 py-4 px-6  text-[#adb0bc] rounded-[6px] mb-6 md:mb-8 ">
               <div>DATE</div>
               <div>EVENT</div>
               <div>STATUS</div>
