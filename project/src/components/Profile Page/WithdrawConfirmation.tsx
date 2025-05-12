@@ -32,9 +32,9 @@ const WithdrawConfirmation: React.FC = () => {
         <div className="flex flex-col w-full mt-0 md:mt-6 ">
           {/* Confirmation Message */}
           <div className="flex flex-col max-w-2xl mx-auto w-full">
-            <div className="border border-[#161f29] rounded-[4px] md:rounded-[6px] text-center py-4 md:py-6 px-4 mb-6 mt-6 md:mt-0">
-              <p className="text-[#758695] text-[25px] leading-none barlow-condensed-regular leading-tight">Withdrawal Submission Confirmed.</p>
-              <p className="text-[#758695] text-[25px] leading-none barlow-condensed-regular leading-tight mt-2">Please allow up to 72 hours for deposit to appear in your account.</p>
+            <div className="border-[2px] border-[#161f29] rounded-[4px] md:rounded-[7px] text-center py-4 md:py-6 px-4 mb-6 mt-6 md:mt-0">
+              <p className="text-[#758695] text-[25px] leading-[33px] barlow-condensed-regular ">Withdrawal Submission Confirmed. </p>
+              <p className="text-[#758695] text-[25px] leading-[33px] barlow-condensed-regular ">Please allow up to 72 hours for deposit to appear in your account.</p>
             </div>
           </div>
         </div>

@@ -100,7 +100,7 @@ export default function EditWallet() {
       {/* Content */}
       <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto ">
         <div className="bg-[#000000] text-white min-h-screen py-4">
-          <div className="text-[20px] text-center md:text-left barlow-condensed-semibold leading-[30px] md:leading-[60px] text-[#8a8889] mb-4 px-6 md:px-0">
+          <div className="text-[20px] text-center md:text-left barlow-condensed-semibold leading-[30px] md:leading-[60px] text-[#8a8889] mb-3 px-6 md:px-0">
             Connect your wallet(s) to play with NFTs you hold from the collections in our ecosystem.
           </div>
 
@@ -114,14 +114,14 @@ export default function EditWallet() {
               {/* Improved Dropdown Component */}
               <div className="relative  mb-4 flex justify-center" ref={dropdownRef}>
                 <button
-                  className={`bg-[#050d19] z-20 py-2 pl-6 pr-3 rounded-[5px] md:rounded-full flex justify-between items-center cursor-pointer w-80  transition-all ${isDropdownOpen ? ' transform -translate-y-1' : ''}`}
+                  className={`bg-[#050d19] z-20 py-2 pl-6 pr-3 rounded-[5px] md:rounded-[21px] flex justify-between items-center cursor-pointer w-80  transition-all ${isDropdownOpen ? ' transform -translate-y-1' : ''}`}
                   onClick={toggleDropdown}
 
                 >
                   <div className="text-[#f4e6c1] orbitron-semibold text-lg">
                     {selectedChain || 'Select Chain'}
                   </div>
-                  <ChevronDown className={`text-white transition-transform duration-200 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
+                  <ChevronDown className={`text-[#283643]  transition-transform duration-200 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
                 </button>
 
                 {/* Dropdown Menu with Animation */}
@@ -224,7 +224,7 @@ export default function EditWallet() {
 
                 <button
                   onClick={handleSubmit}
-                  className="bg-[#194272] border border-[#38638b] text-white text-lg  barlow-black py-3 px-8 rounded-[7px] mx-auto block hover:bg-[#1c5591] transition"
+                  className="bg-[#194272] border-[2px] border-[#38638b] text-white text-lg py-3  barlow-bold  px-8 rounded-[7px] mx-auto block "
                 >
                   SUBMIT
                 </button>
@@ -287,11 +287,11 @@ export default function EditWallet() {
 
                     <div className="flex justify-end mb-2">
                       {wallet.verified ? (
-                        <span className="bg-black border border-[#30f600] rounded-[2px] md:rounded-[7px] px-1 py-1 mr-2 flex items-center gap-2">
-                          <span className="mr-1 text-base barlow-medium">VERIFIED</span>
+                        <span className="bg-black border border-[#30f600] rounded-[2px] md:rounded-[7px] pl-2 px-1 py-1 mr-2 flex items-center gap-2">
+                          <span className="mr-1 text-sm barlow-semibold">VERIFIED</span>
                           <span>
-                            <img src={Verified} alt="Verified" className="hidden md:block scale-[1.3] w-5 h-5" />
-                            <img src={MobileVerified} alt="Verified" className="md:hidden scale-[1.3] w-5 h-5" />
+                            <img src={Verified} alt="Verified" className="hidden md:block scale-[1.2] w-5 h-5" />
+                            <img src={MobileVerified} alt="Verified" className="md:hidden scale-[1.2] w-5 h-5" />
                           </span>
                         </span>
                       ) : (
@@ -301,8 +301,8 @@ export default function EditWallet() {
                         >
                           <span className="mr-1 text-base barlow-medium">VERIFY</span>
                           <span>
-                            <img src={verify} alt="Verify" className="hidden md:block scale-[1.4] w-5 h-5" />
-                            <img src={MobileVerify} alt="Verify" className="md:hidden scale-[1.4] w-5 h-5" />
+                            <img src={verify} alt="Verify" className="hidden md:block scale-[1.3] w-5 h-5" />
+                            <img src={MobileVerify} alt="Verify" className="md:hidden scale-[1.3] w-5 h-5" />
                           </span>
                         </button>
                       )}

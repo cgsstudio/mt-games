@@ -17,6 +17,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { Link } from 'react-router-dom';
 
 // Original contests data - now with startTime and endTime as Date objects
 const initialContests = [
@@ -249,9 +250,12 @@ export default function ContestsSection() {
                     <div
                       className="absolute z-20 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full px-4"
                     >
+                      <Link to={`/contest`}>
                       <button className="w-full text-white px-6 py-3 rounded-lg text-lg md:text-2xl cygun-bold text-shadow" style={{ backgroundImage: `url(${buttonimg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                         Enter Now
                       </button>
+                      </Link>
+                      
                     </div>
                     
                     <div className="relative z-10">

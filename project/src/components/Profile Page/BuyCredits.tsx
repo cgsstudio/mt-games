@@ -8,6 +8,7 @@ import shapedivider from '../../image/icons/BG-55.svg';
 import mobileshapedivider from '../../image/icons/BG-contest.svg';
 import doublearrow from '../../image/icons/sign-up-ar-2.svg';
 import UserProfileMobile from '../UserProfileMobile'
+import { Link } from 'react-router-dom';
 
 
 
@@ -131,7 +132,7 @@ export default function BuyCredits() {
                   />
                 </div>
 
-                <button className="bg-[#194272] border border-[#38638b] text-base md:text-lg text-white barlow-black py-3 md:py-4 px-4 rounded-[7px] md:w-[30%] ml-3">
+                <button className="bg-[#194272] border-[2px] border-[#38638b] text-base md:text-lg text-white barlow-black py-3 md:py-4 px-4 rounded-[7px] md:w-[30%] ml-3">
                   CALCULATE
                 </button>
               </div>
@@ -175,16 +176,21 @@ export default function BuyCredits() {
               </div>
 
               {/* Checkout buttons */}
-              <div className="flex gap-8 mx-4 md:mx-0">
-                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
+              <div className="flex justify-center gap-8 mx-4 md:mx-0">
+                <Link to={"/checkout-card"}>
+                <button className="bg-[#194272] border-[2px] border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
                   <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
                   <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]' >CREDIT CARD</div>
                 </button>
-
-                <button className="bg-[#194272] border border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
+                
+                </Link>
+                
+                <Link to={"/checkout-crypto"}>
+                <button className="bg-[#194272] border-[2px] border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
                   <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
                   <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]'>CRYPTO</div>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

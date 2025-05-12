@@ -93,24 +93,29 @@ export default function WithdrawFunds() {
               <div className="col-span-3 flex items-center justify-center">
                 <span className="uppercase text-[#f4e6c1] text-lg md:text-xl barlow-condensed-semibold">available to withdraw</span>
               </div>
-              <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center">
+             <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center ">
                 <div className="flex items-center">
-                  <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
-                  <span className="text-[27px] lg:text-[30px] orbitron-semibold leading-none">10,000</span>
+                  <img src={icon1} alt="Gold icon" className="w-6 h-6 mr-2" />
+                  {/* <span className="text-yellow-500 mr-2">●</span> */}
+                  <span className="text-[27px] lg:text-[30px] orbitron-semibold leading-none ">10,000</span>
                 </div>
               </div>
             </div>
-            <div className="bg-[#161f29] rounded-[12px] px-4 md:px-8 py-6 md:py-12 w-full flex flex-col gap-y-4">
+            <div className="bg-[#161f29] rounded-[12px] px-4 md:px-8 py-6 md:py-10 w-full flex flex-col gap-y-4">
               <div>
-                <h2 className="text-white text-center barlow-bold text-lg md:text-xl mb-2">HOW MANY CREDITS WOULD YOU LIKE TO WITHDRAW?</h2>
-                <p className="text-[#fff0c9] barlow-semibold text-base text-center mb-6">Minimum purchase: 1,000 Credits</p>
+                <h2 className="text-white text-center barlow-bold text-lg md:text-xl ">HOW MANY CREDITS WOULD YOU LIKE TO WITHDRAW?</h2>
+                <p className="text-[#fff0c9] barlow-semibold text-base text-center mb-2">Minimum purchase: 1,000 Credits</p>
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center bg-[#050d19] py-2 px-4 md:py-4 md:px-4 rounded-[3px] md:w-[70%]">
-                  <span className="text-yellow-500 mr-2">
-                    <img src={icon1} alt="Blue icon" className="w-4 h-4 lg:w-5 lg:h-5" />
-                  </span>
+                 <div className="flex items-center justify-between">
+                <div className="flex items-center bg-[#050d19] py-3 md:py-4 px-4 rounded-[3px] md:w-[70%]">
+                  <div className="flex items-center justify-center mr-2 min-w-[28px] min-h-[28px] md:min-w-[32px] md:min-h-[32px]">
+                    <img
+                      src={icon1}
+                      alt="Blue icon"
+                      className="w-6 h-6  object-contain"
+                    />
+                  </div>
                   <input
                     type="text"
                     placeholder="1,000"
@@ -118,7 +123,7 @@ export default function WithdrawFunds() {
                   />
                 </div>
 
-                <button className="bg-[#194272] border border-[#38638b] text-base md:text-lg text-white barlow-black py-2 px-4 md:py-4 md:px-4 rounded-[7px] md:w-[30%] ml-3">
+                <button className="bg-[#194272] border-[2px] border-[#38638b] text-base md:text-lg text-white barlow-black py-3 md:py-4 px-4 rounded-[7px] md:w-[30%] ml-3">
                   CALCULATE
                 </button>
               </div>
@@ -132,14 +137,17 @@ export default function WithdrawFunds() {
 
           {/* Right Column - 1fr */}
           <div className="space-y-4">
-            <div className=" h-full bg-[#161f29] rounded-[11px] pt-1 px-1 pb-8 flex flex-col gap-y-4">
-              <div className="pb-2 mb-4 bg-[#283643] rounded-[7px]">
-                <div className="text-[33px] barlow-condensed-semibold leading-[37px] text-center py-2">SELECT WITHDRAWAL METHOD</div>
+            <div className=" h-full bg-[#161f29] rounded-[11px] pt-1 px-1  flex flex-col gap-y-4">
+             <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center mb-4">
+                <div className="flex items-center">
+                  
+                  <span className="text-[27px] lg:text-[33px] barlow-condensed-semibold leading-none lg:leading-[37px] ">SELECT WITHDRAWAL METHOD</span>
+                </div>
               </div>
 
               <div className="relative mb-4 flex justify-center" ref={dropdownRef}>
                 <button
-                  className={`bg-[#050d19] z-20 py-2 pl-6 pr-3 rounded-[5px] md:rounded-full flex justify-between items-center cursor-pointer w-80 transition-all ${isDropdownOpen ? 'transform -translate-y-1' : ''}`}
+                  className={`bg-[#050d19] z-20 py-2 pl-6 pr-3 rounded-[5px] md:rounded-[21px] flex justify-between items-center cursor-pointer w-80 transition-all ${isDropdownOpen ? 'transform -translate-y-1' : ''}`}
                   onClick={toggleDropdown}
                 >
                   <div className="text-[#f4e6c1] orbitron-semibold text-[25px] md:text-lg">
@@ -181,16 +189,17 @@ export default function WithdrawFunds() {
                   type="text"
                   value={walletAddress}
                   onChange={handleAddressChange}
-                  className="w-full bg-[#050d19] p-3 rounded-[3px] mb-4 text-[#9d9a9a] focus:outline-none barlow-medium text-xl placeholder-white text-center text-base"
+                  className="w-full bg-[#050d19] p-2 rounded-[3px] mb-4 text-[#9d9a9a] focus:outline-none barlow-medium text-base leading-[36px] placeholder-white text-center text-base"
                   placeholder="Username/Email/Mobile Number"
                 />
+              
+              </div>
                 <button
                   onClick={handleSubmit}
-                  className="bg-[#194272] border border-[#38638b] text-white text-[25px] md:text-lg barlow-black py-5 px-16 md:py-3 md:px-8 rounded-none md:rounded-[7px] mx-auto block hover:bg-[#1c5591] transition mt-4 md:mt-0"
+                  className="bg-[#194272] border-[2px] border-[#38638b] text-white text-[25px] md:text-xl barlow-black rounded-none md:rounded-[7px] mx-auto block hover:bg-[#1c5591] transition mt-4 md:mt-0 w-[275px] h-[75px]"
                 >
                   WITHDRAW
                 </button>
-              </div>
             </div>
           </div>
         </div>

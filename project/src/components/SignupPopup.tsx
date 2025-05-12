@@ -5,7 +5,7 @@ import signup01 from '../image/icons/sign-up-ar-1.svg';
 import signup02 from '../image/icons/sign-up-ar-2.svg';
 import MainLogo from '../image/Logos/main-logo.png';
 import glowingline from "../image/icons/glowing-line.svg";
-import buyRight from "../image/icons/glowchavron.svg";
+import buyRight from "../image/icons/sign-up-ar-2.svg";
 
 interface SignupPopupProps {
   isOpen: boolean;

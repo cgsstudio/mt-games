@@ -55,7 +55,7 @@ export default function Footer() {
                 className="w-full bg-[#273036]/50 border-none rounded-sm px-4 py-3 text-[#a3a2a2] placeholder-gray-400 focus:outline-none poppins-medium text-sm"
               />
               <div className="flex justify-center lg:justify-start">
-                <button className="linear-button relative orbitron-semibold text-sm w-fit">
+                <button className="linear-button relative orbitron-semibold  w-fit">
                   SIGN UP
                 </button>
               </div>

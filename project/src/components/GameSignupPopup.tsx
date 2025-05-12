@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import robotimg from '../image/icons/robot-bg.png'
+import robotimg from '../image/SPARTAN-COMMANDER.png'
 import glowingline from "../image/icons/glowing-line.svg";
 import buyLeft from "../image/icons/ios.svg";
 import buyRight from "../image/icons/glowchavron.svg";
@@ -60,7 +60,7 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
         {/* Popup content */}
         <div className={`p-[2px] rounded-lg`}
           style={{
-            background: 'linear-gradient(to right, #0560fa, #d93ef9)',
+            background: 'linear-gradient(to bottom, #0560fa, #d93ef9)',
           }}>
           <div className="w-full h-full flex flex-col lg:flex-row bg-no-repeat bg-cover bg-center rounded-lg"
             style={{ backgroundImage: `url(${robotimg})` }}>

@@ -45,26 +45,31 @@ const CheckoutCard: React.FC = () => {
         </div>
         <div className="border-b-[2px] border-[#d540f3]  md:px-0 pt-3 pb-2 md:pt-8 md:pb-4 mx-4 md:mx-0">
           <div className="flex items-center gap-3">
-            <img src={contestarrow} alt="checkout arrow" />
+          <img 
+              src={contestarrow} 
+              alt="contestarrow" 
+              className="cursor-pointer" 
+              onClick={() => window.history.back()}
+            />
             <h1 className="font-mono orbitron-medium tracking-wider text-[25px] md:text-[33px]">CHECKOUT</h1>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-xl mx-auto py-6 md:py-20 px-4">
+      <div className="max-w-2xl mx-auto py-6 md:py-20 px-4">
 
         {/* Purple line - matching the border-[#d540f3] from your component */}
         {/* <div className="h-px bg-[#d540f3] w-full mb-6"></div> */}
 
         {/* Credits and Amount */}
-        <div className="grid grid-cols-[1fr_1.5fr] mb-12 bg-[#161f29] p-[5px] rounded-lg">
+        <div className="grid grid-cols-[1fr_1.5fr] mb-12 bg-[#161f29] p-[5px] rounded-[12px]">
           <div className="flex items-center pl-4">
             {/* <div className="bg-yellow-500 rounded-full h-4 w-4 mr-2"></div> */}
             <img src={icon1} alt="Gold icon" className="w-8 h-8 mr-2" />
             <span className="text-[23px] md:text-[25px] leading-none orbitron-semibold">1,200</span>
           </div>
-          <div className="bg-[#283643] p-4 text-center rounded-[3px]">
+          <div className="bg-[#283643] p-4 text-center rounded-[2px] md:rounded-[6px]">
             <span className="text-[#ff0000] text-[27px] md:text-[29px] leading-none orbitron-semibold">$100</span>
           </div>
         </div>
@@ -77,12 +82,12 @@ const CheckoutCard: React.FC = () => {
           <div className="space-y-2">
 
             <div>
-              <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
+              <label className="pl-2 block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
                 Credit Card Number
               </label>
               <input
                 type="text"
-                className="w-full p-3 bg-[#050d19] rounded barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold flex items-center border border-[#161f29]"
+                className="w-full p-4 bg-[#050d19] rounded-[5px] barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold  border-[2px] border-[#161f29] focus:outline-none focus:border-[#d540f3]"
                 placeholder="**** **** **** ****"
                 value={cardNumber}
                 onChange={handleCardNumberChange}
@@ -92,12 +97,12 @@ const CheckoutCard: React.FC = () => {
 
             <div className="flex gap-4">
               <div className="flex-1">
-                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
+                <label className="pl-2 block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
                   Exp. Date
                 </label>
                 <input
                   type="text"
-                  className="w-full p-3 bg-[#050d19] rounded barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold flex items-center border border-[#161f29]"
+                  className="w-full p-4 bg-[#050d19] rounded-[5px] barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold flex items-center border-[2px] border-[#161f29] focus:outline-none focus:border-[#d540f3]"
                   placeholder="MM/YY"
                   value={expDate}
                   onChange={handleExpDateChange}
@@ -105,12 +110,12 @@ const CheckoutCard: React.FC = () => {
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
+                <label className="pl-2 block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">
                   CVV
                 </label>
                 <input
                   type="text"
-                  className="w-full p-3 bg-[#050d19] rounded barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold flex items-center border border-[#161f29]"
+                  className="w-full p-4 bg-[#050d19] rounded-[5px] barlow-semibold text-[#758695] text-[20px] leading-none placeholder:text-[#283643] placeholder:barlow-semibold flex items-center border-[2px] border-[#161f29] focus:outline-none focus:border-[#d540f3]"
                   value={cvv}
                   onChange={handleCvvChange}
                   placeholder="***"
@@ -123,13 +128,13 @@ const CheckoutCard: React.FC = () => {
 
 
           {/* Notice */}
-          <div className="border border-[#161f29] p-3 rounded-[6px] text-center text-xl md:text-base leading-none text-[#758695] barlow-condensed-regular">
-            <p className="mb-1">This transaction is non-refundable.</p>
+          <div className="border-[2px] border-[#161f29] px-3 py-5 rounded-[6px] text-center text-xl  leading-[1.2] text-[#758695] barlow-condensed-regular">
+            <p >This transaction is non-refundable.</p>
             <p>All Credits must be assigned before they can be withdrawn.</p>
           </div>
 
           {/* Submit Button - matching the blue color from your component */}
-          <button className="w-full bg-[#194272] border border-[#38638b] text-xl text-white py-3 rounded-[2px] md:rounded uppercase  barlow-black">
+          <button className="w-full bg-[#194272] border-[2px] border-[#38638b] text-xl text-white py-5 rounded-[0px] md:rounded-[6px] uppercase  barlow-bold">
             Submit Payment
           </button>
         </div>
