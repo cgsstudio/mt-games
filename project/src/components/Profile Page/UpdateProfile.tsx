@@ -87,14 +87,14 @@ export default function UpdateProfile() {
             {/* Profile Image Section */}
             <div className="flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="w-40 h-40 rounded-full bg-[#161f29] flex items-center justify-center overflow-hidden">
+                <div className="w-40 h-40 rounded-full bg-[#050d19] border-[2px] border-[#161f29] flex items-center justify-center overflow-hidden">
                   <img
                     src={profileImage || defaultProfile}
                     alt="Profile"
-                    className="w-[95%] h-[95%] object-cover"
+                    className="w-[90%] h-[90%] object-cover rounded-full"
                   />
                 </div>
-                <div className='flex justify-end absolute bottom-0 right-0'>
+                <div className='flex justify-end absolute bottom-0 -right-4'>
                   <button
                     onClick={openModal}
                     className="w-8 h-8"
@@ -108,64 +108,64 @@ export default function UpdateProfile() {
             {/* Form Section */}
             <form className="w-full space-y-4">
               <div>
-                <label className="block text-xs uppercase mb-1 text-[#758695] barlow-condensed-semibold">USER NAME:</label>
+                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">USER NAME:</label>
                 <input
                   type="text"
                   name="username"
                   value={profileData.username}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full py-3 px-6 bg-[#050d19] rounded-[6px] border-[2px] border-[#161f29] text-[#9d9a9a]/80 focus:outline-none focus:border-[#d540f3] orbitron-medium text-[20px] leading-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase mb-1 text-[#758695] barlow-condensed-semibold">EMAIL:</label>
+                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">EMAIL:</label>
                 <input
                   type="email"
                   name="email"
                   value={profileData.email}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full py-3 px-6 bg-[#050d19] rounded-[6px] border-[2px] border-[#161f29] text-[#9d9a9a]/80 focus:outline-none focus:border-[#d540f3] orbitron-medium text-[20px] leading-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase mb-1 text-[#758695] barlow-condensed-semibold">CONFIRM EMAIL:</label>
+                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">CONFIRM EMAIL:</label>
                 <input
                   type="email"
                   name="confirmEmail"
                   value={profileData.confirmEmail}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full py-3 px-6 bg-[#050d19] rounded-[6px] border-[2px] border-[#161f29] text-[#9d9a9a]/80 focus:outline-none focus:border-[#d540f3] orbitron-medium text-[20px] leading-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase mb-1 text-[#758695] barlow-condensed-semibold">NEW PASSWORD:</label>
+                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">NEW PASSWORD:</label>
                 <input
                   type="password"
                   name="password"
                   value={profileData.password}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold"
+                  className="w-full py-3 px-6 bg-[#050d19] rounded-[6px] border-[2px] border-[#161f29] text-[#9d9a9a]/80 focus:outline-none focus:border-[#d540f3] orbitron-medium text-[20px] leading-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase mb-1 text-[#758695] barlow-condensed-semibold">CONFIRM PASSWORD:</label>
+                <label className="block text-[13px] uppercase mb-1 text-[#758695] barlow-bold">CONFIRM PASSWORD:</label>
                 <input
                   type="password"
                   name="confirmPassword"
                   value={profileData.confirmPassword}
                   onChange={handleInputChange}
-                  className="w-full p-3 bg-[#050d19] rounded-[6px] border border-[#161f29] text-[#9d9a9a] focus:outline-none focus:border-[#d540f3] orbitron-semibold "
+                  className="w-full py-3 px-6 bg-[#050d19] rounded-[6px] border-[2px] border-[#161f29] text-[#9d9a9a]/80 focus:outline-none focus:border-[#d540f3] orbitron-medium text-[20px] leading-none "
                 />
               </div>
 
               <div className="pt-5 flex justify-center">
                 <button
                   type="submit"
-                  className="bg-[#194272] border border-[#38638b] text-lg text-white py-3 px-4 rounded-[7px] barlow-black hover:bg-[#172A3A] transition-colors w-auto md:w-auto md:px-12"
+                  className="bg-[#194272] border-[2px] border-[#38638b] text-lg text-white py-3 px-4 rounded-[7px] barlow-black  transition-colors w-auto md:w-auto md:px-12"
                 >
                   SAVE CHANGES
                 </button>
@@ -174,27 +174,29 @@ export default function UpdateProfile() {
           </div>
 
           {isModalOpen && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-              <div className="bg-[#050d19] border border-[#283643] p-6 rounded-[12px] w-80">
+            <div className="fixed inset-0 flex items-center justify-center  z-50">
+              <div className="bg-[#161f29]  px-6 pt-4 pb-8 rounded-[12px] w-80 shadow-[0px_0px_9.62px_3.38px_rgba(0,0,0,0.75)]">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-[#fff0c9] font-medium orbitron-medium">UPLOAD PFP</h3>
+                  <h3 className="text-[#fff0c9] text-lg leading-[1.2] barlow-condensed-medium">UPLOAD PFP</h3>
                   <button onClick={closeModal} className="text-[#758695] hover:text-white">
                     <X size={20} />
                   </button>
                 </div>
 
                 <div
-                  className="border border-dashed border-[#283643] bg-[#161f29] rounded-none md:rounded-[6px] h-[250px] mb-4 flex flex-col items-center justify-center cursor-pointer"
+                  className={`${
+                    tempSelectedImage ? 'border-none' : 'border border-dashed border-[#758695]'
+                  } bg-[#283643] rounded-none md:rounded-[6px] h-[250px] mb-4 flex flex-col items-center justify-center cursor-pointer overflow-hidden`}
                   onClick={() => document.getElementById('fileInput').click()}
                 >
                   {tempSelectedImage ? (
                     <img
                       src={tempSelectedImage}
                       alt="Preview"
-                      className="max-h-full max-w-full object-contain p-2"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
-                    <p className="text-[#758695] text-sm text-center barlow-condensed-regular">Select an image to upload</p>
+                    <p className="text-[#fff0c9] text-base text-center barlow-semibold">Select an image to upload</p>
                   )}
                   <input
                     id="fileInput"
@@ -210,7 +212,7 @@ export default function UpdateProfile() {
                     onClick={handleSaveImage}
                     disabled={!tempSelectedImage}
                     className={`w-auto text-white text-base py-2 px-6 rounded-[7px] barlow-black transition-colors
-            ${tempSelectedImage ? 'bg-[#194272] border border-[#38638b] hover:bg-[#172A3A]' : 'bg-[#232323] border border-[#3b3b3b] cursor-not-allowed text-[#3b3b3b]'}
+            ${tempSelectedImage ? 'bg-[#194272] border border-[#38638b] ' : 'bg-[#232323] border border-[#3b3b3b] cursor-not-allowed text-[#3b3b3b]'}
           `}
                   >
                     SAVE

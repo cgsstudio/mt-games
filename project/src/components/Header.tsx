@@ -20,6 +20,7 @@ import earncredits from '../image/icons/earncreadit.svg';
 import MobileHeader from './MobileHeader';
 import usericon from '../image/icons/user-icon.svg';
 
+
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -77,7 +78,7 @@ const Header = () => {
           }`}
       >
         <div className="px-6 md:px-8 lg:px-12 w-full">
-          <div className="flex items-center justify-between lg:justify-between py-2 sm:py-3">
+          <div className="flex items-center justify-between lg:justify-between pt-2 sm:pt-3">
             {/* Mobile Logo Section (Centered) */}
             <div className="flex-1 flex flex-col lg:flex-row justify-center lg:justify-start items-center space-y-2 lg:space-y-0 lg:space-x-2">
               <Link to="/">
@@ -98,11 +99,11 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation - Now only visible on large screens */}
-            <div className="hidden lg:flex items-center gap-6 space-x-3 lg:space-x-4">
+            <div className="hidden lg:flex items-center  gap-1 ">
               {/* Credits and Username Container */}
               <div className="relative" ref={dropdownRef}>
                 <div
-                  className={`relative z-20 flex items-center gap-6 px-4 py-2 transition-colors cursor-pointer ${isDropdownOpen ? 'bg-[#add9ff] text-[#000000] rounded-tl-md rounded-tr-md' : 'hover:bg-gray-800 rounded-md'
+                  className={`relative z-20 flex items-center gap-6 px-4 py-3 transition-colors cursor-pointer ${isDropdownOpen ? 'bg-[#add9ff] text-[#000000] rounded-tl-md rounded-tr-md' : 'hover:bg-[#112037] rounded-md'
                     }`}
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
@@ -110,33 +111,31 @@ const Header = () => {
                  
                   </div> */}
                   <div className="flex items-center space-x-1">
-                      <img src={icon1} alt="Gold icon" className="w-4 h-4 lg:w-5 lg:h-5" />
-                      <span className={`cygun-bold text-2xl ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <img src={icon2} alt="Blue icon" className="w-4 h-4 lg:w-5 lg:h-5" />
-                      <span className={`cygun-bold text-2xl ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
-                    </div>
+                    <img src={icon1} alt="Gold icon" className="w-4 h-4 lg:w-6 lg:h-6" />
+                    <span className={`cygun-bold text-[25px] leading-none ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <img src={icon2} alt="Blue icon" className="w-4 h-4 lg:w-6 lg:h-6" />
+                    <span className={`cygun-bold text-[25px] leading-none ${isDropdownOpen ? 'text-[#000000]' : ''}`}>10,000</span>
+                  </div>
 
                   <div className="flex items-center space-x-1">
                     <img
                       src={isDropdownOpen ? blackuser : icon3}
                       alt="User icon"
-                      className="w-4 h-4 lg:w-5 lg:h-5"
+                      className="w-4 h-4 lg:w-6 lg:h-6"
                     />
-                    <div className={`font-medium text-2xl cygun ${isDropdownOpen ? 'text-[#000000]' : 'text-gray-300'}`}>USER NAME</div>
+                    <div className={`text-[25px] leading-none cygun ${isDropdownOpen ? 'text-[#000000]' : 'text-white'}`}>USER NAME</div>
                   </div>
                 </div>
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full right-0 -mt-2 w-full bg-[#0A1625] border border-[#d540f3] rounded-lg shadow-lg z-10">
-                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl" style={{ maxHeight: '80vh' }}>
-                      {/* Top header */}
-
-
+                  <div className="absolute top-full right-0 -mt-2 w-full bg-gradient-to-r from-[#050c11] to-[#2a234e] border border-[#d540f3] rounded-lg shadow-lg z-10">
+                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl">
                       {/* User info section */}
-                      <div className="bg-gray-900 flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
+                      <div className="flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
+
                         <div className='p-3'>
                           <div className="flex items-center gap-3 w-full pb-2">
                             <div className="w-16 h-16 flex items-center justify-center">
@@ -147,22 +146,22 @@ const Header = () => {
                             </div>
                           </div>
                           <div className="w-full grid grid-cols-2 gap-2 ">
-                            <div className="text-right flex flex-col space-y-2">
-                              <span className="text-gray-400 century-gothic-normal text-xl">Credit Balance:</span>
-                              <span className="text-gray-400 century-gothic-normal text-xl">Bits Balance:</span>
-                              <span className="text-gray-400 century-gothic-normal text-xl">Available for Withdrawal:</span>
+                            <div className="text-right flex flex-col ">
+                              <span className="text-white century-gothic-normal text-xl leading-[35px]">Credit Balance:</span>
+                              <span className="text-white century-gothic-normal text-xl leading-[35px]">Bits Balance:</span>
+                              <span className="text-white century-gothic-normal text-xl leading-[35px]">Available for Withdrawal:</span>
                             </div>
                             <div className="flex flex-col space-y-2">
-                              <span className="text-xl century-gothic-bold flex items-center ">
-                                <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                              <span className="text-xl century-gothic-bold  flex items-center ">
+                                <img src={icon1} alt="Credits" className="w-6 h-6 mr-2" />
                                 {userData.credits.toLocaleString()}
                               </span>
-                              <span className="text-xl century-gothic-bold flex items-center ">
-                                <img src={icon2} alt="Bits" className="w-5 h-5 mr-2" />
+                              <span className="text-xl century-gothic-bold  flex items-center ">
+                                <img src={icon2} alt="Bits" className="w-6 h-6 mr-2" />
                                 {userData.bits.toLocaleString()}
                               </span>
-                              <span className="text-xl century-gothic-bold flex items-center ">
-                                <img src={icon1} alt="Credits" className="w-5 h-5 mr-2" />
+                              <span className="text-xl century-gothic-bold  flex items-center ">
+                                <img src={icon1} alt="Credits" className="w-6 h-6 mr-2" />
                                 {userData.availableForWithdrawal.toLocaleString()}
                               </span>
                             </div>
@@ -170,7 +169,7 @@ const Header = () => {
 
                           </div>
                           <div className='flex justify-end w-full'>
-                            <button className="bg-[#194272] border border-[#38638b] text-white text-base uppercase barlow-black py-2 px-6 rounded-[7px] hover:bg-[#1c5591] transition">
+                            <button className="bg-[#194272] border-[2px] border-[#38638b] text-white text-base uppercase barlow-bold py-2 px-6 rounded-[7px] hover:bg-[#1c5591] transition">
                               Sign Out
                             </button>
                           </div>
@@ -182,7 +181,7 @@ const Header = () => {
 
 
                         {/* Menu grid */}
-                        <div className="grid grid-cols-2 gap-3 p-3 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
+                        <div className="grid grid-cols-2 gap-3 py-3 px-12 bg-[#194272] shadow-[inset_0px_0px_31.68px_0.32px_rgba(0,0,0,0.61)]">
                           {/* Special Offers */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
@@ -192,79 +191,97 @@ const Header = () => {
                           </div>
 
                           {/* Full Profile */}
-                          <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={fullprofile} alt="Full Profile" className="w-16 h-16" />
+                          <Link to={"/profile"}>
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
+                                <img src={fullprofile} alt="Full Profile" className="w-16 h-16" />
+                              </div>
+                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Full Profile</div>
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Full Profile</div>
-                          </div>
+                          </Link>
+
 
                           {/* Edit/Add/Remove Wallets */}
-                          <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={editwallet} alt="Edit Wallet" className="w-16 h-16" />
+                          <Link to={"/edit-wallet"}>
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
+                                <img src={editwallet} alt="Edit Wallet" className="w-16 h-16" />
+                              </div>
+                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Edit/Add/Remove Wallets</div>
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Edit/Add/Remove Wallets</div>
-                          </div>
+
+                          </Link>
+
 
                           {/* Transaction History */}
-                          <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={transactionhistory} alt="Transaction History" className="w-16 h-16" />
+                          <Link to={"/transaction-history"}>
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
+                                <img src={transactionhistory} alt="Transaction History" className="w-16 h-16" />
+                              </div>
+                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Transaction History</div>
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Transaction History</div>
-                          </div>
+                          </Link>
+
 
                           {/* Active Contests */}
-                          <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={activecontest} alt="Active Contests" className="w-16 h-16" />
+                          <Link to={"/active-contest"}>
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
+                                <img src={activecontest} alt="Active Contests" className="w-16 h-16" />
+                              </div>
+                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Active<br/>Contests</div>
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Active Contests</div>
-                          </div>
+
+                          </Link>
+
 
                           {/* Earn Credits for Referrals */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
                               <img src={earncredits} alt="Earn Credits" className="w-16 h-16" />
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Earn Credits for Referrals</div>
+                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Earn Credits<br/> for Referrals</div>
                           </div>
                         </div>
 
                         {/* Bottom buy credits button */}
-                        <div className="py-3 px-2 flex justify-center ">
-                          <div className="w-auto p-[1px] rounded-full bg-gradient-to-r from-[#0560fa] to-[#d93ef9]">
-                            <button
-                              className="w-full py-1 text-base text-white barlow-black rounded-full shadow-md hover:brightness-110 transition bg-gradient-to-b from-[#0d0917] to-[#3f1261] flex items-center justify-center relative"
-                            >
-                              <img
-                                src={signup02}
-                                alt="Buy Icon Left"
-                                className="w-10 h-10 mr-2 scale-[1.3]"
-                              />
-                              <span className="scale-[1.1]">BUY CREDITS NOW</span>
-                              <img
-                                src={signup01}
-                                alt="Buy Icon Right"
-                                className="w-10 h-10 ml-2 scale-[1.3]"
-                              />
-                            </button>
-                          </div>
+                        <div className="py-3 px-2 flex justify-center">
+                          <button
+                            className="flex items-center justify-between linear-button relative"
+                          >
+                            <img
+                              src={signup02}
+                              alt="Buy Icon Left"
+                              className="w-10 h-10 mr-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
+                            />
+                            <span className="text-[24px] text-white barlow-black">BUY CREDITS NOW</span>
+                            <img
+                              src={signup01}
+                              alt="Buy Icon Right"
+                              className="w-10 h-10 ml-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
+                            />
+                          </button>
                         </div>
+
                       </div>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Line divider */}
-              <img src={lines} alt="divider" className="h-10" />
+              <div className='flex items-center gap-3'>
+                {/* Line divider */}
+                <img src={lines} alt="divider" className="h-10" />
 
-              {/* Buy Credits Button */}
-              <button className="text-base linear-button relative orbitron-semibold">
-                BUY CREDITS
-              </button>
+                {/* Buy Credits Button */}
+                <button className=" linear-button relative orbitron-semibold">
+                  BUY CREDITS
+                </button>
+
+              </div>
+
+
             </div>
           </div>
         </div>
