@@ -77,9 +77,9 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
           {/* Close Button */}
           <button 
             onClick={onClose}
-            className="absolute orbitron-medium right-2 top-0 text-[#758695] hover:text-white text-[30px]"
+            className="absolute orbitron-light text-[37px] right-2 -top-3 text-[#758695] hover:text-white text-[30px] rotate-45"
           >
-            ×
+            +
           </button>
 
           {/* Logo */}
@@ -114,25 +114,25 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
                       <div className="text-[25px] leading-none digital-7-mono">
                         {timeLeft.days.toString().padStart(2, '0')}:
                       </div>
-                      <div className="text-base leading-none uppercase digital-7-mono">DAYS</div>
+                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">DAYS:</div>
                     </div>
                     <div className="px-1">
                       <div className="text-[25px] leading-none digital-7-mono">
                         {timeLeft.hours.toString().padStart(2, '0')}:
                       </div>
-                      <div className="text-base leading-none uppercase digital-7-mono">HRS</div>
+                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">HRS:</div>
                     </div>
                     <div className="px-1">
                       <div className="text-[25px] leading-none digital-7-mono">
                         {timeLeft.minutes.toString().padStart(2, '0')}:
                       </div>
-                      <div className="text-base leading-none uppercase digital-7-mono">MIN</div>
+                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">MIN:</div>
                     </div>
                     <div className="px-1">
                       <div className="text-[25px] leading-none digital-7-mono">
                         {timeLeft.seconds.toString().padStart(2, '0')}
                       </div>
-                      <div className="text-base leading-none uppercase digital-7-mono">SEC</div>
+                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">SEC:</div>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
           </div>
 
           {/* Disclaimer */}
-          <div className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-tight mt-6 bg-[#000000]"  >
+          <div className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-[1.2] mt-6 bg-[#000000]"  >
                 <ul className="space-y-3 barlow-condensed-regular">
                   <li>• Once you hit CONFIRM ENTRY, credits will be deducted from your account. This action is non-refundable.</li>
                   <li>• The CONTEST END time above is the time limit to compete in the contest, if you do not compete in that time limit, your funds will be forfeited</li>
@@ -152,11 +152,11 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
           <div className="p-[1px] rounded-none md:rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-6">
                 <button 
                   onClick={handleConfirmEntry}
-                  className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-none md:rounded-[10px] text-center barlow-black text-xl uppercase flex items-center justify-center gap-3"
+                  className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261]  rounded-none md:rounded-[10px] p-2 text-center barlow-black text-[24px] md:text-[29px] uppercase flex items-center justify-center gap-3"
                 >
-                  <img src={signup02} alt="Right Icon" className="w-12 h-12 md:w-16 md:h-16" />
+                  <img src={signup02} alt="Right Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                   confirm entry
-                  <img src={signup01} alt="Left Icon" className="w-12 h-12 md:w-16 md:h-16" />
+                  <img src={signup01} alt="Left Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                 </button>
               </div>
         </div>

@@ -52,9 +52,9 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="orbitron-medium absolute top-4 right-4 z-10 text- text-[#758695] hover:text-white"
+          className="orbitron-light text-[37px] absolute right-2 -top-3 z-10 text- text-[#758695] hover:text-white rotate-45"
         >
-         x
+         +
         </button>
 
         {/* Popup content */}

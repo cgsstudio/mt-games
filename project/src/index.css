@@ -28,7 +28,7 @@ body{
 
   @font-face {
     font-family: 'Cygun';
-    src: url('./Assest/font/Cygun-Regular-2.ttf') format('truetype');
+    src: url('./Assest/font/Cygun-Regular-AF65d841fa29d76.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -245,24 +245,30 @@ body{
 
 
 .linear-button-2{
-  padding: 0px 20px;
-  border:none;
-  background-image: linear-gradient(to bottom, #0d0917, #3f1261);
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+ 
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#0d0917, #3f1261) padding-box, /* inner */
+    linear-gradient(to bottom, #0560fa, #d93ef9) border-box; /* border */
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+
+  text-transform: uppercase;
+  
+  
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-.linear-button-2::after{
-  content: "";
-  position: absolute;
-  width: 101%;
-  height: 107%;
-  background-image: linear-gradient(to bottom, #0560fa, #d93ef9);
-  z-index: -1;
-  border-radius: 12px;
+@media (max-width: 768px) {
+  .linear-button-2 {
+    border-radius: 4px !important;
+  }
 }
 .work-card{
   position: relative;

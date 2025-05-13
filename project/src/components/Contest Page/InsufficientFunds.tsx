@@ -32,9 +32,9 @@ const InsufficientFunds: React.FC<InsufficientFundsProps> = ({ isOpen, onClose, 
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute orbitron-medium right-2 top-0 text-[#758695] hover:text-white text-[30px]"
+          className="absolute orbitron-light text-[37px] right-2 -top-3 text-[#758695] hover:text-white text-[30px] rotate-45"
         >
-          ×
+          +
         </button>
 
         {/* Warning Icon */}
@@ -53,7 +53,7 @@ const InsufficientFunds: React.FC<InsufficientFundsProps> = ({ isOpen, onClose, 
               <div className="col-span-4 bg-[#283643] p-2 flex items-center rounded-[4px] justify-center">
                 <div className="flex items-center">
                   <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
-                  <span className="text-xl text-[#f30000] md:text-[25px] lg:text-[30px] orbitron-medium leading-none">{entryFee}</span>
+                  <span className="text-xl text-[#f30000] md:text-[25px] lg:text-[30px] orbitron-medium leading-none">{entryFee.toLocaleString()}</span>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@ const InsufficientFunds: React.FC<InsufficientFundsProps> = ({ isOpen, onClose, 
 
         {/* Message */}
         
-          <div className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-tight mt-6 bg-[#000000]"  >
+          <div className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-none mt-6 bg-[#000000]"  >
                 <ul className="space-y-3 text-center barlow-condensed-regular">
                   <li> You do not have enough credits to enter this contest.</li>
                   <li> This contest requires more credits than your current balance.</li>
@@ -75,11 +75,11 @@ const InsufficientFunds: React.FC<InsufficientFundsProps> = ({ isOpen, onClose, 
             <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-6">
                 <button 
                   
-                  className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-xl uppercase flex items-center justify-center gap-3"
+                  className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-[24px] md:text-[29px] uppercase flex items-center justify-center gap-3 p-2"
                 >
-                  <img src={signup02} alt="Right Icon" className="w-12 h-12 md:w-16 md:h-16" />
+                  <img src={signup02} alt="Right Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                   Buy Creadits Now
-                  <img src={signup01} alt="Left Icon" className="w-12 h-12 md:w-16 md:h-16" />
+                  <img src={signup01} alt="Left Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                 </button>
               </div>
       </div>

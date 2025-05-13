@@ -16,19 +16,20 @@ export default function SignupPopup({ isOpen, onClose }: SignupPopupProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
       <div
         className="relative w-full h-[400px] md:h-auto max-w-4xl rounded-lg overflow-hidden p-[1px] mx-4 md:mx-0"
         style={{
           background: 'linear-gradient(to bottom, #0560fa, #d93ef9)'
         }}
+        onClick={e => e.stopPropagation()}
       >
         {/* Close button moved to main container */}
         <button
           onClick={onClose}
-          className="absolute orbitron-medium right-2 top-2 text-[#758695] hover:text-white text-[20px] z-30"
+          className="absolute orbitron-light text-[37px] right-2 -top-3 text-[#758695] hover:text-white rotate-45 z-30"
         >
-          X
+          +
         </button>
         
         <div
@@ -73,7 +74,7 @@ export default function SignupPopup({ isOpen, onClose }: SignupPopupProps) {
                 {/* Game characters image container */}
                 <div className="relative h-30 md:h-64 flex items-center justify-end">
                   {/* Offer text */}
-                  <div className="text-center p-2 md:p-4 w-3/4">
+                  <div className="text-center mb-3 p-2 md:p-4 w-3/4">
                     <p className="text-xl leading-tight md:text-2xl orbitron-semibold">Sign up now to claim XX <span className="text-purple-500">FREE</span> credits when you purchase 10,000 Credits.</p>
                   </div>
                 </div>
