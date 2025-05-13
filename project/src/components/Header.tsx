@@ -18,7 +18,7 @@ import transactionhistory from '../image/icons/transaction.svg';
 import activecontest from '../image/icons/ac-contest.svg';
 import earncredits from '../image/icons/earncreadit.svg';
 import MobileHeader from './MobileHeader';
-import usericon from '../image/icons/user-icon.svg';
+import usericon from '../image/icons/newusericon.svg';
 
 
 const Header = () => {
@@ -78,7 +78,7 @@ const Header = () => {
           }`}
       >
         <div className="px-6 md:px-8 lg:px-12 w-full">
-          <div className="flex items-center justify-between lg:justify-between pt-2 sm:pt-3">
+          <div className="flex items-center justify-between lg:justify-between pt-3 pb-2">
             {/* Mobile Logo Section (Centered) */}
             <div className="flex-1 flex flex-col lg:flex-row justify-center lg:justify-start items-center space-y-2 lg:space-y-0 lg:space-x-2">
               <Link to="/">
@@ -125,13 +125,13 @@ const Header = () => {
                       alt="User icon"
                       className="w-4 h-4 lg:w-6 lg:h-6"
                     />
-                    <div className={`text-[25px] leading-none cygun ${isDropdownOpen ? 'text-[#000000]' : 'text-white'}`}>USER NAME</div>
+                    <div className={`text-[25px] leading-none cygun-bold ${isDropdownOpen ? 'text-[#000000]' : 'text-white'}`}>USER NAME</div>
                   </div>
                 </div>
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full right-0 -mt-2 w-full bg-gradient-to-r from-[#050c11] to-[#2a234e] border border-[#d540f3] rounded-lg shadow-lg z-10">
+                  <div className="absolute top-full right-0 -mt-2 w-full bg-gradient-to-r from-[#1c1a38] to-[#2a234e] border border-[#d540f3] rounded-br-[21px] rounded-bl-[21px] shadow-lg z-10">
                     <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl">
                       {/* User info section */}
                       <div className="flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
@@ -141,7 +141,7 @@ const Header = () => {
                             <div className="w-16 h-16 flex items-center justify-center">
                               <img src={usericon} alt="User Icon" className="w-full h-full " />
                             </div>
-                            <div className="text-xl century-gothic-bold border-b-[2px] border-white w-full pb-2">
+                            <div className="text-lg century-gothic-bold border-b-[2px] border-white w-full pb-2">
                               {userData.username}
                             </div>
                           </div>
@@ -149,7 +149,7 @@ const Header = () => {
                             <div className="text-right flex flex-col ">
                               <span className="text-white century-gothic-normal text-xl leading-[35px]">Credit Balance:</span>
                               <span className="text-white century-gothic-normal text-xl leading-[35px]">Bits Balance:</span>
-                              <span className="text-white century-gothic-normal text-xl leading-[35px]">Available for Withdrawal:</span>
+                              <span className="text-white century-gothic-normal text-xl leading-[1.2]">Available for Withdrawal:</span>
                             </div>
                             <div className="flex flex-col space-y-2">
                               <span className="text-xl century-gothic-bold  flex items-center ">
@@ -169,7 +169,7 @@ const Header = () => {
 
                           </div>
                           <div className='flex justify-end w-full'>
-                            <button className="bg-[#194272] border-[2px] border-[#38638b] text-white text-base uppercase barlow-bold py-2 px-6 rounded-[7px] hover:bg-[#1c5591] transition">
+                            <button className="bg-[#194272] border-[2px] border-[#38638b] text-white text-[14px] leading-[36px] uppercase barlow-bold  px-5 rounded-[7px] ">
                               Sign Out
                             </button>
                           </div>
@@ -185,18 +185,18 @@ const Header = () => {
                           {/* Special Offers */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={specialoffer} alt="Special Offers" className="w-16 h-16" />
+                              <img src={specialoffer} alt="Special Offers" className="w-20 h-20" />
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Special Offers</div>
+                            <div className="text-center text-[#ffeec9] text-lg century-gothic-bold">Special Offers</div>
                           </div>
 
                           {/* Full Profile */}
                           <Link to={"/profile"}>
                             <div className="flex flex-col items-center">
                               <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                                <img src={fullprofile} alt="Full Profile" className="w-16 h-16" />
+                                <img src={fullprofile} alt="Full Profile" className="w-20 h-20" />
                               </div>
-                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Full Profile</div>
+                              <div className="text-center text-[#ffeec9] text-lg century-gothic-bold">Full Profile</div>
                             </div>
                           </Link>
 
@@ -205,9 +205,9 @@ const Header = () => {
                           <Link to={"/edit-wallet"}>
                             <div className="flex flex-col items-center">
                               <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                                <img src={editwallet} alt="Edit Wallet" className="w-16 h-16" />
+                                <img src={editwallet} alt="Edit Wallet" className="w-20 h-20" />
                               </div>
-                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Edit/Add/Remove Wallets</div>
+                              <div className="text-center text-[#ffeec9] text-lg leading-[23px] century-gothic-bold">Edit/Add/Remove Wallets</div>
                             </div>
 
                           </Link>
@@ -217,9 +217,9 @@ const Header = () => {
                           <Link to={"/transaction-history"}>
                             <div className="flex flex-col items-center">
                               <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                                <img src={transactionhistory} alt="Transaction History" className="w-16 h-16" />
+                                <img src={transactionhistory} alt="Transaction History" className="w-20 h-20" />
                               </div>
-                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Transaction History</div>
+                              <div className="text-center text-[#ffeec9] text-lg leading-[23px] century-gothic-bold">Transaction <br/> History</div>
                             </div>
                           </Link>
 
@@ -228,9 +228,9 @@ const Header = () => {
                           <Link to={"/active-contest"}>
                             <div className="flex flex-col items-center">
                               <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                                <img src={activecontest} alt="Active Contests" className="w-16 h-16" />
+                                <img src={activecontest} alt="Active Contests" className="w-20 h-20" />
                               </div>
-                              <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Active<br/>Contests</div>
+                              <div className="text-center text-[#ffeec9] text-lg leading-[23px]  century-gothic-bold">Active<br/>Contests</div>
                             </div>
 
                           </Link>
@@ -239,9 +239,9 @@ const Header = () => {
                           {/* Earn Credits for Referrals */}
                           <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-[#050b36] flex items-center justify-center">
-                              <img src={earncredits} alt="Earn Credits" className="w-16 h-16" />
+                              <img src={earncredits} alt="Earn Credits" className="w-20 h-20" />
                             </div>
-                            <div className="text-center text-[#ffeec9] text-xl century-gothic-bold">Earn Credits<br/> for Referrals</div>
+                            <div className="text-center text-[#ffeec9] text-lg leading-[23px]  century-gothic-bold">Earn Credits<br/> for Referrals</div>
                           </div>
                         </div>
 
