@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import play from '../image/icons/videoplay.svg';
 import videobanner from '../image/icons/newbanner.png';
 import signup01 from '../image/icons/doublechevron.svg';
@@ -14,19 +14,36 @@ interface VideoPopupProps {
 
 const VideoPopup: React.FC<VideoPopupProps> = ({ isOpen, onClose, videoUrl }) => {
   const [signupPopupOpen, setSignupPopupOpen] = useState(false);
+  const popupRef = useRef<HTMLDivElement>(null);
   
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
       {/* Popup Container */}
-      <div className="relative w-full max-w-4xl mx-4 rounded-lg overflow-hidden box-shadow-lg">
+      <div ref={popupRef} className="relative w-full max-w-4xl mx-4 rounded-lg overflow-hidden box-shadow-lg">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute orbitron-semibold text-[22px] top-0 right-0  z-10 w-8 h-8 flex items-center justify-center text-[#758695] hover:text-white"
+          className="absolute orbitron-light text-[37px]  top-0 right-0  z-10 w-8 h-8 flex items-center justify-center text-[#758695] hover:text-white rotate-45"
         >
-          x
+          +
         </button>
 
         {/* Video Container */}

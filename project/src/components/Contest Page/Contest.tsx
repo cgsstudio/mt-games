@@ -264,11 +264,11 @@ export default function ContestDetails() {
             <div className="p-[1px] rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-4 mt-6">
               <button
                 onClick={() => setShowEnterNow(true)}
-                className="w-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] hover:from-[#0f0b1d] hover:to-[#4f167b] rounded-[10px] text-center barlow-black text-[28px] md:text-[29px] uppercase flex items-center justify-center gap-3 p-2 md:p-0"
+                className="w-full bg-gradient-to-b from-[#0d0917] to-[#3f1261]  rounded-[10px] text-center barlow-black text-[28px]  md:text-[29px] uppercase flex items-center justify-center gap-3 p-2 md:p-2"
               >
-                <img src={signup02} alt="Right Icon" className="scale-[1.3] w-16 md:h-16" />
+                <img src={signup02} alt="Right Icon" className=" w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                 ENTER NOW!
-                <img src={signup01} alt="Left Icon" className="scale-[1.3] w-16 md:h-16" />
+                <img src={signup01} alt="Left Icon" className=" w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
               </button>
             </div>
 

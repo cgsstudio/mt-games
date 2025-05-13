@@ -42,11 +42,11 @@ const UserProfileSidebar = () => {
     offers: giftIcon,
     search: searchIcon
   };
-  
+
   // Use custom hamburger icon instead of FaBars
-  const toggleIcon = isOpen 
-  ? <img src={yourCustomCloseIcon} alt="Close Menu" className="w-10 h-10" /> 
-  : <img src={customHamburgerIcon} alt="Menu" className="w-10 h-10" />;
+  const toggleIcon = isOpen
+    ? <img src={yourCustomCloseIcon} alt="Close Menu" className="w-10 h-10" />
+    : <img src={customHamburgerIcon} alt="Menu" className="w-10 h-10" />;
 
   const buyLeft = signup02;
   const buyRight = signup01;
@@ -67,13 +67,12 @@ const UserProfileSidebar = () => {
 
   return (
     <div
-      className={`hidden md:block fixed top-1/2 left-0 transform -translate-y-1/2 z-50 transition-all duration-300 ${
-        isOpen ? "w-90" : "w-20"
-      }`}
+      className={`hidden md:block fixed top-[60%] left-0 transform -translate-y-1/2 z-50  ${isOpen ? "w-80" : "w-20"
+        }`}
     >
-      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#080e17_0%,_#262048_100%)] shadow-lg py-3 flex flex-col">
+      <div className="h-full rounded-tr-[20px] rounded-br-[20px]  bg-[linear-gradient(180deg,_#15162d_0%,_#29224c_100%)] shadow-lg pt-3 pb-6 flex flex-col">
         {/* Toggle Button */}
-        <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center"} mb-2`}>
+        <div className={`${isOpen ? "flex justify-end px-3" : "flex justify-center mr-2"}`}>
           <button
             onClick={toggleSidebar}
             className="text-white text-xl hover:text-purple-400"
@@ -84,95 +83,96 @@ const UserProfileSidebar = () => {
 
         {/* Profile Section */}
         <div className={isOpen ? "pl-10 pr-10" : "pl-0 pr-3"}>
-          <div className="flex flex-col items-center mb-3">
+          <div className={`flex flex-col items-center justify-center ${isOpen ? "-mt-6" : "mt-3"}`}>
             <div className="w-10 h-10 rounded-full flex items-center justify-center">
-              <img 
-                src={avatar} 
+              <img
+                src={avatar}
                 alt="Profile"
-                className="w-full h-full"
+                className={`${isOpen ? "w-6 h-6" : "w-6 h-6"}`}
               />
             </div>
             {isOpen && (
               <>
-                <h2 className="text-white text-[32px] leading-none text-center cygun-bold mt-2">
+                <h2 className="text-white text-[27px] leading-none text-center cygun ">
                   USER NAME
                 </h2>
-                <img src={glowingline} alt="" className="w-full h-full mt-1" />
+                <img src={glowingline} alt="" className="w-full h-full " />
               </>
             )}
           </div>
-          
+
           {/* Navigation Items */}
-          <div className={`${isOpen ? "mx-8" : "mx-0"}`}>
-               <div className="flex-1 flex flex-col">
-            {menuItems.map(({ icon, label, path }, index) => (
-              isOpen ? (
-                <Link 
-                  to={path}
-                  key={index}
-                  className={`
-                    flex items-center justify-start px-4 rounded-[16px]
-                    text-amber-100 py-2 mb-1 bg-[#0f1020]
+          <div className={`${isOpen ? "mx-4 mt-5" : "mx-0 mt-5"}`}>
+            <div className="flex-1 flex flex-col">
+              {menuItems.map(({ icon, label, path }, index) => (
+                isOpen ? (
+                  <Link
+                    to={path}
+                    key={index}
+                    className={`
+                    flex items-center justify-start px-4 rounded-[10px]
+                    text-amber-100 py-2 mb-1 bg-[#000000]/30
                     hover:bg-opacity-20 hover:bg-white 
                     cursor-pointer transition-all shadow-md
                   `}
-                >
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <img src={icon} alt={label} className="w-full h-full" />
-                  </div>
-                  <span className="text-base font-medium text-amber-100 ml-3">
-                    {label}
-                  </span>
-                </Link>
-              ) : (
-                <Link 
-                  to={path}
-                  key={index}
-                  className={`
-                    flex items-center justify-center rounded-tr-[16px] rounded-br-[16px]
-                    text-amber-100 py-2 mb-1 bg-[#0f1020] hover:bg-opacity-20 hover:bg-white 
+                  >
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <img src={icon} alt={label} className="w-full h-full" />
+                    </div>
+                    <span className="text-[14px] century-gothic-bold text-amber-100 ml-3">
+                      {label}
+                    </span>
+                  </Link>
+                ) : (
+                  <Link
+                    to={path}
+                    key={index}
+                    className={`
+                    flex items-center justify-center rounded-tr-[10px] rounded-br-[10px]
+                    text-amber-100 py-2 mb-1 bg-[#000000]/25 hover:bg-opacity-20 hover:bg-white 
                     cursor-pointer transition-all
                   `}
-                >
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <img src={icon} alt={label} className="w-full h-full" />
-                  </div>
-                </Link>
-              )
-            ))}
-          </div>
+                  >
+                    <div className="w-7 h-7 flex items-center justify-center">
+                      <img src={icon} alt={label} className="w-full h-full" />
+                    </div>
+                  </Link>
+                )
+              ))}
+            </div>
 
           </div>
-       
-          
+
+
           {/* Buy Credits Button */}
-          <div className="mt-4">
+          <div className={`${isOpen ? "mt-6 flex items-center justify-center" : "mt-4"}`}>
             {isOpen ? (
               <button
-                className="flex items-center justify-between linear-button relative"
+                className="flex items-center justify-between linear-button-2 relative px-2"
               >
                 <img
                   src={signup02}
                   alt="Buy Icon Left"
-                  className="w-10 h-10 mr-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
+                  className="w-8 h-8 mr-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
                 />
-                <span className="text-[24px] text-white barlow-black">BUY CREDITS NOW</span>
+                <span className="text-[16px] leading-[45px] text-white barlow-black">BUY CREDITS NOW</span>
                 <img
                   src={signup01}
                   alt="Buy Icon Right"
-                  className="w-10 h-10 ml-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
+                  className="w-8 h-8 ml-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
                 />
               </button>
             ) : (
-              <div className="p-[1px] rounded-tr-[16px] rounded-br-[16px] bg-gradient-to-r from-[#0560fa] to-[#d93ef9] flex justify-center items-center">
-                <div className="w-full h-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-tr-[16px] rounded-br-[16px] flex items-center justify-end p-2 mx-auto">
+              <div className="pr-[1px] rounded-tr-full rounded-br-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] flex justify-center items-center">
+                <div className="w-full h-full bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-tr-full rounded-br-full flex items-center justify-end py-2 pr-3 mx-auto">
                   <img
                     src={icon1}
                     alt="Buy Credits"
-                    className="w-6 h-6"
+                    className="w-8 h-8"
                   />
                 </div>
               </div>
+
             )}
           </div>
         </div>
