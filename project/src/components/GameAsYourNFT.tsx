@@ -3,6 +3,7 @@ import logo1 from '../image/Logos/XPUNKS-LOGO.svg';
 import logo2 from '../image/Logos/yoots-LOGO.svg';
 import logo3 from '../image/Logos/AKCB-LOGO.svg';
 import logo4 from '../image/lock_.png';
+import secbg from '../image/GLOW.png'
 
 export default function GameAsYourNFT() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -26,12 +27,20 @@ useEffect(() => {
 
 
   return (
-    <div className="relative w-full py-12 text-white mb-10 md:mb-20" >
+    <div className="relative w-full  text-white mb-10 md:mb-20" >
       {/* Main title */}
       <div className="2xl:max-w-7xl xl:max-w-5xl mx-auto">
-        <h2 className="text-[30px] text-center md:text-7xl cygun uppercase tracking-widest mb-10 md:mb-16">
-          GAME AS YOUR NFT.
-        </h2>
+        <div className='h-[40vh] flex items-center justify-center relative'>
+          <img 
+            src={secbg} 
+            alt="background glow" 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px]"
+          />
+          <h2 className="text-[30px] text-center md:text-7xl cygun uppercase relative z-10">
+            GAME AS YOUR NFT.
+          </h2>
+        </div>
+       
         
         {/* Content layout - Changed from md:flex-row to lg:flex-row so tablet is stacked */}
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center">

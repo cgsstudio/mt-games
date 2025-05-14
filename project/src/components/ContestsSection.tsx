@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import rightarrow from '../image/Right-arrow.png';
 import leftarrow from '../image/arrow-left.png';
-import card1 from '../image/img21.png';
-import buttonimg from '../image/icons/Shape 1.svg';
+import card1 from '../image/icons/BRAWLERSLOGONEW.svg';
+import buttonimg from '../image/icons/ENTER-NOW.svg';
 import cardBottomImg from '../image/bottomlayer.png';
 // Import your custom icons here
 import timerIcon from '../image/icons/time.svg';
@@ -18,6 +18,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Link } from 'react-router-dom';
+
+// Add this helper function after the imports
+const formatNumber = (num: number) => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
 
 // Original contests data - now with startTime and endTime as Date objects
 const initialContests = [
@@ -140,10 +145,10 @@ const CountdownTimer = ({ startTime, endTime }) => {
   
   return (
     <div className="">
-      <div className="text-white text-[16px] md:text-base digital-7-mono">
-        {isCompleted ? "ENDED" : hasStarted ? "END IN" : "START IN"}
+      <div className="text-[#f4e6c1] text-[16px] md:text-[16px] digital-7-mono leading-none ">
+        {isCompleted ? "ENDED:" : hasStarted ? "END IN:" : "START IN:"}
       </div>
-      <span className="text-white text-lg md:text-[24px] digital-7-mono">{timeRemaining}</span>
+      <span className="text-white text-[18px] md:text-[24px] leading-none digital-7-mono">{timeRemaining}</span>
     </div>
   );
 };
@@ -174,9 +179,9 @@ const TimerContainer = ({ startTime, endTime }) => {
   }, [startTime, endTime]);
 
   return (
-    <div className="flex items-center gap-2 rounded-[16px] px-4 mt-2" 
+    <div className="flex items-center gap-3 rounded-[16px] pl-2 pr-6 py-1 mt-2" 
          style={{ backgroundColor: containerBgColor, transition: 'background-color 0.3s' }}>
-      <img src={timerIcon} alt="Timer" className="w-5 h-5" />
+      <img src={timerIcon} alt="Timer" className="w-6 h-6" />
       <CountdownTimer startTime={startTime} endTime={endTime} />
     </div>
   );
@@ -199,8 +204,8 @@ export default function ContestsSection() {
             <img 
               src={leftarrow} 
               alt="Previous" 
-              className="w-16 h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 opacity-80 hover:opacity-100 transition-opacity"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(255, 0, 255, 0.5))' }}
+              className="w-full h-full "
+              
             />
           </div>
           
@@ -211,7 +216,7 @@ export default function ContestsSection() {
                 nextEl: '.custom-swiper-next',
                 prevEl: '.custom-swiper-prev',
               }}
-              pagination={{ clickable: true }}
+             
               loop={true}
               spaceBetween={20}
               slidesPerView={3}
@@ -245,17 +250,25 @@ export default function ContestsSection() {
               }}
             >
               {contests.map((contest) => (
-                <SwiperSlide key={contest.id} className="pt-10 pb-20 md:pt-16 md:pb-16">
+                <SwiperSlide key={contest.id} className="pt-10 pb-20 md:pt-8 md:pb-16">
                   <div className="bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] rounded-[20px] border border-[rgb(213,64,243)] border-solid backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative">
                     <div
                       className="absolute z-20 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full px-4"
                     >
                       <Link to={`/contest`}>
-                      <button className="w-full text-white px-6 py-3 rounded-lg text-lg md:text-2xl cygun-bold text-shadow" style={{ backgroundImage: `url(${buttonimg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-                        Enter Now
-                      </button>
+                        <div 
+                          className="w-full h-[60px] md:h-[70px] text-white text-lg md:text-2xl cygun-bold flex items-center justify-center"
+                          style={{ 
+                            backgroundImage: `url(${buttonimg})`,
+                            backgroundSize: '100% 100%',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            
+                          }}
+                        >
+                          
+                        </div>
                       </Link>
-                      
                     </div>
                     
                     <div className="relative z-10">
@@ -271,7 +284,7 @@ export default function ContestsSection() {
                           <span className="text-[#f4e6c1] text-[20px] uppercase md:text-xl barlow-condensed-semibold">Entry Fee: </span>
                           <div className="flex items-center gap-2">
                             <img src={contest.icon} alt="Coins" className="w-6 h-6" />
-                            <span className="text-[#e4e4e4] text-[26px] md:text-xl orbitron-bold">{contest.entryFee}</span>
+                            <span className="text-[#e4e4e4] text-[24px] md:text-[24px] orbitron-semibold">{contest.entryFee}</span>
                           </div>
                         </div>
                       </div>
@@ -286,14 +299,14 @@ export default function ContestsSection() {
                             <span className="text-[#888888] barlow-condensed-regular text-[25px] md:text-2xl">Current Pot Size: </span>
                             <div className="flex items-center gap-2">
                               <img src={coinsIcon} alt="Trophy" className="w-6 h-6" />
-                              <span className="text-[#0cff00] orbitron-semibold text-[25px] md:text-2xl">{contest.prizePool}</span>
+                              <span className="text-[#0cff00] orbitron-semibold text-[25px] md:text-2xl">{formatNumber(contest.prizePool)}</span>
                             </div>
                           </div>
 
-                          <div className="flex justify-between items-center pt-2 px-2">
+                          <div className="flex justify-between items-center pt-1 px-2">
                             <span className="text-[#888888] barlow-condensed-regular text-[25px] md:text-2xl">Spaces Remaining:</span>
                             <div className="flex items-center gap-2">
-                              <span className="text-[#0cff00] orbitron-semibold text-[25px] md:text-2xl">{contest.spacesRemaining}</span>
+                              <span className="text-[#0cff00] orbitron-semibold text-[25px] leading-[1.2] md:text-2xl">{contest.spacesRemaining}</span>
                             </div>
                           </div>
                           
@@ -301,7 +314,7 @@ export default function ContestsSection() {
                             <TimerContainer startTime={contest.startTime} endTime={contest.endTime} />
                             
                             <div className="flex justify-end mt-2">
-                              <button className="px-6 py-2 info-button relative barlow-black text-base">
+                              <button className="px-7 py-[10px] linear-button-2 relative barlow-black text-base">
                                 INFO
                               </button>
                             </div>
@@ -333,8 +346,8 @@ export default function ContestsSection() {
             <img 
               src={rightarrow} 
               alt="Next" 
-              className="w-16 h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 opacity-80 hover:opacity-100 transition-opacity"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(255, 0, 255, 0.5))' }}
+              className="w-full h-full  "
+              
             />
           </div>
         </div>

@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="w-full lg:max-w-[300px]">
             <h3 className="text-white barlow-condensed-bold text-xl lg:text-2xl mb-3 text-center lg:text-left">SUBSCRIBE</h3>
             <p className="text-[#888888] barlow-medium text-base mb-4 text-center lg:text-left">
-              Be the first to get the latest news and updates from MetaTope and HTgames.
+              Be the first to get the latest news and updates from MetaTope and MTgames.
             </p>
             <div className="flex flex-col gap-3">
               <input
@@ -55,7 +55,7 @@ export default function Footer() {
                 className="w-full bg-[#273036]/50 border-none rounded-sm px-4 py-3 text-[#a3a2a2] placeholder-gray-400 focus:outline-none poppins-medium text-sm"
               />
               <div className="flex justify-center lg:justify-start">
-                <button className="linear-button relative orbitron-semibold  w-fit">
+                <button className="linear-button-2 py-[15px] px-10 text-[15px] leading-none relative orbitron-semibold  flex items-center justify-center ">
                   SIGN UP
                 </button>
               </div>
@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
 
             <div className="text-white text-lg leading-snug barlow-medium mb-4 text-center lg:text-right">
-              Copyright ©2023 MetaTope.
+              Copyright ©2025 MetaTope.
               <br />
               All Rights reserved.
             </div>

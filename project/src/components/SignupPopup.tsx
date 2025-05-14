@@ -50,7 +50,7 @@ export default function SignupPopup({ isOpen, onClose }: SignupPopupProps) {
           />
 
           {/* Content container */}
-          <div className="relative z-10 px-4 md:px-6 py-3 md:py-10 flex flex-col justify-between h-full">
+          <div className="relative z-10 px-4 md:px-6 pt-3 pb-3 md:pt-10 md:pb-6 flex flex-col justify-between h-full">
             <div className="text-white flex flex-col justify-between h-full md:flex-row">
               {/* Left side with logo and tagline */}
               <div className="md:w-1/2 flex flex-col items-start  space-y-2 py-0 px-0 md:py-4 md:px-4 -mt-0 md:-mt-[45px] ">
