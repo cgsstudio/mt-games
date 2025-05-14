@@ -21,7 +21,7 @@ import EnterNow from './EnterNow';
 export default function ContestDetails() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [showEnterNow, setShowEnterNow] = useState(false);
-  const [userCredits] = useState(5000); // Add this line to set user credits for testing
+  const [userCredits] = useState(15000); // Add this line to set user credits for testing
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -88,7 +88,7 @@ export default function ContestDetails() {
       </div>
 
       {/* Content */}
-      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto py-4 px-4 md:px-0">
+      <div className="2xl:max-w-6xl xl:max-w-5xl mx-auto py-6 px-4 md:px-0">
         {/* Logo */}
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] my-6 ">
           <div className='flex items-center justify-center'>

@@ -30,7 +30,7 @@ useEffect(() => {
     <div className="relative w-full  text-white mb-10 md:mb-20" >
       {/* Main title */}
       <div className="2xl:max-w-7xl xl:max-w-5xl mx-auto">
-        <div className='h-[40vh] flex items-center justify-center relative'>
+        <div className='h-[10vh] md:h-[40vh] flex items-center justify-center relative'>
           <img 
             src={secbg} 
             alt="background glow" 
