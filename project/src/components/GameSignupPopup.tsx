@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import robotimg from '../image/SPARTAN-COMMANDER.png'
 import glowingline from "../image/icons/glowing-line.svg";
 import buyLeft from "../image/icons/ios.svg";
-import buyRight from "../image/icons/glowchavron.svg";
+import buyRight from "../image/icons/sign-up-ar-2.svg";
 import adnroidicon from "../image/icons/android.svg";
 import macicon from "../image/icons/mac.svg";
 import pcicon from "../image/icons/window.svg";
@@ -44,11 +44,13 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-      <div
-        ref={popupRef}
-        className="relative w-full max-w-4xl mx-4 overflow-hidden rounded-lg"
-      >
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 overflow-y-auto p-4">
+
+     <div
+  ref={popupRef}
+  className="relative w-full max-w-4xl mx-4 overflow-hidden rounded-lg max-h-[95vh] overflow-y-auto"
+>
+
         {/* Close button */}
         <button
           onClick={onClose}

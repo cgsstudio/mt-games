@@ -132,7 +132,7 @@ const Header = () => {
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute top-full right-0 -mt-2 w-full bg-gradient-to-r from-[#1c1a38] to-[#2a234e] border border-[#d540f3] rounded-br-[21px] rounded-bl-[21px] shadow-lg z-10">
-                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl">
+                    <div className="flex flex-col w-full text-white rounded-lg overflow-hidden shadow-xl max-h-[585px] overflow-y-auto">
                       {/* User info section */}
                       <div className="flex flex-col items-center space-y-1 rounded-md text-white overflow-y-auto">
 

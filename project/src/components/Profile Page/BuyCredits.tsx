@@ -87,16 +87,18 @@ export default function BuyCredits() {
                       transition duration-300  
                       group-hover:shadow-[0_0_20px_#d540f3]" />
                   <div className="relative flex items-center justify-between bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] 
-                      text-white pl-6 py-3 rounded-[25px] 
+                      text-white px-6 py-8 rounded-[25px] 
                       group-hover:bg-[#172A3A] transition-colors
-                      border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl  xl:text-[29px]">
+                      border border-[#d540f3] group-hover:border-[#d540f3] text-lg md:text-xl xl:text-[22px] 2xl:text-[29px]">
                     {item}
                     <div className="flex items-center">
-                      <img src={doublearrow} alt="arrow" className="scale-[1.3] w-14 h-14 lg:w-20 lg:h-20 block" />
+                      <img src={doublearrow} alt="arrow" className="scale-[1.4] w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)] block" />
                     </div>
                   </div>
                 </div>
+                
               ))}
+              
             </div>
 
 
@@ -180,7 +182,7 @@ export default function BuyCredits() {
                 <Link to={"/checkout-card"}>
                 <button className="bg-[#194272] border-[2px] border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
                   <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
-                  <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]' >CREDIT CARD</div>
+                  <div className='text-[14px] md:text-lg leading-none -mt-0 md:-mt-2 scale-[1.2]' >CREDIT CARD</div>
                 </button>
                 
                 </Link>
@@ -188,7 +190,7 @@ export default function BuyCredits() {
                 <Link to={"/checkout-crypto"}>
                 <button className="bg-[#194272] border-[2px] border-[#38638b]  text-white barlow-bold py-3 px-4 rounded-[2px] md:rounded-[7px] text-center flex-1">
                   <div className='text-[14px] md:text-lg leading-none scale-[0.9]'>CHECKOUT WITH</div>
-                  <div className='text-[14px] md:text-lg leading-none -mt-2 scale-[1.2]'>CRYPTO</div>
+                  <div className='text-[14px] md:text-lg leading-none -mt-0 md:-mt-2 scale-[1.2]'>CRYPTO</div>
                 </button>
                 </Link>
               </div>

@@ -137,7 +137,7 @@ export default function WithdrawFunds() {
 
           {/* Right Column - 1fr */}
           <div className="space-y-4">
-            <div className=" h-full bg-[#161f29] rounded-[11px] pt-1 px-1  flex flex-col gap-y-4">
+            <div className=" h-full bg-[#161f29] rounded-[11px] pt-1 px-1 pb-8 md:pb-0  flex flex-col gap-y-4">
              <div className="col-span-4 bg-[#283643] p-3 md:p-5 flex items-center rounded-[2px] md:rounded-[6px] justify-center mb-4">
                 <div className="flex items-center">
                   
