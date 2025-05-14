@@ -128,9 +128,9 @@ export default function TransactionHistory() {
                       {transaction.status}
                     </div>
                     <div className="flex items-center md:items-start justify-center md:justify-start barlow-bold text-[14px] md:text-base text-[#ffeccd]">{transaction.amount}</div>
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-end">
                       {transaction.change && (
-                        <span className={transaction.change === '+' ? 'text-green-500 mr-2' : 'text-red-500 mr-2'}>
+                        <span className={`${transaction.change === '+' ? 'text-green-500' : 'text-red-500'} mr-2 barlow-medium text-[29px] leading-none hidden md:block`}>
                           {transaction.change}
                         </span>
                       )}

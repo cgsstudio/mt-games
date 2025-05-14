@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import texture1 from '../image/texture-01.png';
 import texture2 from '../image/texture-02.png';
-import rightarrow from '../image/icons/reviewright.svg';
-import leftarrow from '../image/icons/reviewleft.svg';
+import rightarrow from '../image/icons/reviewright.png';
+import leftarrow from '../image/icons/reviewleft.png';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -90,7 +90,7 @@ export default function PlayerReviewCarousel() {
               <img 
                 src={leftarrow} 
                 alt="Previous" 
-                className="w-16 h-16 hover:opacity-80 transition-opacity duration-300"
+                className="w-full h-full hover:opacity-80 transition-opacity duration-300"
               />
             </button>
             <button 
@@ -101,7 +101,7 @@ export default function PlayerReviewCarousel() {
               <img 
                 src={rightarrow} 
                 alt="Next" 
-                className="w-16 h-16 hover:opacity-80 transition-opacity duration-300"
+                className="w-full h-full hover:opacity-80 transition-opacity duration-300"
               />
             </button>
           </div>

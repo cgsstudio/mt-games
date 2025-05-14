@@ -24,6 +24,8 @@ import brawllerlogo from '../image/icons/REBEL-BRAWLERS-LOGO.png'
 import speedrunlogo from  '../image/icons/speedrunlogo.svg'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import activepagination from '../image/icons/activepagi.svg';
+import inactivepagination from '../image/icons/normalpagi.svg';
 
 // Import the GameSignupPopup component
 import GameSignupPopup from './GameSignupPopup';
@@ -90,16 +92,17 @@ const MobileHeroSection = () => {
         <div className='w-full px-4 mt-8'>
           {/* Mobile Header */}
           <div className="mb-4">
-            <h1 className="text-[39px] leading-[30px] text-[#050d19] cygun-bold">
-              PLAY TO WIN. PLAY FOR KEEPS.
+            <h1 className="text-[39px] leading-[28px] text-[#050d19] cygun-bold">
+              PLAY TO WIN.<br/> PLAY FOR KEEPS.
             </h1>
-            <p className="text-white barlow-condensed-medium text-base leading-tight mt-2 bg-black/50 rounded-[10px] px-4 py-2">
+            
+            <p className="text-white barlow-condensed-medium text-base leading-tight mt-2 bg-black/50 rounded-[24px] px-4 py-2">
               MTgames is your hub for the newest games and most lucrative prizes. Play for FREE or test your skills by adding your entry fee to a contest prize pool and competing for your chance at cash, prizes, and glory. All games available on iOS, Android, PC, Mac, and in Browser.
             </p>
           </div>
 
           {/* Mobile Slider */}
-          <div className="relative pb-6 [&_.swiper-pagination]:!bottom-0 [&_.swiper-pagination]:!flex [&_.swiper-pagination]:!justify-center [&_.swiper-pagination]:!items-center [&_.swiper-pagination]:!gap-2 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:!right-0 [&_.swiper-pagination]:!mx-auto [&_.swiper-pagination-bullet]:!w-3 [&_.swiper-pagination-bullet]:!h-3 [&_.swiper-pagination-bullet]:!bg-white/50 [&_.swiper-pagination-bullet-active]:!bg-white">
+          <div className="relative pb-6 [&_.swiper-pagination]:!bottom-0 [&_.swiper-pagination]:!flex [&_.swiper-pagination]:!justify-center [&_.swiper-pagination]:!items-center [&_.swiper-pagination]:!gap-2 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:!right-0 [&_.swiper-pagination]:!mx-auto [&_.swiper-pagination-bullet]:!w-3 [&_.swiper-pagination-bullet]:!h-3 [&_.swiper-pagination-bullet-active]:!bg-[#ffeec4]">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
@@ -119,21 +122,21 @@ const MobileHeroSection = () => {
               speed={800} // Slower transition speed
               className="w-full relative rounded-lg overflow-hidden"
             >
-              <button type="button" className="custom-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer w-12 h-12 flex items-center justify-center">
+              <button type="button" className="custom-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer w-12 h-14 flex items-center justify-center">
                 <img src={leftarrow} alt="Previous" className="w-full h-full" />
               </button>
-              <button type="button" className="custom-next absolute right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer w-12 h-12 flex items-center justify-center">
+              <button type="button" className="custom-next absolute right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer w-12 h-14 flex items-center justify-center">
                 <img src={rightarrow} alt="Next" className="w-full h-full" />
               </button>
               
               {games.map((game, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} >
                   <img src={game.image} alt={game.title} className="w-full h-full object-cover" />
                   {/* Mobile Sign Up Button */}
                   <div className="absolute bottom-[20px] left-1/2 transform -translate-x-1/2 z-10">
                     <div className="p-[1px] rounded-[8px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
                       <button 
-                        className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] text-white px-4 text-[10px] barlow-black tracking-wide uppercase flex items-center gap-2 rounded-[8px] w-[300px] h-[50px] lg:w-[400px] lg:h-[75px] justify-center"
+                        className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] text-white px-4 text-[16px] barlow-black tracking-wide uppercase flex items-center gap-2 rounded-[8px] w-[230px] h-[40px] lg:w-[400px] lg:h-[75px] justify-between"
                         onClick={() => handleSignUpClick(game, index)}
                       >
                         <img src={signup02} alt="icon" className="w-8 h-8 drop-shadow-[0_0_5px_#ff00cc]" />
@@ -343,7 +346,7 @@ const DesktopHeroSection = () => {
             <div className="grid grid-cols-4 items-center gap-4">
               {/* Game Showcase Section */}
               <div className="col-span-3">
-                <div className="relative slider-container [&_.swiper-pagination]:!bottom-0 [&_.swiper-pagination]:!flex [&_.swiper-pagination]:!justify-start [&_.swiper-pagination]:!items-center [&_.swiper-pagination]:!gap-2 [&_.swiper-pagination]:!left-[30px] [&_.swiper-pagination]:!w-auto [&_.swiper-pagination-bullet]:!w-3 [&_.swiper-pagination-bullet]:!h-3 [&_.swiper-pagination-bullet]:!bg-white/50 [&_.swiper-pagination-bullet-active]:!bg-white">
+                <div className="relative slider-container [&_.swiper-pagination]:!bottom-1 [&_.swiper-pagination]:!flex [&_.swiper-pagination]:!justify-start [&_.swiper-pagination]:!items-center  [&_.swiper-pagination]:!left-[70px] [&_.swiper-pagination]:!w-auto [&_.swiper-pagination-bullet]:!w-4 [&_.swiper-pagination-bullet]:!h-4  [&_.swiper-pagination-bullet-active]:!bg-[#ffeec4]">
                   <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={20}

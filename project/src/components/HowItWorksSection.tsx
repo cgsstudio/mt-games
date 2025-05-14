@@ -34,10 +34,7 @@ export default function HowItWorks() {
       className="relative w-full  py-16 overflow-hidden text-white py-16"
       id="about" 
       style={{
-        backgroundImage: `url(${secbg})`,
-        backgroundPosition: 'center',
-      
-        backgroundRepeat: 'no-repeat',
+       
         backgroundColor: '#050d19', // Added this background color
         
       }}
@@ -52,7 +49,7 @@ export default function HowItWorks() {
       <div className="relative z-10 2xl:max-w-7xl xl:max-w-5xl mx-auto px-4">
         {/* Logo/Header */}
         <div className="flex justify-center mb-12">
-          <div className="w-24 h-24 md:w-40 md:h-40  relative">
+          <div className="flex items-center justify-center  relative">
             <div className="relative flex items-center justify-center w-full h-full md:w-[150px] md:h-[142px] lg:w-[200px] md:h-[192px] ">
               <img 
                 src={nft}
@@ -64,7 +61,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Title */}
-        <h2 className="text-[32px] text-center md:text-left md:text-5xl cygun tracking-wider uppercase mb-12">
+        <h2 className="text-[32px] text-center md:text-left md:text-[36px] cygun tracking-wider uppercase mb-12">
           HOW IT WORKS
         </h2>
 
