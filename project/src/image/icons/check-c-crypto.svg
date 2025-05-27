@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="51" viewBox="0 0 150 51">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 9.458px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: Barlow;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .cls-2 {
+        font-size: 11.823px;
+      }
+    </style>
+  </defs>
+  <text id="Checkout_with_CRYPTO" data-name="Checkout with CRYPTO" class="cls-1" transform="translate(74.979 19.781) scale(1.762)"><tspan x="0">Checkout with</tspan><tspan class="cls-2" x="0" dy="11.823">CRYPTO</tspan></text>
+</svg>

@@ -66,6 +66,15 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
     }
   };
 
+  const renderTimerCell = (value: number, label: string) => (
+    <div className="enter-now-timer-cell">
+      <div className="enter-now-timer-value">
+        {value.toString().padStart(2, '0')}:
+      </div>
+      <div className="enter-now-timer-label">{label}:</div>
+    </div>
+  );
+
   if (!isOpen) return null;
 
   return (
@@ -73,93 +82,79 @@ const EnterNow: React.FC<EnterNowProps> = ({ isOpen, onClose, entryFee, contestE
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose}></div>
         
-        <div className="relative p-6 rounded-lg w-full max-w-xl mx-4" style={{ background: 'linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%)' }}>
-          {/* Close Button */}
-          <button 
-            onClick={onClose}
-            className="absolute orbitron-light text-[37px] right-2 -top-3 text-[#758695] hover:text-white text-[30px] rotate-45"
-          >
-            +
-          </button>
+        <main className="enter-now-container enter-now-modal">
+          <header>
+            <button 
+              onClick={onClose}
+              className="enter-now-close-btn orbitron-light text-[37px] rotate-45"
+              aria-label="Close modal"
+            >
+              +
+            </button>
 
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <img src={speedrunlogo} alt="Rebel Speedrun" className="w-64" />
-          </div>
-
-          {/* Entry Fee */}
-          <div className="mb-2">
-            <div className="grid grid-cols-7 p-[4px] bg-[#050d19] overflow-hidden rounded-[5px]">
-              <div className="col-span-3 flex items-center">
-                <span className="uppercase pl-4 text-[#f4e6c1] text-lg barlow-condensed-semibold">ENTRY FEE:</span>
-              </div>
-              <div className="col-span-4 bg-[#283643] p-2 flex items-center rounded-[4px] justify-center">
-                <div className="flex items-center">
-                  <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
-                  <span className="text-xl md:text-[25px] lg:text-[30px] orbitron-medium leading-none">{entryFee}</span>
-                </div>
-              </div>
+            <div className="enter-now-logo">
+              <h1 className="sr-only">Rebel Speedrun</h1>
+              <img src={speedrunlogo} alt="Rebel Speedrun" className="w-64" />
             </div>
-          </div>
+          </header>
 
-          {/* Contest Ends Timer */}
-          <div className="mb-2">
-          <div className="grid grid-cols-7 p-[4px] bg-[#050d19] overflow-hidden rounded-[5px]">
-                <div className="col-span-3   flex items-center">
-                  <span className="uppercase text-[#f4e6c1] pl-4 text-lg barlow-condensed-semibold">CONTEST ENDS:</span>
-                </div>
-                <div className="col-span-4 bg-[#702121] p-1 flex items-center justify-center rounded-[4px]">
-                  <div className="flex justify-center w-full text-center">
-                    <div className="px-1">
-                      <div className="text-[25px] leading-none digital-7-mono">
-                        {timeLeft.days.toString().padStart(2, '0')}:
-                      </div>
-                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">DAYS:</div>
-                    </div>
-                    <div className="px-1">
-                      <div className="text-[25px] leading-none digital-7-mono">
-                        {timeLeft.hours.toString().padStart(2, '0')}:
-                      </div>
-                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">HRS:</div>
-                    </div>
-                    <div className="px-1">
-                      <div className="text-[25px] leading-none digital-7-mono">
-                        {timeLeft.minutes.toString().padStart(2, '0')}:
-                      </div>
-                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">MIN:</div>
-                    </div>
-                    <div className="px-1">
-                      <div className="text-[25px] leading-none digital-7-mono">
-                        {timeLeft.seconds.toString().padStart(2, '0')}
-                      </div>
-                      <div className="text-[#f4e6c1] text-base leading-none uppercase digital-7-mono">SEC:</div>
-                    </div>
+          <section aria-label="Contest Details">
+            <div className="mb-2">
+              <div className="enter-now-info-grid">
+                <h2 className="enter-now-info-label">
+                  <span className="uppercase pl-4 text-[#f4e6c1] text-lg barlow-condensed-semibold">
+                    ENTRY FEE:
+                  </span>
+                </h2>
+                <div className="enter-now-entry-fee">
+                  <div className="flex items-center">
+                    <img src={icon1} alt="Gold icon" className="w-5 h-5 mr-2" />
+                    <span className="text-xl md:text-[25px] lg:text-[30px] orbitron-medium leading-none">
+                      {entryFee}
+                    </span>
                   </div>
                 </div>
               </div>
-          </div>
+            </div>
 
-          {/* Disclaimer */}
-          <div className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-[1.2] mt-6 bg-[#000000]"  >
-                <ul className="space-y-3 barlow-condensed-regular">
-                  <li>• Once you hit CONFIRM ENTRY, credits will be deducted from your account. This action is non-refundable.</li>
-                  <li>• The CONTEST END time above is the time limit to compete in the contest, if you do not compete in that time limit, your funds will be forfeited</li>
-               
-                </ul>
+            <div className="mb-2">
+              <div className="enter-now-timer-grid">
+                <h2 className="enter-now-info-label">
+                  <span className="uppercase text-[#f4e6c1] pl-4 text-lg barlow-condensed-semibold">
+                    CONTEST ENDS:
+                  </span>
+                </h2>
+                <div className="enter-now-timer">
+                  <div className="flex justify-center w-full text-center">
+                    {renderTimerCell(timeLeft.days, "DAYS")}
+                    {renderTimerCell(timeLeft.hours, "HRS")}
+                    {renderTimerCell(timeLeft.minutes, "MIN")}
+                    {renderTimerCell(timeLeft.seconds, "SEC")}
+                  </div>
+                </div>
               </div>
+            </div>
+          </section>
 
-          {/* Confirm Button */}
-          <div className="p-[1px] rounded-none md:rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-6">
-                <button 
-                  onClick={handleConfirmEntry}
-                  className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261]  rounded-none md:rounded-[10px] p-2 text-center barlow-black text-[24px] md:text-[29px] uppercase flex items-center justify-center gap-3"
-                >
-                  <img src={signup02} alt="Right Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
-                  confirm entry
-                  <img src={signup01} alt="Left Icon" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
-                </button>
-              </div>
-        </div>
+          <section aria-label="Disclaimer" className="p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-[1.2] mt-6 bg-[#000000]">
+            <h2 className="sr-only">Important Information</h2>
+            <ul className="space-y-3 barlow-condensed-regular">
+              <li>• Once you hit CONFIRM ENTRY, credits will be deducted from your account. This action is non-refundable.</li>
+              <li>• The CONTEST END time above is the time limit to compete in the contest, if you do not compete in that time limit, your funds will be forfeited</li>
+            </ul>
+          </section>
+
+          <footer className="p-[1px] rounded-none md:rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-6">
+            <button 
+              onClick={handleConfirmEntry}
+              className="w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-none md:rounded-[10px] p-2 text-center barlow-black text-[24px] md:text-[29px] uppercase flex items-center justify-center gap-3"
+            >
+              <img src={signup02} alt="" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
+              <span>confirm entry</span>
+              <img src={signup01} alt="" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
+            </button>
+          </footer>
+        </main>
       </div>
 
       <CongratulationsPopup 

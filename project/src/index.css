@@ -58,6 +58,12 @@ body{
     font-weight: 700;
     font-style: normal;
   }
+   @font-face {
+    font-family: 'Orbitron';
+    src: url('./Assest/font/orbitron-black.otf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
 
   @font-face {
     font-family: 'Century-Gothic';
@@ -130,6 +136,10 @@ body{
   .orbitron-bold {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700; /* Bold */
+  }
+  .orbitron-black {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900; /* Black */
   }
 
   .cygun {
@@ -220,7 +230,7 @@ body{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 15px 15px;
   border: 2px solid transparent;
   background: 
     linear-gradient(#0d0917, #3f1261) padding-box, /* inner */
@@ -231,7 +241,7 @@ body{
 
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 15px;
   z-index: 1;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -242,7 +252,32 @@ body{
     border-radius: 4px !important;
   }
 }
+.offer-button{
+  position: relative;
 
+ 
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#000000, #000000) padding-box, /* inner */
+    linear-gradient(to bottom, #0560fa, #d93ef9) border-box; /* border */
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.buy-creadit-mobile{
+    position: relative;
+
+ 
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#0d0917, #3f1261) padding-box, /* inner */
+    linear-gradient(to bottom, #0560fa, #d93ef9) border-box; /* border */
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 .swiper-pagination-bullet{
   opacity: 1 !important;
   border: 2px solid #d640f3 ;
@@ -398,3 +433,672 @@ body{
   font-style: normal;
 }
 
+.sign-up-popup{
+  background-image: url('./image/icons/SIGNUPPOPUP.png');
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width:767px){
+  .sign-up-popup{
+  background-image: url('./image/icons/MOBILESIGNUPPOPUP.png');
+
+}
+}
+ @media (max-width: 768px) {
+          .custom-swiper-prev2 {
+            left: -10px !important;
+          
+          }
+          .custom-swiper-next2 {
+            right: -10px !important;
+        
+          }
+        }
+        
+        @media (min-width: 1400px) {
+          .custom-swiper-prev2 {
+            left: -80px !important;
+          }
+          .custom-swiper-next2 {
+            right: -80px !important;
+          }
+        }
+        
+        @media (min-width: 1600px) {
+          .custom-swiper-prev2 {
+            left: -100px !important;
+          }
+          .custom-swiper-next2 {
+            right: -100px !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .custom-swiper-prev {
+            left: -10px !important;
+            top: 40% !important;
+          }
+          .custom-swiper-next {
+            right: -10px !important;
+            top: 40% !important;
+          }
+        }
+        
+        @media (min-width: 1400px) {
+          .custom-swiper-prev {
+            left: -80px !important;
+          }
+          .custom-swiper-next {
+            right: -80px !important;
+          }
+        }
+        
+        @media (min-width: 1600px) {
+          .custom-swiper-prev {
+            left: -100px !important;
+          }
+          .custom-swiper-next {
+            right: -100px !important;
+          }
+        }
+
+.text-stroke {
+  -webkit-text-stroke: 3px #b002cf;
+  text-stroke: 3px #b002cf; /* for future compatibility */
+}
+
+.congratulations-popup-container {
+  background: linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%);
+}
+
+.congratulations-close-button {
+  font-size: 37px;
+  transform: rotate(45deg);
+}
+
+.congratulations-button {
+  width: 220px;
+  border: 0.5px solid #d540f3;
+  background: linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%);
+}
+
+.contest-container {
+  background: #000000;
+}
+
+.contest-header-border {
+  border-bottom: 2px solid #d540f3;
+}
+
+.contest-grid-layout {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.contest-video-container {
+  background: #161f29;
+  border: 2px solid #283643;
+}
+
+.contest-status-box {
+  background: #161f29;
+  border-radius: 9px;
+}
+
+.contest-status-live {
+  background: #005952;
+  border-radius: 6px;
+}
+
+.contest-status-live-text {
+  color: #00ff18;
+}
+
+.contest-timer-box {
+  background: #702121;
+  border-radius: 6px;
+}
+
+.contest-info-box {
+  background: #283643;
+  border-radius: 6px;
+}
+
+.contest-rules-container {
+  border: 2px solid #161f29;
+  background: #000000;
+}
+
+.contest-enter-button {
+  background: linear-gradient(to bottom, #0d0917, #3f1261);
+  border-radius: 10px;
+}
+
+.contest-enter-wrapper {
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+  border-radius: 10px;
+}
+
+/* EnterNow Component Styles */
+.enter-now-modal {
+  background: linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%);
+}
+
+.enter-now-close-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: -0.75rem;
+  color: #758695;
+}
+
+.enter-now-close-btn:hover {
+  color: white;
+}
+
+.enter-now-container {
+  @apply relative p-6 rounded-lg w-full max-w-xl mx-4;
+}
+
+.enter-now-logo {
+  @apply flex justify-center mb-8;
+}
+
+.enter-now-info-grid {
+  @apply grid grid-cols-7 p-[4px] bg-[#050d19] overflow-hidden rounded-[5px];
+}
+
+.enter-now-info-label {
+  @apply col-span-3 flex items-center;
+}
+
+.enter-now-entry-fee {
+  @apply col-span-4 bg-[#283643] p-2 flex items-center rounded-[4px] justify-center;
+}
+
+.enter-now-timer {
+  @apply col-span-4 bg-[#702121] p-1 flex items-center justify-center rounded-[4px];
+}
+
+/* EnterNow Component Additional Styles */
+.enter-now-timer-grid {
+  @apply grid grid-cols-7 p-[4px] bg-[#050d19] overflow-hidden rounded-[5px];
+}
+
+.enter-now-disclaimer {
+  @apply p-4 rounded-[9px] border-[2px] border-[#161f29] text-lg text-[#758695] leading-[1.2] mt-6 bg-[#000000];
+}
+
+.enter-now-timer-cell {
+  @apply px-1;
+}
+
+.enter-now-timer-value {
+  @apply text-[25px] leading-none digital-7-mono;
+}
+
+.enter-now-timer-label {
+  @apply text-[#f4e6c1] text-base leading-none uppercase digital-7-mono;
+}
+
+.enter-now-confirm-wrapper {
+  @apply p-[1px] rounded-none md:rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9] mt-6;
+}
+
+.enter-now-confirm-button {
+  @apply w-full uppercase bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-none md:rounded-[10px] p-2 text-center barlow-black text-[24px] md:text-[29px] uppercase flex items-center justify-center gap-3;
+}
+
+.enter-now-icon {
+  @apply w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)];
+}
+
+/* InsufficientFunds Component Styles */
+.insufficient-funds-modal {
+  background: linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%);
+}
+
+.insufficient-funds-close-btn {
+  font-size: 37px;
+}
+
+.insufficient-funds-title {
+  color: #ffeeca;
+}
+
+.insufficient-funds-entry-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 4px;
+  background-color: #050d19;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.insufficient-funds-entry-value {
+  background-color: #283643;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.insufficient-funds-message {
+  padding: 1rem;
+  border-radius: 9px;
+  border: 2px solid #161f29;
+  background-color: #000000;
+}
+
+.insufficient-funds-button-wrapper {
+  padding: 1px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+}
+
+.insufficient-funds-button {
+  width: 100%;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #0d0917, #3f1261);
+  border-radius: 10px;
+}
+
+.insufficient-funds-button:hover {
+  background: linear-gradient(to bottom, #0f0b1d, #4f167b);
+}
+
+/* Modal Base Styles */
+.modal-overlay {
+  @apply fixed inset-0 flex items-center justify-center z-50;
+}
+
+.modal-backdrop {
+  @apply absolute inset-0 bg-black/70 backdrop-blur-sm;
+}
+
+/* InsufficientFunds Component Additional Styles */
+.insufficient-funds-header {
+  @apply flex justify-center items-center gap-2 mt-4;
+}
+
+.insufficient-funds-warning-icon {
+  @apply w-10 h-10;
+}
+
+.insufficient-funds-gold-icon {
+  @apply w-5 h-5 mr-2;
+}
+
+.insufficient-funds-entry-label {
+  @apply col-span-3 flex items-center;
+}
+
+.insufficient-funds-entry-label span {
+  @apply uppercase pl-4 text-[#f4e6c1] text-lg barlow-condensed-semibold;
+}
+
+.insufficient-funds-entry-amount {
+  @apply flex items-center;
+}
+
+.insufficient-funds-entry-amount span {
+  @apply text-xl text-[#f30000] md:text-[25px] lg:text-[30px] orbitron-medium leading-none;
+}
+
+.insufficient-funds-button-icon {
+  @apply w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)];
+}
+
+/* Active Contests Component Styles */
+.active-contests-container {
+  @apply w-full bg-[#000000] text-white py-10 md:py-16 relative;
+}
+
+.active-contests-shape-divider {
+  @apply absolute top-0 md:-top-10 left-0 w-full;
+}
+
+.shape-divider-desktop {
+  @apply hidden md:block w-full h-auto;
+}
+
+.shape-divider-mobile {
+  @apply block md:hidden w-full h-auto;
+}
+
+.active-contests-header-container {
+  @apply 2xl:max-w-6xl xl:max-w-5xl mx-auto;
+}
+
+.active-contests-mobile-profile {
+  @apply block md:hidden mt-4 px-6;
+}
+
+.active-contests-title-border {
+  @apply border-b-[2px] border-[#d540f3] mx-4 md:mx-0 md:px-0 pt-3 pb-2 md:pt-8 md:pb-4;
+}
+
+.active-contests-title {
+  @apply uppercase font-mono orbitron-semibold tracking-wider text-[25px] md:text-[33px];
+}
+
+.active-contests-content {
+  @apply 2xl:max-w-6xl xl:max-w-5xl mx-auto py-4;
+}
+
+.active-contests-table-container {
+  @apply rounded overflow-hidden space-y-4 px-4 md:px-0;
+}
+
+.active-contests-table-header {
+  @apply bg-[#161f29] barlow-condensed-bold text-lg md:text-xl grid grid-cols-4 py-4 px-6 text-[#adb0bc] rounded-[6px] my-6 md:my-8;
+}
+
+.active-contests-row {
+  @apply grid grid-cols-4 items-center py-4 px-6 rounded-[6px];
+  background: linear-gradient(180deg, rgb(3, 8, 16) 0%, rgb(7, 18, 33) 100%);
+}
+
+.active-contests-game-image {
+  @apply w-6 h-6 rounded-lg bg-purple-500/20;
+  transform: scale(2.0);
+}
+
+.active-contests-coin-icon {
+  @apply w-4 h-4 md:w-6 md:h-6;
+}
+
+.active-contests-entry-fee {
+  @apply text-[#ff8000] barlow-bold text-base md:text-xl;
+}
+
+.active-contests-attempts {
+  @apply flex items-center justify-center text-base md:text-xl;
+}
+
+.attempts-current {
+  @apply text-[#2a8fbc] barlow-bold;
+}
+
+.attempts-total {
+  @apply text-[#ffeccd] barlow-bold;
+}
+
+.active-contests-time {
+  @apply flex items-center justify-center md:justify-start pl-0 md:pl-20 text-base md:text-xl;
+}
+
+.time-remaining {
+  @apply text-[#ffeccd] barlow-bold;
+}
+
+.time-remaining.urgent {
+  @apply text-[#ff0000];
+}
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #050d19;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #283643;
+  border-radius: 3px;
+}
+
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #283643 #050d19;
+}
+
+/* Transaction History Styles */
+.transaction-row-deposit {
+  background: linear-gradient(180deg, #1a051f 0%, #330b3d 100%);
+}
+
+.transaction-row-contest {
+  background: linear-gradient(180deg, rgb(3, 8, 16) 0%, rgb(7, 18, 33) 100%);
+}
+
+.transaction-game-image {
+  transform: scale(2.0);
+}
+
+/* Transaction Status Colors */
+.transaction-status-failed {
+  color: #ff0000;
+}
+
+.transaction-status-pending {
+  color: #404040;
+}
+
+.transaction-status-complete {
+  color: #2a8fbc;
+}
+
+.transaction-coins-failed,
+.transaction-coins-pending {
+  color: #404040;
+}
+
+.transaction-coins-negative {
+  color: #ff0000;
+}
+
+.transaction-coins-positive {
+  color: #00ff06;
+}
+
+.transaction-coins-neutral {
+  color: #ff8000;
+}
+
+/* Contest Section Styles */
+.trapezoid-button {
+  background: #008aff;
+  clip-path: polygon(0 0%, 100% 0%, 85% 100%, 15% 100%);
+  transition: all 0.3s ease;
+  padding: 0 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.contest-arrow-left {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  cursor: pointer;
+}
+
+.contest-arrow-right {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* Featured Games Navigation Styles */
+.featured-prev {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  cursor: pointer;
+}
+
+.featured-next {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contest-arrow-left {
+    left: -10px;
+    top: 40%;
+  }
+  
+  .contest-arrow-right {
+    right: -10px;
+    top: 40%;
+  }
+
+  .featured-prev {
+    left: -10px;
+  }
+  .featured-next {
+    right: -10px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contest-arrow-left {
+    left: -80px;
+  }
+  
+  .contest-arrow-right {
+    right: -80px;
+  }
+
+  .featured-prev {
+    left: -80px;
+  }
+  .featured-next {
+    right: -80px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .contest-arrow-left {
+    left: -100px;
+  }
+  
+  .contest-arrow-right {
+    right: -100px;
+  }
+
+  .featured-prev {
+    left: -100px;
+  }
+  .featured-next {
+    right: -100px;
+  }
+}
+
+.nft-cards{
+  min-height: 180px;
+
+
+}
+
+@media (max-width: 768px) {
+  .nft-cards{
+    min-height: 140px;
+  }
+}
+
+/* NFT Card Styles */
+.nft-card {
+  @apply rounded-[20px] overflow-hidden flex items-center justify-center p-0.5 transform transition-transform duration-300 hover:scale-105 z-10 w-full max-w-md mx-auto;
+}
+
+.nft-card-active {
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+  min-height: 180px;
+}
+
+.nft-card-locked {
+  background: linear-gradient(to bottom, #ef077e, #8a0773);
+  padding: 1px;
+  height: 180px;
+}
+
+.nft-card-inner {
+  @apply w-full h-full rounded-[18px] flex items-center justify-center py-10 px-6;
+  background: linear-gradient(-41deg,rgb(42,35,78) 0%,rgb(5,12,17) 100%);
+}
+
+@media (max-width: 768px) {
+  .nft-card-active,
+  .nft-card-locked {
+    min-height: 140px;
+    height: 140px;
+  }
+}
+
+.game-signup-gradient {
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+}
+
+.game-signup-bg {
+  background-image: url('./image/SPARTAN-COMMANDER.png');
+}
+
+/* home page hero section css */
+
+.hero-mobile{
+  background-image: url('./image/BANNERmobileCONTAINER.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mobile-dropdown-menu {
+  background: linear-gradient(-41deg, rgb(42, 35, 78) 0%, rgb(5, 12, 17) 100%);
+}
+.drop-down-openmenu{
+  background: linear-gradient(-41deg, rgb(42, 35, 78) 0%, rgb(5, 12, 17) 100%);
+  background-color: #d93ef9;
+}
+
+/* How It Works Section Styles */
+.how-it-works-section {
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+  color: white;
+  background-image: url('./image/GLOW.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #050d19;
+}
+
+.how-it-works-card {
+  position: relative;
+  padding: 0.125rem;
+  border-radius: 1.5rem;
+  transition: all 500ms;
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+}
+
+.how-it-works-card-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom right, rgb(42, 35, 78), rgb(5, 12, 17));
+}
+
+.how-it-works-card-icon {
+  width: 4rem;
+  height: 4rem;
+  object-contain: cover;
+  transition: all 300ms;
+}
