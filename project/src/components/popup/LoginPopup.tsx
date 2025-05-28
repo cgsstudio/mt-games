@@ -11,21 +11,21 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 // Import your custom icons here
-import timerIcon from '../image/icons/time.svg';
-import trophyIcon from '../image/icons/coin.svg';
-import coinsIcon from '../image/icons/icon-1.png';
-import mtbit from '../image/icons/icon-2.png';
-import doubleLeftArrow from '../image/icons/double-left-arrow.svg';  // Add this import
-import doubleRightArrow from '../image/icons/double-right-arrow.svg'; // Add this import
-import rightarrow from '../image/Right-arrow.png';
-import leftarrow from '../image/arrow-left.png';
-import card1 from '../image/icons/BRAWLERSLOGONEW.svg';
-import buttonimg from '../image/icons/Daily-Main-Event.png';
-import cardBottomImg from '../image/bottomlayer.png';
-import signup01 from '../image/icons/sign-up-ar-1.svg';
-import signup02 from '../image/icons/sign-up-ar-2.svg';
-import icon1 from '../image/icons/icon-1.png';
-import turnamentIcon from '../image/icons/tournament.svg';
+import timerIcon from '../../image/icons/time.svg';
+import trophyIcon from '../../image/icons/coin.svg';
+import coinsIcon from '../../image/icons/icon-1.png';
+import mtbit from '../../image/icons/icon-2.png';
+import doubleLeftArrow from '../../image/icons/double-left-arrow.svg';  // Add this import
+import doubleRightArrow from '../../image/icons/double-right-arrow.svg'; // Add this import
+import rightarrow from '../../image/Right-arrow.png';
+import leftarrow from '../../image/arrow-left.png';
+import card1 from '../../image/icons/BRAWLERSLOGONEW.svg';
+import buttonimg from '../../image/icons/Daily-Main-Event.png';
+import cardBottomImg from '../../image/bottomlayer.png';
+import signup01 from '../../image/icons/sign-up-ar-1.svg';
+import signup02 from '../../image/icons/sign-up-ar-2.svg';
+import icon1 from '../../image/icons/icon-1.png';
+import turnamentIcon from '../../image/icons/tournament.svg';
 import ContestCard, { Contest } from './ContestCard';
 
 // Interfaces

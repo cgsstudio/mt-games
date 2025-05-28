@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import rightarrow from '../image/Right-arrow.png';
 import leftarrow from '../image/arrow-left.png';
 import banner1 from '../image/feature1.png';
@@ -17,12 +18,13 @@ interface GameImage {
   id: number;
   image: string;
   alt: string;
+  locked?: boolean;
 }
 
 const gameImages: GameImage[] = [
   {
     id: 1,
-    image: banner1, // Replace with actual image paths
+    image: banner1,
     alt: 'Game 1'
   },
   {
@@ -33,22 +35,31 @@ const gameImages: GameImage[] = [
   {
     id: 3,
     image: banner3,
-    alt: 'Game 3'
+    alt: 'Game 3',
+    locked: true
   },
-    {
+  {
     id: 4,
     image: banner1,
     alt: 'Game 4'
   },
-  // Add more images as needed
 ];
 
 const FeaturedGames: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleGameClick = (gameId: number) => {
+    // Redirect to game-detail page instead of dynamic game URL
+    navigate(`/game-detail`);
+    // If you need to pass the game ID as a query parameter:
+    // navigate(`/game-detail?id=${gameId}`);
+  };
+
   const swiperConfig = {
     modules: [Navigation, Pagination, Autoplay],
     navigation: {
-      nextEl: '.custom-swiper-next',
-      prevEl: '.custom-swiper-prev',
+      nextEl: '.featured-swiper-next',
+      prevEl: '.featured-swiper-prev',
     },
     autoplay: {
       delay: 3000,
@@ -69,13 +80,34 @@ const FeaturedGames: React.FC = () => {
   };
 
   const renderNavigationArrow = (direction: 'prev' | 'next') => (
-    <div className={`custom-swiper-${direction}2 featured-${direction}`}>
+    <div className={`featured-swiper-${direction} featured-${direction}`}>
       <img 
         src={direction === 'prev' ? leftarrow : rightarrow} 
         alt={direction === 'prev' ? 'Previous' : 'Next'} 
         className="w-full h-full" 
       />
     </div>
+  );
+
+  const renderGameSlide = (game: GameImage) => (
+    <SwiperSlide 
+      key={game.id} 
+      className={`pt-4 pb-8 ${!game.locked ? 'cursor-pointer' : 'cursor-not-allowed'}`}
+      onClick={() => !game.locked && handleGameClick(game.id)}
+    >
+      <figure className="relative">
+        <img
+          src={game.image}
+          alt={game.alt}
+          className={`w-full object-cover ${!game.locked ? 'hover:opacity-100' : 'opacity-100'} transition-opacity`}
+        />
+        {game.locked && (
+          <div className="absolute inset-0 flex items-center justify-center">
+          
+          </div>
+        )}
+      </figure>
+    </SwiperSlide>
   );
 
   return (
@@ -90,17 +122,7 @@ const FeaturedGames: React.FC = () => {
             </h2>
             
             <Swiper {...swiperConfig} className="featured-games-swiper">
-              {gameImages.map((game) => (
-                <SwiperSlide key={game.id} className="pt-4 pb-8">
-                  <figure className="">
-                    <img
-                      src={game.image}
-                      alt={game.alt}
-                      className="w-full object-cover"
-                    />
-                  </figure>
-                </SwiperSlide>
-              ))}
+              {gameImages.map(renderGameSlide)}
             </Swiper>
           </div>
           

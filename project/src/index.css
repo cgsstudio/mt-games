@@ -226,8 +226,29 @@ body{
   }
 }
 .linear-button {
-  position: relative;
+  /* position: relative; */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 15px;
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#0d0917, #3f1261) padding-box, /* inner */
+    linear-gradient(to bottom, #0560fa, #d93ef9) border-box; /* border */
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.linear-circle{
+    display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 15px 15px;
@@ -508,7 +529,10 @@ body{
   -webkit-text-stroke: 3px #b002cf;
   text-stroke: 3px #b002cf; /* for future compatibility */
 }
-
+.text-stroke2{
+  -webkit-text-stroke: 1px #b002cf;
+  text-stroke: 1px #b002cf; /* for future compatibility */
+}
 .congratulations-popup-container {
   background: linear-gradient(-41deg, rgb(42,35,78) 0%, rgb(5,12,17) 100%);
 }
@@ -901,14 +925,19 @@ body{
 }
 
 /* Contest Section Styles */
+.trapezoid-button-wrapper {
+  filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.5));
+}
+
 .trapezoid-button {
   background: #008aff;
-  clip-path: polygon(0 0%, 100% 0%, 85% 100%, 15% 100%);
-  transition: all 0.3s ease;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
   padding: 0 40px;
   position: relative;
   overflow: visible;
 }
+
+
 
 .contest-arrow-left {
   position: absolute;

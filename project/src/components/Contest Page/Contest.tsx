@@ -145,7 +145,7 @@ export default function ContestDetails() {
                   aria-label="Enter contest"
                 >
                   <img src={signup02} alt="" aria-hidden="true" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
-                  <span>ENTER NOW!</span>
+                  <span>ENTER NOW</span>
                   <img src={signup01} alt="" aria-hidden="true" className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                 </button>
               </footer>

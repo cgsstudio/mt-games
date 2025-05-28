@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import MobileHeader from './MobileHeader';
 import LoginPopup from './LoginPopup';
-import RegisterPopup from './RegisterPopup';
+import SignupPopup from './SignupPopup';
 import SpecialOfferPopup from './SpecialOfferPopup';
 
 // Contexts
@@ -302,7 +302,7 @@ const Header: React.FC = () => {
         />
       )}
       {showRegisterForm && (
-        <RegisterPopup
+        <SignupPopup
           onClose={() => setShowRegisterForm(false)}
           onRegisterSuccess={handleRegisterSuccess}
         />

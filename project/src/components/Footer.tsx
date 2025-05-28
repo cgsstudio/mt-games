@@ -13,7 +13,20 @@ import contestmobiedivider from '../image/icons/contestmobiledivider.svg';
 export default function Footer() {
   const location = useLocation();
 
-  const isContestOrProfilePage = location.pathname.includes('contest') || location.pathname.includes('profile') || location.pathname.includes('checkout-card') || location.pathname.includes('confirmation') || location.pathname.includes('checkout-crypto') || location.pathname.includes('buy-credits') || location.pathname.includes('update-profile') || location.pathname.includes('edit-wallet') || location.pathname.includes('withdraw-funds') || location.pathname.includes('transaction-history'); 
+  // Modified logic to handle both game-detail and dynamic game URLs
+  const isContestOrProfilePage = 
+    location.pathname.includes('contest') || 
+    location.pathname.includes('profile') || 
+    location.pathname.includes('checkout-card') || 
+    location.pathname.includes('confirmation') || 
+    location.pathname.includes('checkout-crypto') || 
+    location.pathname.includes('buy-credits') || 
+    location.pathname.includes('update-profile') || 
+    location.pathname.includes('edit-wallet') || 
+    location.pathname.includes('withdraw-funds') || 
+    location.pathname.includes('transaction-history') || 
+    location.pathname.includes('game-detail') ||
+    location.pathname.match(/^\/game\/\d+$/); // This will match any /game/{number} URL
 
   // Divider images based on screen size and page
   const topDividerDesktop = isContestOrProfilePage ? contestdivider : shapedivider;

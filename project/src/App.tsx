@@ -34,6 +34,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import LoginPopup from './components/LoginPopup';
 import FeaturedGames from './components/featuredGames.js'
 import HeroDemo from './components/HeroDemo.js';
+import GameDetailPage from './components/Game-Detail-Page/gameDtailpage.js';
 
 function AppContent() {
   const { isLoginPopupOpen, closeLoginPopup } = useLoginPopup();
@@ -121,6 +122,15 @@ function AppContent() {
               <WithdrawConfirmation />
             </ProtectedRoute>
           } />
+
+          <Route path="/game-detail" element={
+            <ProtectedRoute>
+              <GameDetailPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/game/:id" element={<GameDetailPage />} />
+
+          {/* Demo Page - Public */}
 
           {/* Catch all route for invalid URLs */}
           <Route path="*" element={<Navigate to="/" replace />} />
