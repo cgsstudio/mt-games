@@ -1,20 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { useAuth } from '../context/AuthContext';
+import { GAMES, Game } from './data/GAMEs'; // Add this import
 
 // Import styles and assets
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import banner from '../image/icons/signupbanner.png';
-import banner2 from '../image/cover4.png';
-import banner3 from '../image/cover5.png';
-import banner4 from '../image/cover1.png';
-import banner5 from '../image/cover2.png';
+
 import rightarrow from "../image/icons/swiperrightnew.png"
 import leftarrow from '../image/icons/swiperleftnew.png';
 import doublearrow from '../image/icons/sign-up-ar-2.svg';
@@ -27,19 +24,15 @@ import infoIcon from '../image/icons/info-icon.svg';
 import mobilebg from '../image/BANNERmobileCONTAINER.png'
 
 import downarrow from '../image/icons/downarrow.png'
-import brawllerlogo from '../image/icons/REBEL-BRAWLERS-LOGO.png'
-import speedrunlogo from '../image/icons/speedrunlogo.svg'
+
 import GameSignupPopup from './GameSignupPopup';
 import VideoPopup from './VideoPopup';
 import SignupPopup from './SignUppopup';
 import SpecialOfferPopup from './SpecialOfferPopup';
+// import { GAMES, Game } from './data/GAMES';
+// Remove the old GAMES constant from this file
 
-// Types
-interface Game {
-  title: string;
-  image: string;
-  logo: string;
-}
+
 
 interface NavigationItem {
   label: string;
@@ -65,34 +58,7 @@ const getButtonText = (index: number, isAuthenticated: boolean): string => {
   }
 };
 
-// Constants
-const GAMES: Game[] = [
-  {
-    title: 'Referral banner',
-    image: banner4,
-    logo: speedrunlogo
-  },
-  {
-    title: 'Special Offer ',
-    image: banner5,
-    logo: speedrunlogo
-  },
-  {
-    title: 'sign up now',
-    image: banner,
-    logo: brawllerlogo
-  },
-  {
-    title: 'rebel brawlers',
-    image: banner2,
-    logo: brawllerlogo
-  },
-  {
-    title: 'Rebel speed runner',
-    image: banner3,
-    logo: speedrunlogo
-  },
-];
+
 
 const NAVIGATION_ITEMS: NavigationItem[] = [
   {
@@ -119,12 +85,12 @@ const SignUpButton = ({ onClick, text, className }) => (
   </div>
 );
 
-const ActionButton = ({ icon, onClick }) => (
-  <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-12 h-12">
-    <div
-      className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center"
-      onClick={onClick}
-    >
+const ActionButton = ({ icon, onClick, isInfo = false }) => (
+  <button 
+    className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-12 h-12"
+    onClick={onClick}
+  >
+    <div className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] rounded-full w-full h-full flex items-center justify-center">
       <img src={icon} alt="icon" className="w-5 h-5" />
     </div>
   </button>
@@ -145,7 +111,7 @@ const GameSlide = ({ game, index, onSignUpClick, onVideoClick, isAuthenticated }
       />
     </div>
     {/* Video and Info Buttons - Only show for non-first slides */}
-    {index !== 0 && (
+    {index !== 0 && game.showButtons && (
       <div className="absolute bottom-6 right-6 flex flex-col gap-4 z-10">
         <ActionButton icon={videoIcon} onClick={onVideoClick} />
         <ActionButton icon={infoIcon} onClick={onVideoClick} />
@@ -157,6 +123,7 @@ const GameSlide = ({ game, index, onSignUpClick, onVideoClick, isAuthenticated }
 // Main Components
 const MobileHeroSection = () => {
   const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("Sign up");
 
@@ -202,6 +169,12 @@ const MobileHeroSection = () => {
       default:
         setCurrentGame(game);
         setPopupOpen(true);
+    }
+  };
+
+  const handleInfoClick = (game: Game) => {
+    if (game.slug) {
+      navigate('/game-detail', { state: { game } });
     }
   };
 
@@ -272,7 +245,7 @@ const MobileHeroSection = () => {
                   </div>
                   </div>
                   {/* Video and Info Buttons - Only show for non-first slides */}
-                  {index !== 0 && (
+                  {index !== 0 && game.showButtons && (
                     <div className="absolute bottom-4 right-4 flex flex-col gap-2 z-10">
                       <button className="p-[1px] rounded-full bg-gradient-to-b from-[#0560fa] to-[#d93ef9] w-8 h-8">
                         <div
@@ -394,6 +367,7 @@ const MobileHeroSection = () => {
 
 const DesktopHeroSection = () => {
   const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
   const [currentGame, setCurrentGame] = useState(null);
 
@@ -425,6 +399,12 @@ const DesktopHeroSection = () => {
       default:
         setCurrentGame(game);
         setPopupOpen(true);
+    }
+  };
+
+  const handleInfoClick = (game: Game) => {
+    if (game.slug) {
+      navigate('/game-detail', { state: { game } });
     }
   };
 
@@ -540,10 +520,10 @@ const DesktopHeroSection = () => {
                             />
                           </div>
                           {/* Desktop Video and Info Buttons - Only show for non-first slides */}
-                          {index !== 0 && (
+                          {index !== 0 && game.showButtons && (
                             <div className="absolute bottom-6 right-6 flex flex-col gap-4 z-10">
                               <ActionButton icon={videoIcon} onClick={() => setVideoPopupOpen(true)} />
-                              <ActionButton icon={infoIcon} onClick={() => setVideoPopupOpen(true)} />
+                              <ActionButton icon={infoIcon} onClick={() => handleInfoClick(game)} isInfo={true} />
                             </div>
                           )}
                         </div>

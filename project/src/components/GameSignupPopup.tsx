@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import robotimg from '../image/SPARTAN-COMMANDER.png';
 import glowingline from "../image/icons/glowing-line.svg";
 import buyLeft from "../image/icons/ios.svg";
@@ -7,6 +7,8 @@ import androidIcon from "../image/icons/android.svg";
 import macIcon from "../image/icons/mac.svg";
 import pcIcon from "../image/icons/window.svg";
 import browserIcon from "../image/icons/browser.svg";
+import qrcode from '../image/qrcode.png'
+
 
 // Typography Constants
 const TYPOGRAPHY = {
@@ -16,8 +18,8 @@ const TYPOGRAPHY = {
 };
 
 // Button Component
-const DownloadButton = ({ icon, text }) => (
-  <button className="w-[260px] relative flex items-center justify-between px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
+const DownloadButton = ({ icon, text, onClick }) => (
+  <button onClick={onClick} className="w-[260px] relative flex items-center justify-between px-2 md:px-4 py-2 rounded-[4px] md:rounded-[8px] border-[0.5px] border-[#d540f3] bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] text-white text-center overflow-hidden shadow-md hover:scale-105 transition-transform">
     <img src={icon} alt={text} className="w-[25px] h-[25px] md:w-[35px] md:h-[35px] z-10" />
     <div className="text-center z-10">
       <p className={TYPOGRAPHY.BUTTON_TEXT}>{text}</p>
@@ -28,6 +30,7 @@ const DownloadButton = ({ icon, text }) => (
 
 const GameSignupPopup = ({ isOpen, onClose, game }) => {
   const popupRef = useRef(null);
+  const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -49,12 +52,16 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
 
   if (!isOpen) return null;
 
+  const handleMobileClick = () => {
+    setShowQR(true);
+  };
+
   const downloadButtons = [
-    { section: "DOWNLOAD ON MOBILE:", buttons: [
-      { icon: buyLeft, text: "ios" },
-      { icon: androidIcon, text: "Android" }
+    { section: "PLAY ON MOBILE:", buttons: [
+      { icon: buyLeft, text: "ios", onClick: handleMobileClick },
+      { icon: androidIcon, text: "Android", onClick: handleMobileClick }
     ]},
-    { section: "DOWNLOAD FOR DESKTOP:", buttons: [
+    { section: "PLAY ON DESKTOP:", buttons: [
       { icon: macIcon, text: "Mac" },
       { icon: pcIcon, text: "PC" }
     ]},
@@ -77,22 +84,35 @@ const GameSignupPopup = ({ isOpen, onClose, game }) => {
                 <img src={game?.logo} alt={game?.title} className="h-16 md:h-32 w-auto mx-auto object-contain" />
               </div>
 
-              <div className="flex flex-col space-y-6 bg-[#050d19] p-4 rounded-lg">
+              <div className="flex flex-col space-y-6 bg-[#050d19] p-4 rounded-lg playnow-container min-h-[450px]">
                 <div className="text-center">
                   <h3 className={TYPOGRAPHY.HEADING}>PLAY NOW</h3>
                   <img src={glowingline} alt="glowing line" className="w-full h-auto -mt-1 md:-mt-3" />
                 </div>
 
-                {downloadButtons.map((section, idx) => (
-                  <div key={idx} className="space-y-2">
-                    <p className={TYPOGRAPHY.SUBHEADING}>{section.section}</p>
-                    <div className="flex justify-center space-x-4">
-                      {section.buttons.map((btn, btnIdx) => (
-                        <DownloadButton key={btnIdx} {...btn} />
-                      ))}
-                    </div>
+                {showQR ? (
+                  <div className="flex flex-col items-center space-y-4">
+                    <p className={TYPOGRAPHY.SUBHEADING}>Scan the QR code below to play:</p>
+                    <img src={qrcode} alt="QR Code" className="w-48 h-48 object-contain" />
+                    <button 
+                      onClick={() => setShowQR(false)}
+                      className={TYPOGRAPHY.SUBHEADING}
+                    >
+                      Back to download options
+                    </button>
                   </div>
-                ))}
+                ) : (
+                  downloadButtons.map((section, idx) => (
+                    <div key={idx} className="space-y-2 dwnld-section">
+                      <p className={TYPOGRAPHY.SUBHEADING}>{section.section}</p>
+                      <div className="flex justify-center space-x-4">
+                        {section.buttons.map((btn, btnIdx) => (
+                          <DownloadButton key={btnIdx} {...btn} />
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>

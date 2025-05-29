@@ -108,7 +108,7 @@ const UserProfileSidebar = () => {
               <div className={`${isOpen ? "mt-5 flex items-center justify-center" : "mt-8"}`}>
                 {isOpen ? (
                   <Link to="/profile">
-                    <button className="flex items-center justify-between linear-button-2 relative w-[260px]">
+                    <button className="flex items-center justify-center linear-button-2 relative w-[260px]">
                       <img src={signup02} alt="Buy Icon Left" className="w-8 h-8 mr-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />
                       <span className="text-[16px] leading-[55px] tracking-wide text-white barlow-black">BUY CREDITS NOW</span>
                       <img src={signup01} alt="Buy Icon Right" className="w-8 h-8 ml-2 drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]" />

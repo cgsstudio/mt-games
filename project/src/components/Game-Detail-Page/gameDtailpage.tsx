@@ -22,6 +22,7 @@ import card1 from '../../image/icons/BRAWLERSLOGONEW.svg';
 import contestlogo from '../../image/contest-LOGO.svg';
 import CoinsIcon from '../../image/icons/icon-1.png';
 import turnamentIcon from '../../image/icons/tournament.svg';
+import { useLocation } from 'react-router-dom';
 
 // Add mock contest data
 const mockContest: Contest = {
@@ -46,6 +47,9 @@ const formatNumber = (num: number): string => {
 };
 
 export default function GameDetailPage() {
+  const location = useLocation();
+  const gameData = location.state?.game;
+
   const [showEnterNow, setShowEnterNow] = useState(false);
   const [userCredits] = useState(5000);
   const [activeTab, setActiveTab] = useState('featured');
@@ -152,9 +156,6 @@ export default function GameDetailPage() {
 
         {/* Main Content */}
         <article className="py-6 px-4 md:px-0">
-
-
-
           {/* Content Grid */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-6">
             {/* Left Column */}
@@ -162,8 +163,8 @@ export default function GameDetailPage() {
             <section className="md:col-span-3 space-y-6">
               <figure className="flex items-center justify-center">
                 <img
-                  src={contestlogo}
-                  alt="Rebel Brawlers"
+                  src={gameData?.logo || contestlogo}
+                  alt={gameData?.title || "Game Logo"}
                   className="h-16 md:h-20"
                 />
               </figure>

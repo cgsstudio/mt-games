@@ -1,5 +1,5 @@
 // React and third-party imports
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Image imports
@@ -42,13 +42,13 @@ const TYPOGRAPHY = {
 // Helper functions
 const formatNumber = (num: number): string => {
   if (num < 10) {
-    return '00';
+    return '∞';
   }
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 // ContestCard component
-const ContestCard: React.FC<{ contest: Contest }> = ({ contest }) => {
+const ContestCard: React.FC<{ contest: Contest, onEnterClick: () => void }> = ({ contest, onEnterClick }) => {
   return (
     <div className="bg-[linear-gradient(-41deg,rgb(42,35,78)_0%,rgb(5,12,17)_100%)] rounded-[20px] border border-[rgb(213,64,243)] border-solid backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative">
       <div className="absolute z-20 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] px-4">
@@ -128,7 +128,7 @@ const ContestCard: React.FC<{ contest: Contest }> = ({ contest }) => {
           </div>
           <div className="bg-[#000000]  flex items-center rounded-[2px] md:rounded-[9px] justify-center w-[180px] h-[50px]">
             <div className="flex items-center">
-              <img src={icon1} alt="Gold icon" className="w-6 h-6 mr-2" />
+              <img src={icon1} alt="Gold icon" className="w-8 h-8 mr-2" />
               {/* <span className="text-yellow-500 mr-2">●</span> */}
               <p className="text-[#f4e6c1] text-[27px] lg:text-[25px] barlow-condensed-semibold leading-[13px] uppercase "><span className='text-[#00ff18]'>{formatNumber(contest.entryFee)}</span> Entry</p>
             </div>
@@ -138,7 +138,7 @@ const ContestCard: React.FC<{ contest: Contest }> = ({ contest }) => {
         <div className="px-4 pb-4">
           <footer className="contest-enter-wrapper p-[1px] mt-4">
             <button
-              // onClick={() => setShowEnterNow(true)}
+              onClick={onEnterClick}
               className="contest-enter-button w-full text-center barlow-black text-2xl md:text-[29px] leading-[60px] uppercase flex items-center justify-around gap-3 "
               aria-label="Enter contest"
             >

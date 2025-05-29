@@ -27,6 +27,7 @@ import signup02 from '../image/icons/sign-up-ar-2.svg';
 import icon1 from '../image/icons/icon-1.png';
 import turnamentIcon from '../image/icons/tournament.svg';
 import ContestCard, { Contest } from './ContestCard';
+import LeaderboardDetails from './leaderboard-details/leaderboardDetails';
 
 // Interfaces
 interface TimerProps {
@@ -230,6 +231,7 @@ const initialContests = [
 
 const ContestsSection: React.FC = () => {
   const [contests, setContests] = useState<Contest[]>(initialContests);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   return (
     <section className="bg-[#050d19] overflow-hidden" id="contests">
@@ -286,7 +288,10 @@ const ContestsSection: React.FC = () => {
             >
               {contests.map((contest) => (
                 <SwiperSlide key={contest.id} className="pt-10 pb-20 md:pt-8 md:pb-16">
-                  <ContestCard contest={contest} />
+                  <ContestCard 
+                    contest={contest} 
+                    onEnterClick={() => setShowLeaderboard(true)}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -303,7 +308,11 @@ const ContestsSection: React.FC = () => {
         </div>
       </div>
 
-
+      {/* Add LeaderboardDetails at the root level */}
+      <LeaderboardDetails 
+        isOpen={showLeaderboard} 
+        onClose={() => setShowLeaderboard(false)} 
+      />
     </section>
   );
 };

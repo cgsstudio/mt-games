@@ -314,7 +314,7 @@ body{
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+
  
   border: 2px solid transparent;
   background: 
@@ -1130,4 +1130,11 @@ body{
   height: 4rem;
   object-contain: cover;
   transition: all 300ms;
+}
+
+/* Leaderboard Details Styles */
+.leaderboard-gradient-border {
+  background: linear-gradient(to bottom, #0560fa, #d93ef9);
+  padding: 1px;
+  border-radius: 18px;
 }

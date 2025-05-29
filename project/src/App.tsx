@@ -35,6 +35,7 @@ import LoginPopup from './components/LoginPopup';
 import FeaturedGames from './components/featuredGames.js'
 import HeroDemo from './components/HeroDemo.js';
 import GameDetailPage from './components/Game-Detail-Page/gameDtailpage.js';
+import Specialofferpage from './components/special-offers-and-referrals/SpecialOffersAndReferrals.js'
 
 function AppContent() {
   const { isLoginPopupOpen, closeLoginPopup } = useLoginPopup();
@@ -129,6 +130,14 @@ function AppContent() {
             </ProtectedRoute>
           } />
           <Route path="/game/:id" element={<GameDetailPage />} />
+
+          <Route path="/special-offers-and-referrals" element={
+            <ProtectedRoute>
+              <Specialofferpage />
+            </ProtectedRoute>
+          } />
+
+          {/* Public Routes */}
 
           {/* Demo Page - Public */}
 

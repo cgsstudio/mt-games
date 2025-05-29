@@ -66,7 +66,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ isOpen, onClose, videoUrl }) =>
         <div className="flex items-center justify-between bg-[#161f29] px-3 md:px-6 pt-2 pb-6">
           <div className="p-[2px] rounded-none md:rounded-[10px] bg-gradient-to-b from-[#0560fa] to-[#d93ef9]">
             <button
-              onClick={() => setSignupPopupOpen(true)}
+             
               className="bg-gradient-to-b from-[#0d0917] to-[#3f1261] text-white py-2 px-2 text-[14px] md:text-xl barlow-black tracking-wide uppercase flex items-center gap-6 rounded-none md:rounded-[10px] w-[200px] md:w-[250px] justify-center"
             >
               <img src={signup02} alt="" className="w-8 h-8 drop-shadow-[0_0_5px_#ff00cc]" />
@@ -85,11 +85,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ isOpen, onClose, videoUrl }) =>
         </div>
       </div>
 
-      <GameSignupPopup 
-        isOpen={signupPopupOpen}
-        onClose={() => setSignupPopupOpen(false)}
-        game={null}
-      />
+   
     </div>
   );
 };

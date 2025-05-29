@@ -7,6 +7,8 @@ import leftarrow from '../image/arrow-left.png';
 import banner1 from '../image/feature1.png';
 import banner2 from '../image/feature2.png';
 import banner3 from '../image/feature3.png';
+import brawllerlogo from '../image/icons/REBEL-BRAWLERS-LOGO.png';
+import speedrunlogo from '../image/icons/speedrunlogo.svg';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,40 +21,58 @@ interface GameImage {
   image: string;
   alt: string;
   locked?: boolean;
+  logo: string;
+  slug: string;
 }
 
 const gameImages: GameImage[] = [
   {
     id: 1,
     image: banner1,
-    alt: 'Game 1'
+    alt: 'Rebel Speed Runner',
+    logo: brawllerlogo,
+    slug: 'Rebel Speed Runner'
   },
   {
     id: 2,
     image: banner2,
-    alt: 'Game 2'
+    alt: 'Rebel Brawlers',
+    logo: speedrunlogo,
+    slug: 'rebel-brawlers'
   },
   {
     id: 3,
     image: banner3,
-    alt: 'Game 3',
-    locked: true
+    alt: 'Coming Soon',
+    locked: true,
+    logo: '',
+    slug: ''
   },
   {
     id: 4,
     image: banner1,
-    alt: 'Game 4'
+    alt: 'Rebel Brawlers',
+    logo: brawllerlogo,
+    slug: 'rebel-brawlers'
   },
 ];
 
 const FeaturedGames: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleGameClick = (gameId: number) => {
-    // Redirect to game-detail page instead of dynamic game URL
-    navigate(`/game-detail`);
-    // If you need to pass the game ID as a query parameter:
-    // navigate(`/game-detail?id=${gameId}`);
+  const handleGameClick = (game: GameImage) => {
+    if (!game.locked && game.slug) {
+      navigate('/game-detail', { 
+        state: { 
+          game: {
+            title: game.alt,
+            image: game.image,
+            logo: game.logo,
+            slug: game.slug
+          }
+        } 
+      });
+    }
   };
 
   const swiperConfig = {
@@ -93,7 +113,7 @@ const FeaturedGames: React.FC = () => {
     <SwiperSlide 
       key={game.id} 
       className={`pt-4 pb-8 ${!game.locked ? 'cursor-pointer' : 'cursor-not-allowed'}`}
-      onClick={() => !game.locked && handleGameClick(game.id)}
+      onClick={() => handleGameClick(game)}
     >
       <figure className="relative">
         <img
@@ -103,7 +123,7 @@ const FeaturedGames: React.FC = () => {
         />
         {game.locked && (
           <div className="absolute inset-0 flex items-center justify-center">
-          
+            
           </div>
         )}
       </figure>
